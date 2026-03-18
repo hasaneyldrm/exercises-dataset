@@ -1,8 +1,8 @@
 # Exercises Dataset
 
-**TR:** 433 farklı fitness egzersizine ait kapsamlı bir veri seti. Her egzersiz için ad, kategori, hedef kas grubu, ekipman bilgisi, açıklama, görsel ve animasyon videosu içermektedir.
+**TR:** 1323 farklı fitness egzersizine ait kapsamlı bir veri seti ve API. Her egzersiz için ad, kategori, hedef kas grubu, ekipman bilgisi, açıklama, görsel ve animasyon videosu içermektedir.
 
-**EN:** A comprehensive dataset of 433 fitness exercises. Each entry includes name, category, target muscle group, equipment, instructions, thumbnail image, and animation video.
+**EN:** A comprehensive dataset and API of 1323 fitness exercises. Each entry includes name, category, target muscle group, equipment, instructions, thumbnail image, and animation video.
 
 ---
 
@@ -18,8 +18,9 @@
 
 ```
 exercises-dataset/
+├── api/                 # REST API sunucusu / REST API server
 ├── data/
-│   └── exercises.json   # 433 egzersizin tam veri seti / Full exercise dataset
+│   └── exercises.json   # 1323 egzersizin tam veri seti / Full exercise dataset
 ├── images/              # Egzersiz görselleri (.jpg / .png) / Exercise thumbnails
 ├── videos/              # Egzersiz animasyon videoları (.mp4) / Exercise animation videos
 └── README.md
@@ -31,7 +32,7 @@ exercises-dataset/
 
 | | |
 |---|---|
-| Toplam Egzersiz / Total Exercises | **433** |
+| Toplam Egzersiz / Total Exercises | **1323** |
 | Video Dosyası / Video Files | **372** |
 | Görsel Dosyası / Image Files | **364** |
 
@@ -183,6 +184,22 @@ Each record in `data/exercises.json` contains the following fields:
 ---
 
 ## 🚀 Kullanım / Usage
+
+### REST API
+
+**TR:** Projede bir REST API sunucusu bulunmaktadır. Başlatmak için:
+**EN:** The project includes a REST API server. To start the API:
+
+```bash
+pip install -r requirements.txt
+python3 api/server.py --port 8000
+```
+
+İsimle arama örneği / Search by name:
+
+```bash
+curl "http://127.0.0.1:8000/exercises?q=squat&limit=5"
+```
 
 ### Python
 
