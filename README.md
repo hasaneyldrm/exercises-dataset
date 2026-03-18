@@ -11,11 +11,11 @@
   <img src="images/Jump-Squat_Thighs_thumbnail@3x.jpg" width="140" style="border-radius:8px; margin:4px;" />
 </p>
 
-**A comprehensive, ready-to-use fitness exercise dataset with 433 exercises — each with animation videos, thumbnail images, muscle group info, equipment data, and full instructions.**
+**A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with animation GIFs, thumbnail images, muscle group info, equipment data, and full instructions.**
 
-[![Exercises](https://img.shields.io/badge/Exercises-433-blue?style=flat-square)](data/exercises.json)
-[![Videos](https://img.shields.io/badge/Animation%20Videos-372-green?style=flat-square)](videos/)
-[![Images](https://img.shields.io/badge/Thumbnails-364-orange?style=flat-square)](images/)
+[![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
+[![Videos](https://img.shields.io/badge/Animation%20GIFs-1919-green?style=flat-square)](videos/)
+[![Images](https://img.shields.io/badge/Thumbnails-1911-orange?style=flat-square)](images/)
 [![License](https://img.shields.io/badge/License-Educational%20Only-red?style=flat-square)](#-license)
 
 </div>
@@ -45,7 +45,7 @@
 
 ## 🔍 Overview
 
-This dataset is a curated collection of **433 fitness exercises** sourced for educational and research purposes. It covers a wide range of muscle groups, equipment types, and exercise categories — making it ideal for:
+This dataset is a curated collection of **1,324 fitness exercises** sourced for educational and research purposes. It covers a wide range of muscle groups, equipment types, and exercise categories — making it ideal for:
 
 - Building fitness or workout planning applications
 - Machine learning projects involving exercise recognition or recommendation
@@ -63,8 +63,8 @@ Each exercise entry contains:
 | Muscle Group | Secondary / supporting muscles |
 | Equipment | Equipment required (or `None` for bodyweight) |
 | Instructions | Step-by-step exercise instructions |
-| Thumbnail | Static `.jpg` / `.png` preview image |
-| Animation Video | `.mp4` animation showing the movement |
+| Thumbnail | Static `.jpg` preview image |
+| Animation GIF | `.gif` animation showing the movement |
 
 ---
 
@@ -73,17 +73,17 @@ Each exercise entry contains:
 ```
 exercises-dataset/
 ├── data/
-│   └── exercises.json       # Full dataset — 433 exercise records (JSON array)
-├── images/                  # Exercise thumbnail images (.jpg / .png)
-├── videos/                  # Exercise animation videos (.mp4)
+│   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
+├── images/                  # Exercise thumbnail images (.jpg) — 1,911 files
+├── videos/                  # Exercise animation GIFs (.gif) — 1,919 files
 └── README.md
 ```
 
 ### Key Files
 
-- **`data/exercises.json`** — The primary data file. A JSON array of 433 exercise objects. Each record contains all metadata fields plus paths to the corresponding image and video files.
-- **`images/`** — 364 thumbnail images. Files are named descriptively (e.g. `Barbell-Bench-Press_Chest_thumbnail.jpg`). Some exercises share a thumbnail with slightly different names (e.g. `@3x` suffix for higher resolution variants).
-- **`videos/`** — 372 `.mp4` animation files demonstrating the exercise movement. Named consistently with the exercise name and category (e.g. `Barbell-Bench-Press_Chest.mp4`).
+- **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects. Each record contains all metadata fields plus paths to the corresponding image and GIF files.
+- **`images/`** — 1,911 thumbnail images named with the exercise ID (e.g. `0001-2gPfomN.jpg`).
+- **`videos/`** — 1,919 `.gif` animation files demonstrating the exercise movement, named consistently with the image files (e.g. `0001-2gPfomN.gif`).
 
 ---
 
@@ -91,41 +91,43 @@ exercises-dataset/
 
 | Metric | Count |
 |---|---|
-| Total Exercises | **433** |
-| Animation Videos | **372** |
-| Thumbnail Images | **364** |
+| Total Exercises | **1,324** |
+| Animation GIFs | **1,919** |
+| Thumbnail Images | **1,911** |
 
-### Exercises by Category (Muscle Group)
+### Exercises by Body Part
 
-| Category | Exercise Count |
+| Body Part | Exercise Count |
 |---|---|
-| Quadriceps | 53 |
-| Chest | 51 |
-| Abdominals | 48 |
-| Full Body | 41 |
-| Shoulders | 34 |
-| Biceps | 32 |
-| Triceps | 28 |
-| Cardio | 22 |
-| Hamstrings | 21 |
-| Glutes | 19 |
-| Calves | 11 |
-| Back | ~31 |
-| Other | ~42 |
+| Upper Arms | 292 |
+| Upper Legs | 227 |
+| Back | 203 |
+| Waist | 169 |
+| Chest | 163 |
+| Shoulders | 143 |
+| Lower Legs | 59 |
+| Lower Arms | 37 |
+| Cardio | 29 |
+| Neck | 2 |
 
 ### Exercises by Equipment
 
 | Equipment | Exercise Count |
 |---|---|
-| Machine | 138 |
-| None (Bodyweight) | 103 |
-| Barbell | 73 |
-| Dumbbell | 69 |
-| Resistance Band | 13 |
-| Kettlebell | 11 |
-| Other | 26 |
+| Body Weight | 325 |
+| Dumbbell | 294 |
+| Cable | 157 |
+| Barbell | 154 |
+| Leverage Machine | 81 |
+| Band | 54 |
+| Smith Machine | 48 |
+| Kettlebell | 41 |
+| Weighted | 36 |
+| Stability Ball | 28 |
+| EZ Barbell | 23 |
+| Other | 83 |
 
-> **Note:** ~24% of exercises require no equipment at all — great for at-home workout applications.
+> **Note:** ~25% of exercises require no equipment at all — great for at-home workout applications.
 
 ---
 
@@ -135,31 +137,43 @@ Each record in `data/exercises.json` follows this structure:
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | `string` (UUID) | Unique identifier for the exercise |
-| `name` | `string` | Full exercise name (e.g. `"Bicep Curl (Dumbbell)"`) |
-| `category` | `string` | Muscle group category (lowercase, e.g. `"chest"`, `"biceps"`) |
-| `equipment` | `string` | Required equipment (e.g. `"Barbell"`, `"None"`) |
-| `instructions` | `string` | Detailed step-by-step instructions |
-| `muscle_group` | `string` | Secondary / synergist muscle group |
-| `target` | `string` | Primary target muscle (e.g. `"Biceps"`, `"Pectoralis Major"`) |
-| `image` | `string` | Relative path to the thumbnail image file |
-| `gif_url` | `string` | Relative path to the animation video file (`.mp4`) |
+| `id` | `string` | Unique numeric identifier (e.g. `"0001"`) |
+| `name` | `string` | Full exercise name (e.g. `"3/4 Sit-up"`) |
+| `category` | `string` | Body part category (e.g. `"upper arms"`, `"chest"`, `"back"`) |
+| `body_part` | `string` | Same as `category` — body part targeted |
+| `equipment` | `string` | Required equipment (e.g. `"dumbbell"`, `"body weight"`) |
+| `instructions` | `string` | Full step-by-step instructions as a single string |
+| `instruction_steps` | `array[string]` | Same instructions split into individual steps |
+| `muscle_group` | `string` | Primary synergist muscle group |
+| `secondary_muscles` | `array[string]` | Additional muscles involved |
+| `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
+| `image` | `string` | Relative path to the thumbnail image (e.g. `"images/0001-2gPfomN.jpg"`) |
+| `gif_url` | `string` | Relative path to the animation GIF (e.g. `"videos/0001-2gPfomN.gif"`) |
 | `created_at` | `string` | ISO 8601 timestamp of record creation |
 
 ### Sample Record
 
 ```json
 {
-  "id": "166f0156-f963-44cc-8170-4041f649554e",
-  "name": "Bicep Curl (Dumbbell)",
-  "category": "biceps",
-  "equipment": "Dumbbell",
-  "instructions": "Stand upright holding a dumbbell in each hand at arm's length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. Curl the weights while contracting your biceps, exhaling as you raise. Continue until your biceps are fully contracted and the dumbbells are at shoulder level. Hold briefly, then lower back down under control.",
-  "muscle_group": "forearms",
-  "target": "Biceps",
-  "image": "images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg",
-  "gif_url": "videos/Dumbbell-Biceps-Curl_Upper-Arms.mp4",
-  "created_at": "2025-03-05 08:27:36.029938+00"
+  "id": "0001",
+  "name": "3/4 sit-up",
+  "category": "waist",
+  "body_part": "waist",
+  "equipment": "body weight",
+  "instructions": "Lie flat on your back with your knees bent and feet flat on the ground...",
+  "instruction_steps": [
+    "Lie flat on your back with your knees bent and feet flat on the ground.",
+    "Place your hands behind your head with your elbows pointing outwards.",
+    "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "muscle_group": "hip flexors",
+  "secondary_muscles": ["hip flexors", "lower back"],
+  "target": "abs",
+  "image": "images/0001-2gPfomN.jpg",
+  "gif_url": "videos/0001-2gPfomN.gif",
+  "created_at": "2026-03-18 12:31:32.854798+00:00"
 }
 ```
 
@@ -264,12 +278,12 @@ print(f"Total exercises loaded: {len(exercises)}")
 # Filter by category
 chest_exercises = [ex for ex in exercises if ex["category"] == "chest"]
 print(f"Chest exercises: {len(chest_exercises)}")
-# -> Chest exercises: 51
+# -> Chest exercises: 163
 
 # Filter by equipment
-bodyweight = [ex for ex in exercises if ex["equipment"] == "None"]
+bodyweight = [ex for ex in exercises if ex["equipment"] == "body weight"]
 print(f"Bodyweight exercises: {len(bodyweight)}")
-# -> Bodyweight exercises: 103
+# -> Bodyweight exercises: 325
 
 # Get all unique categories
 categories = sorted({ex["category"] for ex in exercises})
@@ -290,8 +304,8 @@ df = pd.DataFrame(data)
 # Top categories by exercise count
 print(df["category"].value_counts().head(10))
 
-# All barbell exercises targeting quadriceps
-barbell_quads = df[(df["equipment"] == "Barbell") & (df["category"] == "quadriceps")]
+# All barbell exercises targeting upper legs
+barbell_quads = df[(df["equipment"] == "barbell") & (df["category"] == "upper legs")]
 print(barbell_quads[["name", "target", "equipment"]])
 ```
 
@@ -303,9 +317,9 @@ const exercises = require("./data/exercises.json");
 console.log(`Total exercises: ${exercises.length}`);
 
 // Bodyweight exercises only
-const bodyweight = exercises.filter(ex => ex.equipment === "None");
+const bodyweight = exercises.filter(ex => ex.equipment === "body weight");
 console.log(`Bodyweight exercises: ${bodyweight.length}`);
-// -> Bodyweight exercises: 103
+// -> Bodyweight exercises: 325
 
 // Group exercises by category
 const byCategory = exercises.reduce((acc, ex) => {
@@ -324,9 +338,12 @@ interface Exercise {
   id: string;
   name: string;
   category: string;
+  body_part: string;
   equipment: string;
   instructions: string;
+  instruction_steps: string[];
   muscle_group: string;
+  secondary_muscles: string[];
   target: string;
   image: string;
   gif_url: string;
