@@ -1,43 +1,103 @@
-# Exercises Dataset
+<div align="center">
 
-**TR:** 433 farklı fitness egzersizine ait kapsamlı bir veri seti. Her egzersiz için ad, kategori, hedef kas grubu, ekipman bilgisi, açıklama, görsel ve animasyon videosu içermektedir.
+# 💪 Exercises Dataset
 
-**EN:** A comprehensive dataset of 433 fitness exercises. Each entry includes name, category, target muscle group, equipment, instructions, thumbnail image, and animation video.
+<p>
+  <img src="images/Barbell-Bench-Press_Chest_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/Barbell-Full-Squat_Thighs_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/Barbell-Deadlift_Hips-FIX_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/Pull-up_Back_thumbnail@3x.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/Jump-Squat_Thighs_thumbnail@3x.jpg" width="140" style="border-radius:8px; margin:4px;" />
+</p>
+
+**A comprehensive, ready-to-use fitness exercise dataset with 433 exercises — each with animation videos, thumbnail images, muscle group info, equipment data, and full instructions.**
+
+[![Exercises](https://img.shields.io/badge/Exercises-433-blue?style=flat-square)](data/exercises.json)
+[![Videos](https://img.shields.io/badge/Animation%20Videos-372-green?style=flat-square)](videos/)
+[![Images](https://img.shields.io/badge/Thumbnails-364-orange?style=flat-square)](images/)
+[![License](https://img.shields.io/badge/License-Educational%20Only-red?style=flat-square)](#-license)
+
+</div>
 
 ---
 
-## ⚠️ Yasal Uyarı / Disclaimer
+## ⚠️ Disclaimer
 
-> **TR:** Bu repo yalnızca eğitim ve araştırma amaçlıdır. Ticari kullanım kesinlikle yasaktır. Repodaki tüm görseller ve videolar ilgili telif hakkı sahiplerine aittir. İçeriklerinizin kaldırılmasını istiyorsanız lütfen bir issue açın.
->
-> **EN:** This repository is provided for **educational and non-commercial purposes only**. All exercise media (images, videos) belong to their respective copyright holders. This dataset must not be used for commercial purposes. If you are the copyright owner and wish to have your content removed, please open an issue or contact the repository owner.
+> This repository is provided for **educational and non-commercial research purposes only**.  
+> All exercise media (images, videos) belong to their respective copyright holders.  
+> **Commercial use is strictly prohibited.**  
+> If you are a copyright owner and wish to have your content removed, please [open an issue](../../issues) or contact the repository owner.
 
 ---
 
-## 📂 Klasör Yapısı / File Structure
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [File Structure](#-file-structure)
+- [Statistics](#-statistics)
+- [Data Schema](#-data-schema)
+- [Sample Exercises](#-sample-exercises)
+- [Usage Examples](#-usage-examples)
+- [License](#-license)
+
+---
+
+## 🔍 Overview
+
+This dataset is a curated collection of **433 fitness exercises** sourced for educational and research purposes. It covers a wide range of muscle groups, equipment types, and exercise categories — making it ideal for:
+
+- Building fitness or workout planning applications
+- Machine learning projects involving exercise recognition or recommendation
+- Health and wellness research
+- Educational demonstrations and prototypes
+
+Each exercise entry contains:
+
+| Field | Description |
+|---|---|
+| Unique ID | UUID to identify each exercise |
+| Name | Full descriptive exercise name |
+| Category | Primary muscle group targeted |
+| Target | Specific target muscle |
+| Muscle Group | Secondary / supporting muscles |
+| Equipment | Equipment required (or `None` for bodyweight) |
+| Instructions | Step-by-step exercise instructions |
+| Thumbnail | Static `.jpg` / `.png` preview image |
+| Animation Video | `.mp4` animation showing the movement |
+
+---
+
+## 📂 File Structure
 
 ```
 exercises-dataset/
 ├── data/
-│   └── exercises.json   # 433 egzersizin tam veri seti / Full exercise dataset
-├── images/              # Egzersiz görselleri (.jpg / .png) / Exercise thumbnails
-├── videos/              # Egzersiz animasyon videoları (.mp4) / Exercise animation videos
+│   └── exercises.json       # Full dataset — 433 exercise records (JSON array)
+├── images/                  # Exercise thumbnail images (.jpg / .png)
+├── videos/                  # Exercise animation videos (.mp4)
 └── README.md
 ```
 
+### Key Files
+
+- **`data/exercises.json`** — The primary data file. A JSON array of 433 exercise objects. Each record contains all metadata fields plus paths to the corresponding image and video files.
+- **`images/`** — 364 thumbnail images. Files are named descriptively (e.g. `Barbell-Bench-Press_Chest_thumbnail.jpg`). Some exercises share a thumbnail with slightly different names (e.g. `@3x` suffix for higher resolution variants).
+- **`videos/`** — 372 `.mp4` animation files demonstrating the exercise movement. Named consistently with the exercise name and category (e.g. `Barbell-Bench-Press_Chest.mp4`).
+
 ---
 
-## 📊 İstatistikler / Statistics
+## 📊 Statistics
 
-| | |
+| Metric | Count |
 |---|---|
-| Toplam Egzersiz / Total Exercises | **433** |
-| Video Dosyası / Video Files | **372** |
-| Görsel Dosyası / Image Files | **364** |
+| Total Exercises | **433** |
+| Animation Videos | **372** |
+| Thumbnail Images | **364** |
 
-### Kategoriler / Categories
+### Exercises by Category (Muscle Group)
 
-| Kategori / Category | Egzersiz Sayısı / Count |
+| Category | Exercise Count |
 |---|---|
 | Quadriceps | 53 |
 | Chest | 51 |
@@ -50,11 +110,12 @@ exercises-dataset/
 | Hamstrings | 21 |
 | Glutes | 19 |
 | Calves | 11 |
-| Diğer / Other | 73 |
+| Back | ~31 |
+| Other | ~42 |
 
-### Ekipman / Equipment
+### Exercises by Equipment
 
-| Ekipman / Equipment | Egzersiz Sayısı / Count |
+| Equipment | Exercise Count |
 |---|---|
 | Machine | 138 |
 | None (Bodyweight) | 103 |
@@ -64,106 +125,28 @@ exercises-dataset/
 | Kettlebell | 11 |
 | Other | 26 |
 
----
-
-## 🎬 Örnek Egzersizler / Sample Exercises
-
-Her egzersiz bir thumbnail görsel ve bir animasyon videosuna sahiptir.  
-Each exercise has a thumbnail image and an animation video.
+> **Note:** ~24% of exercises require no equipment at all — great for at-home workout applications.
 
 ---
 
-### 1 — Bench Press (Barbell) · Chest
+## 🗂️ Data Schema
 
-![Bench Press](images/Barbell-Bench-Press_Chest_thumbnail.jpg)
+Each record in `data/exercises.json` follows this structure:
 
-> 📹 `videos/Barbell-Bench-Press_Chest.mp4`
-
-**TR:** Barbell Bench Press, göğüs, omuz ve triceps kaslarını çalıştıran temel bir compound egzersizdir. Ağırlıklı göğüs gelişimi için en etkili hareketlerden biridir.
-
-**EN:** The Barbell Bench Press is a fundamental compound exercise targeting the chest, shoulders, and triceps. It is one of the most effective movements for overall chest development.
-
----
-
-### 2 — Deadlift (Barbell) · Hamstrings / Back
-
-![Deadlift](images/Barbell-Deadlift_Hips-FIX_thumbnail.jpg)
-
-> 📹 `videos/Barbell-Deadlift_Hips-FIX.mp4`
-
-**TR:** Barbell Deadlift, arka zincir kaslarını (hamstring, glute, sırt alt) bütünsel olarak çalıştıran en temel güç egzersizlerinden biridir. Doğru form, bel sağlığı açısından kritiktir.
-
-**EN:** The Barbell Deadlift is one of the most fundamental strength exercises, engaging the entire posterior chain (hamstrings, glutes, lower back). Proper form is critical for lower back safety.
-
----
-
-### 3 — Full Squat (Barbell) · Quadriceps
-
-![Squat](images/Barbell-Full-Squat_Thighs_thumbnail.jpg)
-
-> 📹 `videos/Barbell-Full-Squat_Thighs.mp4`
-
-**TR:** Barbell Full Squat, kuadriseps, hamstring ve glute kaslarını derinlemesine çalıştıran egzersizlerin kralıdır. Tüm vücut güç ve kas kütlesi gelişimi için temel harekettir.
-
-**EN:** The Barbell Full Squat is considered the king of exercises, deeply engaging the quadriceps, hamstrings, and glutes. It is a cornerstone movement for total body strength and muscle mass development.
-
----
-
-### 4 — Bicep Curl (Dumbbell) · Biceps
-
-![Bicep Curl](images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg)
-
-> 📹 `videos/Dumbbell-Biceps-Curl_Upper-Arms.mp4`
-
-**TR:** Dumbbell Bicep Curl, biseps kaslarını izole eden klasik bir egzersizdir. Her iki kolu bağımsız çalıştırarak kas dengesini geliştirir ve kol hacmini artırır.
-
-**EN:** The Dumbbell Bicep Curl is a classic isolation exercise targeting the biceps. Training each arm independently helps correct muscle imbalances and increases arm size.
-
----
-
-### 5 — Pull-up · Back / Biceps
-
-![Pull-up](images/Pull-up_Back_thumbnail@3x.jpg)
-
-> 📹 `videos/Pull-up_Back.mp4`
-
-**TR:** Pull-up, sırt ve biseps kaslarını çalıştıran en etkili vücut ağırlığı egzersizlerinden biridir. Latissimus dorsi kasını genişletir ve üst vücut çekme gücünü artırır.
-
-**EN:** The Pull-up is one of the most effective bodyweight exercises for the back and biceps. It widens the latissimus dorsi and significantly improves upper body pulling strength.
-
----
-
-### 6 — Jump Squat · Quadriceps / Cardio
-
-![Jump Squat](images/Jump-Squat_Thighs_thumbnail@3x.jpg)
-
-> 📹 `videos/Jump-Squat_Thighs.mp4`
-
-**TR:** Jump Squat, kuadriseps, hamstring ve glute kaslarını patlayıcı şekilde çalıştıran bir pliometrik egzersizdir. Kardiyovasküler kapasiteyi artırırken güç ve hız gelişimine de katkı sağlar.
-
-**EN:** The Jump Squat is a plyometric exercise that explosively engages the quadriceps, hamstrings, and glutes. It improves cardiovascular capacity while also developing power and speed.
-
----
-
-## 🗂️ Veri Yapısı / Data Schema
-
-`data/exercises.json` dosyasındaki her kayıt aşağıdaki alanları içermektedir:  
-Each record in `data/exercises.json` contains the following fields:
-
-| Alan / Field | Tür / Type | Açıklama / Description |
+| Field | Type | Description |
 |---|---|---|
-| `id` | string (UUID) | Egzersizin benzersiz kimliği / Unique exercise identifier |
-| `name` | string | Egzersiz adı / Exercise name |
-| `category` | string | Kas grubu kategorisi / Muscle group category |
-| `equipment` | string | Kullanılan ekipman / Equipment used |
-| `instructions` | string | Egzersiz açıklaması (TR) / Exercise instructions (TR) |
-| `muscle_group` | string | İkincil kas grubu / Secondary muscle group |
-| `target` | string | Birincil hedef kas / Primary target muscle |
-| `image` | string | Görsel dosya yolu / Image file path |
-| `gif_url` | string | Video dosya yolu / Video file path |
-| `created_at` | string | Oluşturulma tarihi / Creation timestamp |
+| `id` | `string` (UUID) | Unique identifier for the exercise |
+| `name` | `string` | Full exercise name (e.g. `"Bicep Curl (Dumbbell)"`) |
+| `category` | `string` | Muscle group category (lowercase, e.g. `"chest"`, `"biceps"`) |
+| `equipment` | `string` | Required equipment (e.g. `"Barbell"`, `"None"`) |
+| `instructions` | `string` | Detailed step-by-step instructions |
+| `muscle_group` | `string` | Secondary / synergist muscle group |
+| `target` | `string` | Primary target muscle (e.g. `"Biceps"`, `"Pectoralis Major"`) |
+| `image` | `string` | Relative path to the thumbnail image file |
+| `gif_url` | `string` | Relative path to the animation video file (`.mp4`) |
+| `created_at` | `string` | ISO 8601 timestamp of record creation |
 
-### Örnek Kayıt / Sample Record
+### Sample Record
 
 ```json
 {
@@ -171,7 +154,7 @@ Each record in `data/exercises.json` contains the following fields:
   "name": "Bicep Curl (Dumbbell)",
   "category": "biceps",
   "equipment": "Dumbbell",
-  "instructions": "Bicep curl, özellikle üst koldaki biseps kaslarını güçlendiren temel bir izolasyon hareketidir...",
+  "instructions": "Stand upright holding a dumbbell in each hand at arm's length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. Curl the weights while contracting your biceps, exhaling as you raise. Continue until your biceps are fully contracted and the dumbbells are at shoulder level. Hold briefly, then lower back down under control.",
   "muscle_group": "forearms",
   "target": "Biceps",
   "image": "images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg",
@@ -182,9 +165,93 @@ Each record in `data/exercises.json` contains the following fields:
 
 ---
 
-## 🚀 Kullanım / Usage
+## 🎬 Sample Exercises
 
-### Python
+Each exercise below includes a thumbnail preview. The corresponding animation video (`.mp4`) is located in the `videos/` folder.
+
+---
+
+### 1 — Barbell Bench Press · Chest
+
+<img src="images/Barbell-Bench-Press_Chest_thumbnail.jpg" width="320" />
+
+> **Animation:** `videos/Barbell-Bench-Press_Chest.mp4`  
+> **Equipment:** Barbell · **Target:** Pectoralis Major · **Secondary:** Shoulders, Triceps
+
+The Barbell Bench Press is the cornerstone of chest training and one of the "Big Three" powerlifting movements. Lying flat on a bench, you lower a loaded barbell to your chest and press it back up explosively. It simultaneously recruits the pectoralis major, anterior deltoids, and triceps brachii, making it the single most effective exercise for upper body pushing strength and chest mass development.
+
+**Key cues:** Retract and depress your scapulae before unracking. Keep your feet flat on the floor, arch your lower back naturally, and maintain a shoulder-width grip. Lower the bar under control to mid-chest and drive up through the heels.
+
+---
+
+### 2 — Barbell Deadlift · Hamstrings / Back
+
+<img src="images/Barbell-Deadlift_Hips-FIX_thumbnail.jpg" width="320" />
+
+> **Animation:** `videos/Barbell-Deadlift_Hips-FIX.mp4`  
+> **Equipment:** Barbell · **Target:** Hamstrings, Glutes · **Secondary:** Erector Spinae, Traps, Forearms
+
+The Barbell Deadlift is widely regarded as the ultimate full-body strength exercise. It engages virtually every major muscle in the posterior chain — hamstrings, glutes, and lower back — while also demanding significant contribution from the upper back, traps, and grip. Proper spinal alignment and bracing technique are critical for both performance and safety.
+
+**Key cues:** Set up with the bar over your mid-foot. Hinge at the hips, grip just outside your legs, brace your core hard, and keep the bar in contact with your shins throughout the lift. Drive the floor away, lock out at the top by squeezing glutes and extending hips fully.
+
+---
+
+### 3 — Barbell Full Squat · Quadriceps
+
+<img src="images/Barbell-Full-Squat_Thighs_thumbnail.jpg" width="320" />
+
+> **Animation:** `videos/Barbell-Full-Squat_Thighs.mp4`  
+> **Equipment:** Barbell · **Target:** Quadriceps · **Secondary:** Glutes, Hamstrings, Core
+
+Often called "the king of all exercises," the Barbell Full Squat demands coordinated strength across the entire lower body and core. Breaking parallel maximizes glute and hamstring activation compared to partial squats. It is the foundation of nearly every strength and hypertrophy program.
+
+**Key cues:** Bar on upper traps (high bar) or rear deltoids (low bar). Brace your core before descent, push knees out in line with toes, sit into your hips, and descend until your thighs pass parallel to the floor. Drive through the whole foot to stand.
+
+---
+
+### 4 — Dumbbell Bicep Curl · Biceps
+
+<img src="images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg" width="320" />
+
+> **Animation:** `videos/Dumbbell-Biceps-Curl_Upper-Arms.mp4`  
+> **Equipment:** Dumbbell · **Target:** Biceps Brachii · **Secondary:** Brachialis, Forearms
+
+The Dumbbell Bicep Curl is the most recognized isolation exercise for the arms. Training each side independently helps identify and correct strength imbalances between limbs. The supinated (palms-up) grip maximizes biceps contraction at the top of the movement.
+
+**Key cues:** Stand tall with elbows pinned to your sides. Supinate your wrists as you curl up, squeeze at the top, and lower under control without swinging. Avoid using momentum from the shoulders or lower back.
+
+---
+
+### 5 — Pull-up · Back / Biceps
+
+<img src="images/Pull-up_Back_thumbnail@3x.jpg" width="320" />
+
+> **Animation:** `videos/Pull-up_Back.mp4`  
+> **Equipment:** None (bodyweight) · **Target:** Latissimus Dorsi · **Secondary:** Biceps, Rear Delts, Core
+
+The Pull-up is the gold standard bodyweight exercise for upper body pulling strength. It primarily develops the latissimus dorsi — creating the coveted V-taper — while heavily involving the biceps, rear deltoids, and core stabilizers. It scales from beginner (band-assisted) to advanced (weighted).
+
+**Key cues:** Dead hang from an overhand grip, shoulder-width or slightly wider. Initiate with your lats by depressing your shoulder blades, then pull your chest toward the bar. Lower fully between reps to maintain range of motion.
+
+---
+
+### 6 — Jump Squat · Quadriceps / Cardio
+
+<img src="images/Jump-Squat_Thighs_thumbnail@3x.jpg" width="320" />
+
+> **Animation:** `videos/Jump-Squat_Thighs.mp4`  
+> **Equipment:** None (bodyweight) · **Target:** Quadriceps, Glutes · **Secondary:** Hamstrings, Calves, Core
+
+The Jump Squat is a plyometric power exercise that trains the explosive strength of the lower body. It elevates heart rate rapidly, making it equally effective as a cardiovascular drill and a power development tool. Used in HIIT, athletic conditioning, and circuit training.
+
+**Key cues:** Descend into a half-squat position, then explode upward as powerfully as possible. Land softly with slightly bent knees to absorb impact, immediately transitioning into the next rep. Keep your chest up throughout.
+
+---
+
+## 🚀 Usage Examples
+
+### Python — Load and Filter
 
 ```python
 import json
@@ -192,11 +259,40 @@ import json
 with open("data/exercises.json", "r", encoding="utf-8") as f:
     exercises = json.load(f)
 
-# Tüm göğüs egzersizlerini getir / Get all chest exercises
-chest_exercises = [ex for ex in exercises if ex["category"] == "chest"]
+print(f"Total exercises loaded: {len(exercises)}")
 
-print(f"Göğüs egzersizi sayısı: {len(chest_exercises)}")
-# -> Göğüs egzersizi sayısı: 51
+# Filter by category
+chest_exercises = [ex for ex in exercises if ex["category"] == "chest"]
+print(f"Chest exercises: {len(chest_exercises)}")
+# -> Chest exercises: 51
+
+# Filter by equipment
+bodyweight = [ex for ex in exercises if ex["equipment"] == "None"]
+print(f"Bodyweight exercises: {len(bodyweight)}")
+# -> Bodyweight exercises: 103
+
+# Get all unique categories
+categories = sorted({ex["category"] for ex in exercises})
+print("Categories:", categories)
+```
+
+### Python — Load with Pandas
+
+```python
+import json
+import pandas as pd
+
+with open("data/exercises.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+df = pd.DataFrame(data)
+
+# Top categories by exercise count
+print(df["category"].value_counts().head(10))
+
+# All barbell exercises targeting quadriceps
+barbell_quads = df[(df["equipment"] == "Barbell") & (df["category"] == "quadriceps")]
+print(barbell_quads[["name", "target", "equipment"]])
 ```
 
 ### JavaScript / Node.js
@@ -204,17 +300,56 @@ print(f"Göğüs egzersizi sayısı: {len(chest_exercises)}")
 ```js
 const exercises = require("./data/exercises.json");
 
-// Ekipmansız egzersizler / Bodyweight exercises
-const bodyweight = exercises.filter(ex => ex.equipment === "None");
+console.log(`Total exercises: ${exercises.length}`);
 
-console.log(`Bodyweight egzersiz sayısı: ${bodyweight.length}`);
-// -> Bodyweight egzersiz sayısı: 103
+// Bodyweight exercises only
+const bodyweight = exercises.filter(ex => ex.equipment === "None");
+console.log(`Bodyweight exercises: ${bodyweight.length}`);
+// -> Bodyweight exercises: 103
+
+// Group exercises by category
+const byCategory = exercises.reduce((acc, ex) => {
+  acc[ex.category] = (acc[ex.category] || []);
+  acc[ex.category].push(ex);
+  return acc;
+}, {});
+
+console.log("Categories:", Object.keys(byCategory));
+```
+
+### TypeScript — Type-safe Usage
+
+```typescript
+interface Exercise {
+  id: string;
+  name: string;
+  category: string;
+  equipment: string;
+  instructions: string;
+  muscle_group: string;
+  target: string;
+  image: string;
+  gif_url: string;
+  created_at: string;
+}
+
+import exercises from "./data/exercises.json";
+const data = exercises as Exercise[];
+
+const shuffled = data.sort(() => Math.random() - 0.5);
+const randomWorkout: Exercise[] = shuffled.slice(0, 6);
+console.log("Random 6-exercise workout:", randomWorkout.map(e => e.name));
 ```
 
 ---
 
-## 📄 Lisans / License
+## 📄 License
 
-**TR:** Bu proje yalnızca **eğitim amaçlıdır**. Ticari kullanım için orijinal içerik sahipleriyle iletişime geçiniz.
+This project is for **educational and non-commercial purposes only**.
 
-**EN:** This project is for **educational purposes only**. For commercial use, please contact the original content owners.
+- You **may** use this dataset for personal projects, research, and learning.
+- You **may not** use this dataset or its media for any commercial application or product.
+- All images and videos are property of their respective copyright owners.
+- For commercial use, please contact the original content owners directly.
+
+If you are a copyright holder and wish to have your content removed, please [open an issue](../../issues).
