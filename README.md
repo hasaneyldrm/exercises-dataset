@@ -3,19 +3,19 @@
 # 💪 Exercises Dataset
 
 <p>
-  <img src="images/Barbell-Bench-Press_Chest_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
-  <img src="images/Barbell-Full-Squat_Thighs_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
-  <img src="images/Barbell-Deadlift_Hips-FIX_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
-  <img src="images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg" width="140" style="border-radius:8px; margin:4px;" />
-  <img src="images/Pull-up_Back_thumbnail@3x.jpg" width="140" style="border-radius:8px; margin:4px;" />
-  <img src="images/Jump-Squat_Thighs_thumbnail@3x.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0025-EIeI8Vf.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0043-qXTaZnJ.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0032-ila4NZS.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0294-NbVPDMW.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0652-lBDjFxJ.jpg" width="140" style="border-radius:8px; margin:4px;" />
+  <img src="images/0334-DsgkuIt.jpg" width="140" style="border-radius:8px; margin:4px;" />
 </p>
 
 **A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with animation GIFs, thumbnail images, muscle group info, equipment data, and full instructions.**
 
 [![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
-[![Videos](https://img.shields.io/badge/Animation%20GIFs-1919-green?style=flat-square)](videos/)
-[![Images](https://img.shields.io/badge/Thumbnails-1911-orange?style=flat-square)](images/)
+[![Videos](https://img.shields.io/badge/Animation%20GIFs-1324-green?style=flat-square)](videos/)
+[![Images](https://img.shields.io/badge/Thumbnails-1324-orange?style=flat-square)](images/)
 [![License](https://img.shields.io/badge/License-Educational%20Only-red?style=flat-square)](#-license)
 
 </div>
@@ -74,16 +74,16 @@ Each exercise entry contains:
 exercises-dataset/
 ├── data/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
-├── images/                  # Exercise thumbnail images (.jpg) — 1,911 files
-├── videos/                  # Exercise animation GIFs (.gif) — 1,919 files
+├── images/                  # Exercise thumbnail images (.jpg) — 1,324 files
+├── videos/                  # Exercise animation GIFs (.gif) — 1,324 files
 └── README.md
 ```
 
 ### Key Files
 
 - **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects. Each record contains all metadata fields plus paths to the corresponding image and GIF files.
-- **`images/`** — 1,911 thumbnail images named with the exercise ID (e.g. `0001-2gPfomN.jpg`).
-- **`videos/`** — 1,919 `.gif` animation files demonstrating the exercise movement, named consistently with the image files (e.g. `0001-2gPfomN.gif`).
+- **`images/`** — 1,324 thumbnail images named with the exercise ID (e.g. `0001-2gPfomN.jpg`).
+- **`videos/`** — 1,324 `.gif` animation files demonstrating the exercise movement, named consistently with the image files (e.g. `0001-2gPfomN.gif`).
 
 ---
 
@@ -92,8 +92,8 @@ exercises-dataset/
 | Metric | Count |
 |---|---|
 | Total Exercises | **1,324** |
-| Animation GIFs | **1,919** |
-| Thumbnail Images | **1,911** |
+| Animation GIFs | **1,324** |
+| Thumbnail Images | **1,324** |
 
 ### Exercises by Body Part
 
@@ -187,36 +187,36 @@ Each exercise below includes a thumbnail preview. The corresponding animation vi
 
 ### 1 — Barbell Bench Press · Chest
 
-<img src="images/Barbell-Bench-Press_Chest_thumbnail.jpg" width="320" />
+<img src="images/0025-EIeI8Vf.jpg" width="320" />
 
-> **Animation:** `videos/Barbell-Bench-Press_Chest.mp4`  
-> **Equipment:** Barbell · **Target:** Pectoralis Major · **Secondary:** Shoulders, Triceps
+> **Animation:** `videos/0025-EIeI8Vf.gif`
+> **Equipment:** Barbell · **Target:** Pectorals · **Secondary:** Triceps, Shoulders
 
-The Barbell Bench Press is the cornerstone of chest training and one of the "Big Three" powerlifting movements. Lying flat on a bench, you lower a loaded barbell to your chest and press it back up explosively. It simultaneously recruits the pectoralis major, anterior deltoids, and triceps brachii, making it the single most effective exercise for upper body pushing strength and chest mass development.
+The Barbell Bench Press is the cornerstone of chest training and one of the "Big Three" powerlifting movements. Lying flat on a bench, you lower a loaded barbell to your chest and press it back up explosively. It simultaneously recruits the pectorals, triceps, and anterior deltoids, making it the single most effective exercise for upper body pushing strength and chest mass development.
 
 **Key cues:** Retract and depress your scapulae before unracking. Keep your feet flat on the floor, arch your lower back naturally, and maintain a shoulder-width grip. Lower the bar under control to mid-chest and drive up through the heels.
 
 ---
 
-### 2 — Barbell Deadlift · Hamstrings / Back
+### 2 — Barbell Deadlift · Upper Legs / Back
 
-<img src="images/Barbell-Deadlift_Hips-FIX_thumbnail.jpg" width="320" />
+<img src="images/0032-ila4NZS.jpg" width="320" />
 
-> **Animation:** `videos/Barbell-Deadlift_Hips-FIX.mp4`  
-> **Equipment:** Barbell · **Target:** Hamstrings, Glutes · **Secondary:** Erector Spinae, Traps, Forearms
+> **Animation:** `videos/0032-ila4NZS.gif`
+> **Equipment:** Barbell · **Target:** Glutes · **Secondary:** Hamstrings, Lower Back
 
-The Barbell Deadlift is widely regarded as the ultimate full-body strength exercise. It engages virtually every major muscle in the posterior chain — hamstrings, glutes, and lower back — while also demanding significant contribution from the upper back, traps, and grip. Proper spinal alignment and bracing technique are critical for both performance and safety.
+The Barbell Deadlift is widely regarded as the ultimate full-body strength exercise. It engages virtually every major muscle in the posterior chain — glutes, hamstrings, and lower back — while also demanding significant contribution from the upper back, traps, and grip. Proper spinal alignment and bracing technique are critical for both performance and safety.
 
 **Key cues:** Set up with the bar over your mid-foot. Hinge at the hips, grip just outside your legs, brace your core hard, and keep the bar in contact with your shins throughout the lift. Drive the floor away, lock out at the top by squeezing glutes and extending hips fully.
 
 ---
 
-### 3 — Barbell Full Squat · Quadriceps
+### 3 — Barbell Full Squat · Upper Legs
 
-<img src="images/Barbell-Full-Squat_Thighs_thumbnail.jpg" width="320" />
+<img src="images/0043-qXTaZnJ.jpg" width="320" />
 
-> **Animation:** `videos/Barbell-Full-Squat_Thighs.mp4`  
-> **Equipment:** Barbell · **Target:** Quadriceps · **Secondary:** Glutes, Hamstrings, Core
+> **Animation:** `videos/0043-qXTaZnJ.gif`
+> **Equipment:** Barbell · **Target:** Glutes · **Secondary:** Quadriceps, Hamstrings, Calves, Core
 
 Often called "the king of all exercises," the Barbell Full Squat demands coordinated strength across the entire lower body and core. Breaking parallel maximizes glute and hamstring activation compared to partial squats. It is the foundation of nearly every strength and hypertrophy program.
 
@@ -224,25 +224,25 @@ Often called "the king of all exercises," the Barbell Full Squat demands coordin
 
 ---
 
-### 4 — Dumbbell Bicep Curl · Biceps
+### 4 — Dumbbell Biceps Curl · Upper Arms
 
-<img src="images/Dumbbell-Biceps-Curl_Upper-Arms_thumbnail.jpg" width="320" />
+<img src="images/0294-NbVPDMW.jpg" width="320" />
 
-> **Animation:** `videos/Dumbbell-Biceps-Curl_Upper-Arms.mp4`  
-> **Equipment:** Dumbbell · **Target:** Biceps Brachii · **Secondary:** Brachialis, Forearms
+> **Animation:** `videos/0294-NbVPDMW.gif`
+> **Equipment:** Dumbbell · **Target:** Biceps · **Secondary:** Forearms
 
-The Dumbbell Bicep Curl is the most recognized isolation exercise for the arms. Training each side independently helps identify and correct strength imbalances between limbs. The supinated (palms-up) grip maximizes biceps contraction at the top of the movement.
+The Dumbbell Biceps Curl is the most recognized isolation exercise for the arms. Training each side independently helps identify and correct strength imbalances between limbs. The supinated (palms-up) grip maximizes biceps contraction at the top of the movement.
 
 **Key cues:** Stand tall with elbows pinned to your sides. Supinate your wrists as you curl up, squeeze at the top, and lower under control without swinging. Avoid using momentum from the shoulders or lower back.
 
 ---
 
-### 5 — Pull-up · Back / Biceps
+### 5 — Pull-up · Back
 
-<img src="images/Pull-up_Back_thumbnail@3x.jpg" width="320" />
+<img src="images/0652-lBDjFxJ.jpg" width="320" />
 
-> **Animation:** `videos/Pull-up_Back.mp4`  
-> **Equipment:** None (bodyweight) · **Target:** Latissimus Dorsi · **Secondary:** Biceps, Rear Delts, Core
+> **Animation:** `videos/0652-lBDjFxJ.gif`
+> **Equipment:** Body Weight · **Target:** Lats · **Secondary:** Biceps, Forearms
 
 The Pull-up is the gold standard bodyweight exercise for upper body pulling strength. It primarily develops the latissimus dorsi — creating the coveted V-taper — while heavily involving the biceps, rear deltoids, and core stabilizers. It scales from beginner (band-assisted) to advanced (weighted).
 
@@ -250,16 +250,16 @@ The Pull-up is the gold standard bodyweight exercise for upper body pulling stre
 
 ---
 
-### 6 — Jump Squat · Quadriceps / Cardio
+### 6 — Dumbbell Lateral Raise · Shoulders
 
-<img src="images/Jump-Squat_Thighs_thumbnail@3x.jpg" width="320" />
+<img src="images/0334-DsgkuIt.jpg" width="320" />
 
-> **Animation:** `videos/Jump-Squat_Thighs.mp4`  
-> **Equipment:** None (bodyweight) · **Target:** Quadriceps, Glutes · **Secondary:** Hamstrings, Calves, Core
+> **Animation:** `videos/0334-DsgkuIt.gif`
+> **Equipment:** Dumbbell · **Target:** Delts · **Secondary:** Traps
 
-The Jump Squat is a plyometric power exercise that trains the explosive strength of the lower body. It elevates heart rate rapidly, making it equally effective as a cardiovascular drill and a power development tool. Used in HIIT, athletic conditioning, and circuit training.
+The Dumbbell Lateral Raise is the go-to isolation exercise for building shoulder width. It directly targets the lateral (middle) head of the deltoid, which is responsible for the broad-shouldered look. Controlled tempo and strict form matter far more than load.
 
-**Key cues:** Descend into a half-squat position, then explode upward as powerfully as possible. Land softly with slightly bent knees to absorb impact, immediately transitioning into the next rep. Keep your chest up throughout.
+**Key cues:** Stand with a slight bend in your elbows throughout. Raise the dumbbells out to the sides until your arms are parallel to the floor — no higher. Lead with your elbows, not your wrists. Lower slowly under control to maximize time under tension.
 
 ---
 
