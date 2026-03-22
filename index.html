@@ -656,6 +656,238 @@
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
+    /* ── DB Setup Button ─────────────────────────────── */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .db-setup-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 9px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--bg-elevated);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .db-setup-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .db-setup-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-muted); }
+
+    /* ── DB Setup Overlay ────────────────────────────── */
+    .db-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      padding: 16px;
+    }
+
+    .db-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .db-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      width: min(700px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      transform: translateY(10px) scale(0.98);
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .db-overlay.open .db-panel {
+      transform: translateY(0) scale(1);
+    }
+
+    .db-panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 20px 20px 0;
+    }
+
+    .db-panel-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .db-panel-subtitle {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .db-panel-close {
+      color: var(--text-tertiary);
+      font-size: 18px;
+      line-height: 1;
+      padding: 4px;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+
+    .db-panel-close:hover { color: var(--text-primary); }
+
+    /* ── DB Tabs ─────────────────────────────────────── */
+    .db-tabs {
+      display: flex;
+      gap: 2px;
+      padding: 14px 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .db-tab {
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s;
+    }
+
+    .db-tab:hover { color: var(--text-primary); }
+    .db-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── DB Steps ────────────────────────────────────── */
+    .db-steps-wrap {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .db-step {
+      display: flex;
+      gap: 14px;
+    }
+
+    .db-step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .db-step-body { flex: 1; min-width: 0; }
+
+    .db-step-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .db-step-desc {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .db-step-desc code {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0 4px;
+      font-size: 12px;
+      font-family: 'SF Mono', 'Fira Mono', 'Menlo', monospace;
+    }
+
+    /* ── Code Block ──────────────────────────────────── */
+    .code-block {
+      position: relative;
+      background: #1a1a1a;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .code-pre {
+      color: #e4e4e7;
+      font-family: 'SF Mono', 'Fira Mono', 'Menlo', 'Consolas', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 0;
+    }
+
+    .media-layout-block .code-pre { padding-top: 12px; padding-bottom: 12px; }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255,255,255,0.1);
+      color: #a1a1aa;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 3px 9px;
+      font-size: 11px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      z-index: 1;
+    }
+
+    .copy-btn:hover { background: rgba(255,255,255,0.18); color: #fff; }
+    .copy-btn.copied { color: #4ade80; border-color: #4ade80; }
+
+    /* ── Generate Button ─────────────────────────────── */
+    .generate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+
+    .generate-btn:hover { opacity: 0.88; }
+    .generate-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .generate-status {
+      margin-left: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+
   </style>
 </head>
 <body>
@@ -665,6 +897,15 @@
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">Exercise<span>DB</span></div>
+      <a class="db-setup-btn" href="setup.html" target="_blank" title="Database Setup">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
+          <path d="M2 4v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V4"/>
+          <path d="M2 7v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V7"/>
+          <path d="M2 10v2c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-2"/>
+        </svg>
+        DB Setup
+      </a>
     </div>
     <div class="sidebar-body">
       <!-- Search -->
@@ -710,6 +951,72 @@
       </div>
     </div>
   </main>
+</div>
+
+<!-- DB Setup Overlay -->
+<div class="db-overlay" id="db-overlay" role="dialog" aria-modal="true" aria-labelledby="db-setup-title">
+  <div class="db-panel" id="db-panel">
+    <div class="db-panel-header">
+      <div>
+        <h2 class="db-panel-title" id="db-setup-title">Database Setup</h2>
+        <p class="db-panel-subtitle">Import 1,324 exercises into your database in 3 steps.</p>
+      </div>
+      <button class="db-panel-close" id="db-setup-close" aria-label="Close">✕</button>
+    </div>
+
+    <!-- DB Tabs -->
+    <div class="db-tabs" role="tablist">
+      <button class="db-tab active" data-db="mssql" role="tab">SQL Server</button>
+      <button class="db-tab" data-db="postgresql" role="tab">PostgreSQL</button>
+      <button class="db-tab" data-db="mysql" role="tab">MySQL</button>
+      <button class="db-tab" data-db="sqlite" role="tab">SQLite</button>
+    </div>
+
+    <div class="db-steps-wrap">
+      <!-- Step 1 -->
+      <div class="db-step">
+        <div class="db-step-num">1</div>
+        <div class="db-step-body">
+          <h3 class="db-step-title">Create Table</h3>
+          <p class="db-step-desc">Run this in your database client (SSMS, DBeaver, pgAdmin, etc.):</p>
+          <div class="code-block">
+            <button class="copy-btn" id="copy-create-btn">Copy</button>
+            <pre class="code-pre" id="create-table-sql"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="db-step">
+        <div class="db-step-num">2</div>
+        <div class="db-step-body">
+          <h3 class="db-step-title">Import Data</h3>
+          <p class="db-step-desc">Generate a <code>.sql</code> file with all 1,324 INSERT statements — runs in any DB client. The file is built entirely in your browser, nothing is uploaded.</p>
+          <button class="generate-btn" id="generate-sql-btn">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
+            </svg>
+            Generate INSERT SQL
+          </button>
+          <span class="generate-status" id="generate-status"></span>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="db-step">
+        <div class="db-step-num">3</div>
+        <div class="db-step-body">
+          <h3 class="db-step-title">Media Files</h3>
+          <p class="db-step-desc">Copy the <code>images/</code> and <code>videos/</code> folders to your web server root (or a CDN). The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app if needed.</p>
+          <div class="code-block media-layout-block">
+            <pre class="code-pre">your-server.com/
+├── images/   ← 1,324 JPG thumbnails
+└── videos/   ← 1,324 GIF animations</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal -->
@@ -1180,6 +1487,188 @@
 
   // ── Boot ───────────────────────────────────────────
   init();
+
+  // ══════════════════════════════════════════════════
+  // ── DB Setup ───────────────────────────────────────
+  // ══════════════════════════════════════════════════
+
+  const DB_SQL = {
+    mssql: `CREATE TABLE exercises (
+  id                NVARCHAR(10)  PRIMARY KEY,
+  name              NVARCHAR(255) NOT NULL,
+  category          NVARCHAR(100),
+  body_part         NVARCHAR(100),
+  equipment         NVARCHAR(100),
+  instructions_en   NVARCHAR(MAX),
+  instructions_tr   NVARCHAR(MAX),
+  muscle_group      NVARCHAR(100),
+  secondary_muscles NVARCHAR(MAX),  -- JSON array stored as string
+  target            NVARCHAR(100),
+  image             NVARCHAR(500),
+  gif_url           NVARCHAR(500),
+  created_at        DATETIME2
+);`,
+    postgresql: `CREATE TABLE exercises (
+  id                VARCHAR(10)  PRIMARY KEY,
+  name              VARCHAR(255) NOT NULL,
+  category          VARCHAR(100),
+  body_part         VARCHAR(100),
+  equipment         VARCHAR(100),
+  instructions_en   TEXT,
+  instructions_tr   TEXT,
+  muscle_group      VARCHAR(100),
+  secondary_muscles JSONB,
+  target            VARCHAR(100),
+  image             VARCHAR(500),
+  gif_url           VARCHAR(500),
+  created_at        TIMESTAMPTZ
+);`,
+    mysql: `CREATE TABLE exercises (
+  id                VARCHAR(10)  PRIMARY KEY,
+  name              VARCHAR(255) NOT NULL,
+  category          VARCHAR(100),
+  body_part         VARCHAR(100),
+  equipment         VARCHAR(100),
+  instructions_en   TEXT,
+  instructions_tr   TEXT,
+  muscle_group      VARCHAR(100),
+  secondary_muscles JSON,
+  target            VARCHAR(100),
+  image             VARCHAR(500),
+  gif_url           VARCHAR(500),
+  created_at        DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`,
+    sqlite: `CREATE TABLE exercises (
+  id                TEXT PRIMARY KEY,
+  name              TEXT NOT NULL,
+  category          TEXT,
+  body_part         TEXT,
+  equipment         TEXT,
+  instructions_en   TEXT,
+  instructions_tr   TEXT,
+  muscle_group      TEXT,
+  secondary_muscles TEXT,  -- JSON array stored as string
+  target            TEXT,
+  image             TEXT,
+  gif_url           TEXT,
+  created_at        TEXT
+);`
+  };
+
+  let currentDb = 'mssql';
+
+  const dbOverlay      = document.getElementById('db-overlay');
+  const dbOpenBtn      = document.getElementById('db-setup-open');
+  const dbCloseBtn     = document.getElementById('db-setup-close');
+  const dbTabs         = document.querySelectorAll('.db-tab');
+  const createSqlEl    = document.getElementById('create-table-sql');
+  const copyCreateBtn  = document.getElementById('copy-create-btn');
+  const generateBtn    = document.getElementById('generate-sql-btn');
+  const generateStatus = document.getElementById('generate-status');
+
+  function openDbSetup() {
+    dbOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    switchDbTab(currentDb);
+  }
+
+  function closeDbSetup() {
+    dbOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function switchDbTab(db) {
+    currentDb = db;
+    dbTabs.forEach(t => t.classList.toggle('active', t.dataset.db === db));
+    createSqlEl.textContent = DB_SQL[db];
+  }
+
+  function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function escStr(val, db) {
+    if (val === null || val === undefined) return 'NULL';
+    const s = String(val).replace(/'/g, "''");
+    return db === 'mssql' ? `N'${s}'` : `'${s}'`;
+  }
+
+  function buildInserts(exercises, db) {
+    const lines = [];
+    const header = db === 'mssql' ? 'BEGIN TRANSACTION;\nGO\n' : 'BEGIN;\n';
+    const footer = db === 'mssql' ? '\nCOMMIT;\nGO' : '\nCOMMIT;';
+    lines.push(header);
+
+    exercises.forEach((ex, i) => {
+      const muscles = JSON.stringify(Array.isArray(ex.secondary_muscles) ? ex.secondary_muscles : []);
+      const instrEn = ex.instructions && ex.instructions.en
+        ? ex.instructions.en
+        : (Array.isArray(ex.instruction_steps) ? ex.instruction_steps.join(' ') : (ex.instructions || ''));
+      const instrTr = ex.instructions && ex.instructions.tr ? ex.instructions.tr : '';
+
+      const vals = [
+        escStr(ex.id, db),
+        escStr(ex.name, db),
+        escStr(ex.category, db),
+        escStr(ex.body_part, db),
+        escStr(ex.equipment, db),
+        escStr(instrEn, db),
+        escStr(instrTr, db),
+        escStr(ex.muscle_group, db),
+        escStr(muscles, db),
+        escStr(ex.target, db),
+        escStr(ex.image, db),
+        escStr(ex.gif_url, db),
+        escStr(ex.created_at, db),
+      ].join(', ');
+
+      lines.push(`INSERT INTO exercises (id, name, category, body_part, equipment, instructions_en, instructions_tr, muscle_group, secondary_muscles, target, image, gif_url, created_at) VALUES (${vals});`);
+
+      // Batch commits every 50 rows for MSSQL compatibility
+      if (db === 'mssql' && (i + 1) % 50 === 0 && i + 1 < exercises.length) {
+        lines.push('GO');
+      }
+    });
+
+    lines.push(footer);
+    return lines.join('\n');
+  }
+
+  function generateInsertSql() {
+    generateBtn.disabled = true;
+    generateStatus.textContent = 'Generating…';
+
+    setTimeout(() => {
+      try {
+        const sql = buildInserts(EXERCISES, currentDb);
+        const blob = new Blob([sql], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `exercises_insert_${currentDb}.sql`;
+        a.click();
+        URL.revokeObjectURL(url);
+        generateStatus.textContent = `✓ Downloaded exercises_insert_${currentDb}.sql`;
+      } catch (e) {
+        generateStatus.textContent = 'Error generating file.';
+        console.error(e);
+      }
+      generateBtn.disabled = false;
+    }, 10);
+  }
+
+  // Wire DB Setup events
+  dbOpenBtn.addEventListener('click', openDbSetup);
+  dbCloseBtn.addEventListener('click', closeDbSetup);
+  dbOverlay.addEventListener('click', e => { if (e.target === dbOverlay) closeDbSetup(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && dbOverlay.classList.contains('open')) closeDbSetup(); });
+  dbTabs.forEach(tab => tab.addEventListener('click', () => switchDbTab(tab.dataset.db)));
+  copyCreateBtn.addEventListener('click', () => copyToClipboard(DB_SQL[currentDb], copyCreateBtn));
+  generateBtn.addEventListener('click', generateInsertSql);
 </script>
 </body>
 </html>

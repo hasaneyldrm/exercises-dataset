@@ -11,7 +11,7 @@
   <img src="images/0334-DsgkuIt.jpg" width="140" style="border-radius:8px; margin:4px;" />
 </p>
 
-**A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with animation GIFs, thumbnail images, muscle group info, equipment data, and full instructions.**
+**A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with animation GIFs, thumbnail images, muscle group info, equipment data, and full bilingual instructions.**
 
 [![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
 [![Videos](https://img.shields.io/badge/Animation%20GIFs-1324-green?style=flat-square)](videos/)
@@ -24,9 +24,9 @@
 
 ## ⚠️ Disclaimer
 
-> This repository is provided for **educational and non-commercial research purposes only**.  
-> All exercise media (images, videos) belong to their respective copyright holders.  
-> **Commercial use is strictly prohibited.**  
+> This repository is provided for **educational and non-commercial research purposes only**.
+> All exercise media (images, videos) belong to their respective copyright holders.
+> **Commercial use is strictly prohibited.**
 > If you are a copyright owner and wish to have your content removed, please [open an issue](../../issues) or contact the repository owner.
 
 ---
@@ -34,6 +34,7 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+- [Interactive Browser & Developer Setup](#-interactive-browser--developer-setup)
 - [File Structure](#-file-structure)
 - [Statistics](#-statistics)
 - [Data Schema](#-data-schema)
@@ -56,15 +57,38 @@ Each exercise entry contains:
 
 | Field | Description |
 |---|---|
-| Unique ID | UUID to identify each exercise |
+| Unique ID | Numeric identifier (e.g. `"0001"`) |
 | Name | Full descriptive exercise name |
 | Category | Primary muscle group targeted |
 | Target | Specific target muscle |
-| Muscle Group | Secondary / supporting muscles |
-| Equipment | Equipment required (or `None` for bodyweight) |
-| Instructions | Step-by-step exercise instructions |
+| Muscle Group | Supporting / synergist muscles |
+| Equipment | Equipment required (or `body weight` for bodyweight) |
+| Instructions (EN) | Step-by-step instructions in English |
+| Instructions (TR) | Step-by-step instructions in Turkish |
 | Thumbnail | Static `.jpg` preview image |
 | Animation GIF | `.gif` animation showing the movement |
+
+---
+
+## 🖥️ Interactive Browser & Developer Setup
+
+This repository includes two ready-to-use HTML tools — no server required, just open in a browser.
+
+### `index.html` — Exercise Browser
+
+A fully client-side exercise explorer with:
+- Live search across all 1,324 exercises
+- Filter by category, equipment, and target muscle
+- Infinite scroll grid with thumbnail previews
+- Click any card to see full details, GIF animation, and bilingual instructions
+
+### `setup.html` — Developer Setup Guide
+
+A step-by-step guide for integrating the dataset into your own application:
+
+1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,324 INSERT statements, built entirely in your browser.
+2. **API Integration** — Copy-paste client code in **JavaScript, Python, C#, Java, PHP, Go, and cURL** showing how to call your backend API. Enter your base URL and all examples update live.
+3. **Ask Your LLM** — A structured prompt (choose your framework + database) that you can paste into ChatGPT, Claude, or Gemini to generate a complete, production-ready REST API in one shot. Supports Express.js, FastAPI, ASP.NET Core, Spring Boot, Laravel, and Gin.
 
 ---
 
@@ -76,14 +100,18 @@ exercises-dataset/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
 ├── images/                  # Exercise thumbnail images (.jpg) — 1,324 files
 ├── videos/                  # Exercise animation GIFs (.gif) — 1,324 files
+├── index.html               # Interactive exercise browser (client-side, no server needed)
+├── setup.html               # Developer setup guide (DB import + API integration)
 └── README.md
 ```
 
 ### Key Files
 
-- **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects. Each record contains all metadata fields plus paths to the corresponding image and GIF files.
-- **`images/`** — 1,324 thumbnail images named with the exercise ID (e.g. `0001-2gPfomN.jpg`).
-- **`videos/`** — 1,324 `.gif` animation files demonstrating the exercise movement, named consistently with the image files (e.g. `0001-2gPfomN.gif`).
+- **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata and paths to corresponding media files.
+- **`images/`** — 1,324 thumbnail JPGs named with the exercise ID (e.g. `0001-2gPfomN.jpg`).
+- **`videos/`** — 1,324 GIF animations demonstrating each movement (e.g. `0001-2gPfomN.gif`).
+- **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
+- **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
 
 ---
 
@@ -142,8 +170,8 @@ Each record in `data/exercises.json` follows this structure:
 | `category` | `string` | Body part category (e.g. `"upper arms"`, `"chest"`, `"back"`) |
 | `body_part` | `string` | Same as `category` — body part targeted |
 | `equipment` | `string` | Required equipment (e.g. `"dumbbell"`, `"body weight"`) |
-| `instructions` | `string` | Full step-by-step instructions as a single string |
-| `instruction_steps` | `array[string]` | Same instructions split into individual steps |
+| `instructions.en` | `string` | Full step-by-step instructions in English |
+| `instructions.tr` | `string` | Full step-by-step instructions in Turkish |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -160,14 +188,10 @@ Each record in `data/exercises.json` follows this structure:
   "category": "waist",
   "body_part": "waist",
   "equipment": "body weight",
-  "instructions": "Lie flat on your back with your knees bent and feet flat on the ground...",
-  "instruction_steps": [
-    "Lie flat on your back with your knees bent and feet flat on the ground.",
-    "Place your hands behind your head with your elbows pointing outwards.",
-    "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
-    "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
-    "Repeat for the desired number of repetitions."
-  ],
+  "instructions": {
+    "en": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
+    "tr": "Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. Ellerinizi başınızın arkasına, dirsekleriniz dışa bakacak şekilde yerleştirin. Karın kaslarınızı kasarak üst vücudunuzu yerden kaldırın ve gövdeniz 45 derecelik açıya gelene kadar öne doğru kıvırın. Bir an için bu pozisyonda bekleyin, ardından yavaşça başlangıç konumuna geri dönün. İstenen tekrar sayısı için hareketi tekrarlayın."
+  },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
   "target": "abs",
@@ -180,8 +204,6 @@ Each record in `data/exercises.json` follows this structure:
 ---
 
 ## 🎬 Sample Exercises
-
-Each exercise below includes a thumbnail preview. The corresponding animation video (`.mp4`) is located in the `videos/` folder.
 
 ---
 
@@ -288,6 +310,11 @@ print(f"Bodyweight exercises: {len(bodyweight)}")
 # Get all unique categories
 categories = sorted({ex["category"] for ex in exercises})
 print("Categories:", categories)
+
+# Access bilingual instructions
+ex = exercises[0]
+print(ex["instructions"]["en"])  # English
+print(ex["instructions"]["tr"])  # Turkish
 ```
 
 ### Python — Load with Pandas
@@ -328,7 +355,10 @@ const byCategory = exercises.reduce((acc, ex) => {
   return acc;
 }, {});
 
-console.log("Categories:", Object.keys(byCategory));
+// Access bilingual instructions
+const ex = exercises[0];
+console.log(ex.instructions.en); // English
+console.log(ex.instructions.tr); // Turkish
 ```
 
 ### TypeScript — Type-safe Usage
@@ -340,8 +370,10 @@ interface Exercise {
   category: string;
   body_part: string;
   equipment: string;
-  instructions: string;
-  instruction_steps: string[];
+  instructions: {
+    en: string;
+    tr: string;
+  };
   muscle_group: string;
   secondary_muscles: string[];
   target: string;
@@ -366,7 +398,7 @@ This project is for **educational and non-commercial purposes only**.
 
 - You **may** use this dataset for personal projects, research, and learning.
 - You **may not** use this dataset or its media for any commercial application or product.
-- All images and videos are property of their respective copyright owners.
+- All images and videos are property of their respective copyright holders.
 - For commercial use, please contact the original content owners directly.
 
 If you are a copyright holder and wish to have your content removed, please [open an issue](../../issues).
