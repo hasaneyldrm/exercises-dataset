@@ -2,9 +2,9 @@
 
 # 💪 Exercises Dataset
 
-**A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,324 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 6 languages (English, Spanish, Italian, Turkish, Russian, Chinese). Exercise media is not included.**
+**A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,500 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 6 languages (English, Spanish, Italian, Turkish, Russian, Chinese). Exercise media is not included.**
 
-[![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
+[![Exercises](https://img.shields.io/badge/Exercises-1500-blue?style=flat-square)](data/exercises.json)
 [![Languages](https://img.shields.io/badge/Languages-6-green?style=flat-square)](#-overview)
 [![Format](https://img.shields.io/badge/Format-JSON-orange?style=flat-square)](data/exercises.json)
 [![Media](https://img.shields.io/badge/Media-not%20included-lightgrey?style=flat-square)](#-notice--exercise-media-is-not-included)
@@ -55,7 +55,7 @@ The associated **media (images & animation GIFs) is _not_ included** in this rep
 
 ## 🔍 Overview
 
-This dataset is a curated collection of **1,324 fitness exercises** for educational and research purposes. It covers a wide range of muscle groups, equipment types, and exercise categories — making it ideal for:
+This dataset is a curated collection of **1,500 fitness exercises** for educational and research purposes. It covers a wide range of muscle groups, equipment types, and exercise categories — making it ideal for:
 
 - Building fitness or workout planning applications
 - Machine learning projects involving exercise recognition or recommendation
@@ -87,7 +87,7 @@ This repository includes two ready-to-use HTML tools — no server required, jus
 ### `index.html` — Exercise Browser
 
 A fully client-side exercise explorer with:
-- Live search across all 1,324 exercises
+- Live search across all 1,500 exercises
 - Filter by category, equipment, and target muscle
 - Infinite scroll grid
 - Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, or Chinese
@@ -96,7 +96,7 @@ A fully client-side exercise explorer with:
 
 A step-by-step guide for integrating the dataset into your own application:
 
-1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,324 INSERT statements, built entirely in your browser.
+1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,500 INSERT statements, built entirely in your browser.
 2. **API Integration** — Copy-paste client code in **JavaScript, Python, C#, Java, PHP, Go, and cURL** showing how to call your backend API. Enter your base URL and all examples update live.
 3. **Ask Your LLM** — A structured prompt (choose your framework + database) that you can paste into ChatGPT, Claude, or Gemini to generate a complete, production-ready REST API in one shot. Supports Express.js, FastAPI, ASP.NET Core, Spring Boot, Laravel, and Gin.
 
@@ -107,7 +107,7 @@ A step-by-step guide for integrating the dataset into your own application:
 ```
 exercises-dataset/
 ├── data/
-│   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
+│   └── exercises.json       # Full dataset — 1,500 exercise records (JSON array)
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
 ├── setup.html               # Developer setup guide (DB import + API integration)
 └── README.md
@@ -115,7 +115,7 @@ exercises-dataset/
 
 ### Key Files
 
-- **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata. The `image` and `gif_url` fields are `null`; `media_id` holds the original ExerciseDB media reference.
+- **`data/exercises.json`** — The primary data file. A JSON array of 1,500 exercise objects with all metadata. The `image` and `gif_url` fields are `null`; `media_id` holds the original ExerciseDB media reference.
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
 - **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
 
@@ -127,40 +127,40 @@ exercises-dataset/
 
 | Metric | Count |
 |---|---|
-| Total Exercises | **1,324** |
+| Total Exercises | **1,500** |
 | Instruction Languages | **6** |
 
 ### Exercises by Body Part
 
 | Body Part | Exercise Count |
 |---|---|
-| Upper Arms | 292 |
-| Upper Legs | 227 |
-| Back | 203 |
-| Waist | 169 |
-| Chest | 163 |
-| Shoulders | 143 |
-| Lower Legs | 59 |
-| Lower Arms | 37 |
-| Cardio | 29 |
+| Upper Arms | 323 |
+| Upper Legs | 257 |
+| Back | 240 |
+| Waist | 195 |
+| Chest | 191 |
+| Shoulders | 156 |
+| Lower Legs | 63 |
+| Lower Arms | 40 |
+| Cardio | 33 |
 | Neck | 2 |
 
 ### Exercises by Equipment
 
 | Equipment | Exercise Count |
 |---|---|
-| Body Weight | 325 |
-| Dumbbell | 294 |
-| Cable | 157 |
-| Barbell | 154 |
-| Leverage Machine | 81 |
-| Band | 54 |
-| Smith Machine | 48 |
-| Kettlebell | 41 |
-| Weighted | 36 |
-| Stability Ball | 28 |
-| EZ Barbell | 23 |
-| Other | 83 |
+| Body Weight | 372 |
+| Dumbbell | 319 |
+| Cable | 181 |
+| Barbell | 170 |
+| Leverage Machine | 91 |
+| Band | 67 |
+| Smith Machine | 56 |
+| Kettlebell | 46 |
+| Weighted | 41 |
+| Stability Ball | 34 |
+| EZ Barbell | 26 |
+| Other | 97 |
 
 > **Note:** ~25% of exercises require no equipment at all — great for at-home workout applications.
 

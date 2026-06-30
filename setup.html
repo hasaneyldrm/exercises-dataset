@@ -522,7 +522,7 @@
         <div class="section-num">1</div>
         <h2 class="section-title">Database Setup</h2>
       </div>
-      <p class="section-desc">Import all 1,324 exercises into your database in 3 steps. Choose your database engine below.</p>
+      <p class="section-desc">Import all 1,500 exercises into your database in 3 steps. Choose your database engine below.</p>
 
       <div class="section-body">
         <!-- DB Tabs -->
@@ -552,7 +552,7 @@
             <div class="step-num">2</div>
             <div class="step-body">
               <h3 class="step-title">Import Data</h3>
-              <p class="step-desc">Generate a <code>.sql</code> file with all 1,324 INSERT statements. The file is built entirely in your browser — nothing is uploaded to any server.</p>
+              <p class="step-desc">Generate a <code>.sql</code> file with all 1,500 INSERT statements. The file is built entirely in your browser — nothing is uploaded to any server.</p>
               <div style="display:flex;align-items:center;gap:0;">
                 <button class="generate-btn" id="generate-sql-btn">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
@@ -573,8 +573,8 @@
               <p class="step-desc">Download the media archives and place them in your web server root or CDN. The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app.</p>
               <div class="code-block">
                 <pre class="code-pre">your-server.com/
-├── images/   ← 1,324 JPG thumbnails
-└── videos/   ← 1,324 GIF animations</pre>
+├── images/   ← 1,500 JPG thumbnails
+└── videos/   ← 1,500 GIF animations</pre>
               </div>
               <div class="media-note">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px">
@@ -840,7 +840,7 @@ curl -s "${base}/exercises?page=2&limit=50"
 #   "total": 1324,
 #   "page": 1,
 #   "limit": 20,
-#   "totalPages": 67
+#   "totalPages": 75
 # }`,
 
     getFiltered: (base) =>
@@ -890,7 +890,7 @@ const result = await getExercises({ page: 1, limit: 20 });
 console.log(result.data);       // Array of exercises
 console.log(result.total);      // 1324
 console.log(result.page);       // 1
-console.log(result.totalPages); // 67`,
+console.log(result.totalPages); // 75`,
 
     getFiltered: (base) =>
 `const BASE_URL = '${base}';
@@ -962,7 +962,7 @@ result = get_exercises(page=1, limit=20)
 print(result["data"])        # list of exercises
 print(result["total"])       # 1324
 print(result["page"])        # 1
-print(result["totalPages"])  # 67`,
+print(result["totalPages"])  # 75`,
 
     getFiltered: (base) =>
 `import requests
@@ -1042,7 +1042,7 @@ async Task<PagedResult<Exercise>> GetExercisesAsync(int page = 1, int limit = 20
 // Usage
 var result = await GetExercisesAsync(page: 1, limit: 20);
 Console.WriteLine(result.Total);      // 1324
-Console.WriteLine(result.TotalPages); // 67
+Console.WriteLine(result.TotalPages); // 75
 
 // Models
 record Exercise(string Id, string Name, string Category, string BodyPart,
@@ -1130,7 +1130,7 @@ String getExercises(int page, int limit) throws Exception {
         client.send(request, HttpResponse.BodyHandlers.ofString());
 
     return response.body();
-    // { "data": [...], "total": 1324, "page": 1, "limit": 20, "totalPages": 67 }
+    // { "data": [...], "total": 1324, "page": 1, "limit": 20, "totalPages": 75 }
 }
 
 // Usage
@@ -1212,7 +1212,7 @@ function getExercises(int $page = 1, int $limit = 20): array
 $result = getExercises(1, 20);
 print_r($result['data']);       // array of exercises
 echo $result['total'];          // 1324
-echo $result['totalPages'];     // 67`,
+echo $result['totalPages'];     // 75`,
 
     getFiltered: (base) =>
 `<?php
@@ -1314,7 +1314,7 @@ func main() {
     result, err := GetExercises(1, 20)
     if err != nil { panic(err) }
     fmt.Println(result["total"])      // 1324
-    fmt.Println(result["totalPages"]) // 67
+    fmt.Println(result["totalPages"]) // 75
 }`,
 
     getFiltered: (base) =>
@@ -1388,7 +1388,7 @@ function buildLlmPrompt(fwKey, dbKey) {
   return `You are a senior ${fw.lang} developer. Build a complete REST API using ${fw.name} for an exercise/fitness database.
 
 ## Dataset Overview
-- 1,324 fitness exercises
+- 1,500 fitness exercises
 - Fields: id (string, e.g. "0001"), name, category, body_part, equipment, instructions_en (full text), instructions_es (Spanish text), instructions_it (Italian text), instructions_tr (Turkish text), instructions_ru (Russian text), instructions_zh (Chinese text), muscle_group, secondary_muscles (JSON array of strings), target, image (relative path like "images/0001.jpg"), gif_url (relative path like "videos/0001.gif"), created_at
 
 ## Database Schema (${db.name})
@@ -1419,7 +1419,7 @@ Response format:
   "total": 1324,
   "page": 1,
   "limit": 20,
-  "totalPages": 67
+  "totalPages": 75
 }
 \`\`\`
 
