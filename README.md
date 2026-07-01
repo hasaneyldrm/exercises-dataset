@@ -63,7 +63,7 @@ is byte-for-byte identical to this repo's `videos/0025-EIeI8Vf.gif`. The assets 
 
 **Added in this repository** on top of the original ExerciseDB data:
 
-- 🇪🇸 Spanish, 🇮🇹 Italian, and 🇹🇷 Turkish translations of the instructions
+- 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish and 🇸🇦 Arabic translations of the instructions
 - the interactive browser (`index.html`) and developer setup guide (`setup.html`)
 - formatting, cleanup, and 1:1 media alignment
 
@@ -79,7 +79,7 @@ The associated **media (images & animation GIFs) is _not_ included** in this rep
 
 **Added in this repository** on top of the base data:
 
-- 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, and 🇨🇳 Chinese translations of the instructions
+- 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, 🇨🇳 Chinese and 🇸🇦 Arabic translations of the instructions
 - the interactive browser (`index.html`) and developer setup guide (`setup.html`)
 - formatting and cleanup
 
@@ -131,11 +131,11 @@ Each exercise entry contains:
 | Equipment | Equipment required (or `body weight` for bodyweight) |
 | Instructions | Step-by-step instructions for each exercise |
 <<<<<<< HEAD
-| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish |
+| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇸🇦 Arabic |
 | Thumbnail | Static `.jpg` preview image |
 | Animation GIF | `.gif` animation showing the movement |
 =======
-| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese |
+| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese · 🇸🇦 Arabic |
 | Media ID | Reference id of the original ExerciseDB media (the media itself is **not** bundled — see [notice](#-notice--exercise-media-is-not-included)) |
 >>>>>>> 225b17d6fe25f00fb80a5dcb60ba428b7332824c
 
