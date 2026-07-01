@@ -1,0 +1,47 @@
+name: "Exercise Correction / Translation Feedback"
+description: "Suggest corrections to an exercise's category, target, muscle group, instructions, or translations."
+title: "[Correction]: "
+labels: ["data-correction", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the exercises dataset! Please fill out the form below.
+  - type: input
+    id: exercise_id
+    attributes:
+      label: "Exercise ID"
+      description: "Provide the unique ID of the exercise (e.g., '0001', '1428') from the dataset."
+      placeholder: "e.g., 0001"
+    validations:
+      required: true
+  - type: input
+    id: exercise_name
+    attributes:
+      label: "Exercise Name"
+      placeholder: "e.g., wrist circles"
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Impacted Translation Language"
+      options:
+        - English (EN)
+        - Spanish (ES)
+        - Italian (IT)
+        - Turkish (TR)
+        - Russian (RU)
+        - Chinese (ZH)
+        - Metadata (Target/Category/Equipment/Muscle Group)
+        - General/Other
+    validations:
+      required: true
+  - type: textarea
+    id: correction_details
+    attributes:
+      label: "Correction Details"
+      description: "Describe what is incorrect and what the correct value or text should be."
+      placeholder: "The translation for 'Make a fist' is slightly awkward, it should be..."
+    validations:
+      required: true
