@@ -2,7 +2,7 @@
 
 # 💪 Exercises Dataset
 
-**A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,324 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 6 languages (English, Spanish, Italian, Turkish, Russian, Chinese). Exercise media is not included.**
+**A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,324 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 7 languages (English, Spanish, Italian, Turkish, Russian, Chinese, Vietnamese). Exercise media is not included.**
 
 [![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
 [![Languages](https://img.shields.io/badge/Languages-6-green?style=flat-square)](#-overview)
@@ -31,7 +31,7 @@ The associated **media (images & animation GIFs) is _not_ included** in this rep
 
 **Added in this repository** on top of the base data:
 
-- 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, and 🇨🇳 Chinese translations of the instructions
+- 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, 🇨🇳 Chinese, and 🇻🇳 Vietnamese translations of the instructions
 - the interactive browser (`index.html`) and developer setup guide (`setup.html`)
 - formatting and cleanup
 
@@ -73,7 +73,7 @@ Each exercise entry contains:
 | Muscle Group | Supporting / synergist muscles |
 | Equipment | Equipment required (or `body weight` for bodyweight) |
 | Instructions | Step-by-step instructions for each exercise |
-| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese |
+| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese · 🇻🇳 Vietnamese |
 | Media ID | Reference id of the original ExerciseDB media (the media itself is **not** bundled — see [notice](#-notice--exercise-media-is-not-included)) |
 
 ---
@@ -90,7 +90,7 @@ A fully client-side exercise explorer with:
 - Live search across all 1,324 exercises
 - Filter by category, equipment, and target muscle
 - Infinite scroll grid
-- Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, or Chinese
+- Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, Chinese, or Vietnamese
 
 ### `setup.html` — Developer Setup Guide
 
@@ -183,6 +183,7 @@ Each record in `data/exercises.json` follows this structure:
 | `instructions.tr` | `string` | Full step-by-step instructions in Turkish |
 | `instructions.ru` | `string` | Full step-by-step instructions in Russian |
 | `instructions.zh` | `string` | Full step-by-step instructions in Chinese |
+| `instructions.vi` | `string` | Full step-by-step instructions in Vietnamese |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -308,6 +309,7 @@ print(ex["instructions"]["it"])  # Italian
 print(ex["instructions"]["tr"])  # Turkish
 print(ex["instructions"]["ru"])  # Russian
 print(ex["instructions"]["zh"])  # Chinese
+print(ex["instructions"]["vi"])  # Vietnamese
 ```
 
 ### Python — Load with Pandas
@@ -356,6 +358,7 @@ console.log(ex.instructions.it); // Italian
 console.log(ex.instructions.tr); // Turkish
 console.log(ex.instructions.ru); // Russian
 console.log(ex.instructions.zh); // Chinese
+console.log(ex.instructions.vi); // Vietnamese
 ```
 
 ### TypeScript — Type-safe Usage
@@ -374,6 +377,7 @@ interface Exercise {
     tr: string;
     ru: string;
     zh: string;
+    vi: string;
   };
   muscle_group: string;
   secondary_muscles: string[];
