@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💪哈哈哈哈哈哈
+# 💪哈哈就这样
 
 **A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,324 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 6 languages (English, Spanish, Italian, Turkish, Russian, Chinese). Exercise media is not included.**
 
