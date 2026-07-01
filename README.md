@@ -17,7 +17,7 @@
 [![Videos](https://img.shields.io/badge/Animation%20GIFs-1324-green?style=flat-square)](videos/)
 [![Images](https://img.shields.io/badge/Thumbnails-1324-orange?style=flat-square)](images/)
 [![License](https://img.shields.io/badge/License-Educational%20Only-red?style=flat-square)](#-license)
-=======
+
 **A developer setup wizard + structured, multilingual exercise dataset — scaffold your own exercise app backend (DB schema, API code, LLM prompt) over 1,324 exercises with category, body-part, equipment, target and muscle-group data and step-by-step instructions in 6 languages (English, Spanish, Italian, Turkish, Russian, Chinese). Exercise media is not included.**
 
 [![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
@@ -35,7 +35,6 @@
 > All exercise media (images, videos) belong to their respective copyright holders.
 > **Commercial use is strictly prohibited.**
 > If you are a copyright owner and wish to have your content removed, please [open an issue](../../issues) or contact the repository owner.
-=======
 ## ⚠️ Notice — exercise media is not included
 
 > **This repository is a developer setup wizard and structured exercise dataset.** The exercise **media (thumbnail images and animation GIFs) is not included here.**
@@ -67,7 +66,6 @@ is byte-for-byte identical to this repo's `videos/0025-EIeI8Vf.gif`. The assets 
 > **educational, non-commercial use only**. Original-source attribution was added following issue [#5](../../issues/5)
 > (thanks to [@shinkaidev](https://github.com/shinkaidev) for the report). If you are a rights holder and want your
 > content removed, please [open an issue](../../issues).
-=======
 The base exercise **data** in this repository originates from **[ExerciseDB v1 by AscendAPI](https://oss.exercisedb.dev)** ([API docs](https://oss.exercisedb.dev/docs)), obtained via a [Kaggle re-host by *omarxadel*](https://www.kaggle.com/datasets/omarxadel/fitness-exercises-dataset).
 
 The associated **media (images & animation GIFs) is _not_ included** in this repository — see the [notice](#-notice--exercise-media-is-not-included) above. Each record's `media_id` is the original ExerciseDB v1 media id (e.g. `2gPfomN`); the official CDN serves the corresponding asset at `static.exercisedb.dev/media/{media_id}.gif` for anyone entitled to use it.
@@ -117,7 +115,7 @@ Each exercise entry contains:
 | Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese · 🇸🇦 Arabic |
 | Thumbnail | Static `.jpg` preview image |
 | Animation GIF | `.gif` animation showing the movement |
-=======
+
 
 ---
 
@@ -171,7 +169,6 @@ exercises-dataset/
 | Total Exercises | **1,324** |
 | Animation GIFs | **1,324** |
 | Thumbnail Images | **1,324** |
-=======
 | Instruction Languages | **6** |
 
 ### Exercises by Body Part
