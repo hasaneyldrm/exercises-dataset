@@ -1,0 +1,12 @@
+{
+  "name": "exercises-dataset",
+  "version": "1.0.0",
+  "description": "A comprehensive dataset of 1,324 fitness exercises.",
+  "scripts": {
+    "start": "npx browser-sync start --server --files '*.html, data/*.json'",
+    "dev": "npx browser-sync start --server --files '*.html, data/*.json'"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}
