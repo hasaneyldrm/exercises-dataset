@@ -24,7 +24,6 @@
 [![Languages](https://img.shields.io/badge/Languages-6-green?style=flat-square)](#-overview)
 [![Format](https://img.shields.io/badge/Format-JSON-orange?style=flat-square)](data/exercises.json)
 [![Media](https://img.shields.io/badge/Media-not%20included-lightgrey?style=flat-square)](#-notice--exercise-media-is-not-included)
->>>>>>> 225b17d6fe25f00fb80a5dcb60ba428b7332824c
 
 </div>
 
@@ -44,7 +43,6 @@
 > There are **multiple, conflicting ownership claims** over this media, so it is **not redistributed in this repository.** Each record keeps a `media_id` (the original ExerciseDB media reference); the dataset itself ships exercise metadata and multilingual instruction translations (EN, AR, ES, IT, TR, RU, ZH).
 >
 > **If you are the rights holder of this media, please [open an issue](../../issues) or contact the maintainer.**
->>>>>>> 225b17d6fe25f00fb80a5dcb60ba428b7332824c
 
 ---
 
@@ -81,8 +79,6 @@ The associated **media (images & animation GIFs) is _not_ included** in this rep
 - formatting and cleanup
 
 > Original-source attribution was added following issue [#5](../../issues/5) (thanks to [@shinkaidev](https://github.com/shinkaidev) for the report). If you are a rights holder and want anything removed or clarified, please [open an issue](../../issues).
->>>>>>> 225b17d6fe25f00fb80a5dcb60ba428b7332824c
-
 ---
 
 ## 📋 Table of Contents
@@ -254,13 +250,11 @@ Each record in `data/exercises.json` follows this structure:
     "es": "Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. Coloca las manos detrás de la cabeza con los codos apuntando hacia afuera. Activando el abdomen, levanta lentamente la parte superior del cuerpo del suelo, curvándote hacia adelante hasta que tu torso forme un ángulo de 45 grados. Haz una pausa por un momento en la parte superior, luego baja lentamente la parte superior del cuerpo de vuelta a la posición inicial. Repite el número de repeticiones deseado.",
     "it": "Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. Metti le mani dietro la testa con i gomiti rivolti verso l'esterno. Coinvolgendo gli addominali, solleva lentamente la parte superiore del corpo da terra, piegandoti in avanti finché il busto non forma un angolo di 45 gradi. Fermati per un momento in alto, quindi abbassa lentamente la parte superiore del corpo fino alla posizione di partenza. Ripetere per il numero di ripetizioni desiderato.",
     "tr": "Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. Ellerinizi başınızın arkasına, dirsekleriniz dışa bakacak şekilde yerleştirin. Karın kaslarınızı kasarak üst vücudunuzu yerden kaldırın ve gövdeniz 45 derecelik açıya gelene kadar öne doğru kıvırın. Bir an için bu pozisyonda bekleyin, ardından yavaşça başlangıç konumuna geri dönün. İstenen tekrar sayısı için hareketi tekrarlayın."
-=======
     "es": "Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. ...",
     "it": "Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. ...",
     "tr": "Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. ...",
     "ru": "Лягте на спину, согните колени и поставьте ступни на землю. ...",
     "zh": "平躺，膝盖弯曲，双脚平放在地上。..."
->>>>>>> 225b17d6fe25f00fb80a5dcb60ba428b7332824c
   },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
