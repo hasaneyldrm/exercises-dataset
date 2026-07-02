@@ -82,6 +82,12 @@ Each exercise entry contains:
 
 This repository includes two ready-to-use HTML tools — no server required, just open in a browser.
 
+### `dashboard.html` — Exercise Dashboard
+
+A sleek, interactive dashboard to explore the dataset through data visualizations:
+- See the breakdown of exercises by target muscle, body part, equipment, and category.
+- Powered by Chart.js for beautiful, responsive charts.
+
 > **Note:** since the media is not bundled, the browser displays exercise **metadata and instructions** only; thumbnail and GIF slots are empty.
 
 ### `index.html` — Exercise Browser

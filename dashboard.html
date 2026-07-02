@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    
+    /* ── Design Tokens ──────────────────────────────── */
+    :root {
+      --bg-base:        #f4f4f5;
+      --bg-surface:     #ffffff;
+      --bg-elevated:    #f0f0f1;
+      --border:         #e4e4e7;
+      --border-hover:   #c4c4c7;
+      --accent:         #ff4f00;
+      --accent-muted:   rgba(255, 79, 0, 0.08);
+      --text-primary:   #111111;
+      --text-secondary: #71717a;
+      --text-tertiary:  #a1a1aa;
+      --radius-sm:      6px;
+      --radius-md:      10px;
+      --radius-lg:      14px;
+      --sidebar-w:      260px;
+    }
+
+    /* ── Base ───────────────────────────────────────── */
+    html, body { height: 100%; }
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── App Shell ──────────────────────────────────── */
+    .app-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ────────────────────────────────────── */
+    .sidebar {
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border);
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sidebar-header {
+      padding: 20px 16px 16px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-surface);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar-logo {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+    .sidebar-logo span { color: var(--accent); }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+      margin: 4px 12px;
+    }
+    .nav-btn:hover { background: var(--bg-elevated); color: var(--text-primary); }
+    .nav-btn.active { background: var(--accent-muted); color: var(--accent); }
+
+    /* ── Main Content ───────────────────────────────── */
+    .main-content {
+      overflow-y: auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .dashboard-header {
+      margin-bottom: 24px;
+    }
+    .dashboard-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .dashboard-subtitle {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* ── Charts Grid ────────────────────────────────── */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+
+    .chart-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .chart-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    
+    .chart-container {
+      position: relative;
+      flex: 1;
+      min-height: 300px;
+    }
+
+    @media (max-width: 768px) {
+      .app-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .sidebar {
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .sidebar-header { padding: 14px 14px 12px; }
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Exercise<span>DB</span></div>
+    </div>
+    <div style="padding: 12px 0;">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Exercise Browser
+      </a>
+      <a href="dashboard.html" class="nav-btn active">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+        Dashboard
+      </a>
+      <a href="setup.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        DB Setup
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h1 class="dashboard-title">Dataset Overview</h1>
+      <p class="dashboard-subtitle" id="stats-subtitle">Loading dataset statistics...</p>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h2 class="chart-title">Exercises by Body Part</h2>
+        <div class="chart-container">
+          <canvas id="bodyPartChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h2 class="chart-title">Exercises by Equipment</h2>
+        <div class="chart-container">
+          <canvas id="equipmentChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h2 class="chart-title">Exercises by Category</h2>
+        <div class="chart-container">
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h2 class="chart-title">Exercises by Target Muscle</h2>
+        <div class="chart-container">
+          <canvas id="targetChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  // Chart defaults
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Inter', sans-serif";
+  Chart.defaults.color = "#71717a";
+
+  const brandColors = [
+    '#ff4f00', '#ff7a33', '#ffa566', '#ffd099', 
+    '#ff9500', '#ffb340', '#ffcc80', '#ffe6bf',
+    '#e64600', '#cc3e00', '#b33700', '#992f00'
+  ];
+
+  async function loadData() {
+    try {
+      const response = await fetch('data/exercises.json');
+      if (!response.ok) throw new Error('Failed to load exercises');
+      const exercises = await response.json();
+
+      document.getElementById('stats-subtitle').textContent = `Visualizing ${exercises.length.toLocaleString()} exercises across different fitness objectives.`;
+
+      const counts = {
+        bodyPart: {},
+        equipment: {},
+        category: {},
+        target: {}
+      };
+
+      exercises.forEach(ex => {
+        counts.bodyPart[ex.body_part] = (counts.bodyPart[ex.body_part] || 0) + 1;
+        counts.equipment[ex.equipment] = (counts.equipment[ex.equipment] || 0) + 1;
+        counts.category[ex.category] = (counts.category[ex.category] || 0) + 1;
+        counts.target[ex.target] = (counts.target[ex.target] || 0) + 1;
+      });
+
+      renderBarChart('bodyPartChart', counts.bodyPart, 'Body Part');
+      renderDoughnutChart('equipmentChart', counts.equipment);
+      renderHorizontalBarChart('categoryChart', counts.category, 'Category');
+      renderHorizontalBarChart('targetChart', counts.target, 'Target Muscle');
+
+    } catch (err) {
+      console.error(err);
+      document.getElementById('stats-subtitle').textContent = 'Error loading dataset.';
+    }
+  }
+
+  function getSortedData(obj) {
+    return Object.entries(obj).sort((a, b) => b[1] - a[1]);
+  }
+
+  function renderBarChart(canvasId, dataObj, label) {
+    const sorted = getSortedData(dataObj);
+    new Chart(document.getElementById(canvasId), {
+      type: 'bar',
+      data: {
+        labels: sorted.map(d => d[0].charAt(0).toUpperCase() + d[0].slice(1)),
+        datasets: [{
+          label: 'Exercises',
+          data: sorted.map(d => d[1]),
+          backgroundColor: '#ff4f00',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, grid: { color: '#f0f0f1' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderHorizontalBarChart(canvasId, dataObj, label) {
+    const sorted = getSortedData(dataObj);
+    new Chart(document.getElementById(canvasId), {
+      type: 'bar',
+      data: {
+        labels: sorted.map(d => d[0].charAt(0).toUpperCase() + d[0].slice(1)),
+        datasets: [{
+          label: 'Exercises',
+          data: sorted.map(d => d[1]),
+          backgroundColor: brandColors,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { beginAtZero: true, grid: { color: '#f0f0f1' } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderDoughnutChart(canvasId, dataObj) {
+    const sorted = getSortedData(dataObj);
+    new Chart(document.getElementById(canvasId), {
+      type: 'doughnut',
+      data: {
+        labels: sorted.map(d => d[0].charAt(0).toUpperCase() + d[0].slice(1)),
+        datasets: [{
+          data: sorted.map(d => d[1]),
+          backgroundColor: brandColors,
+          borderWidth: 2,
+          borderColor: '#ffffff'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: { boxWidth: 12, usePointStyle: true, padding: 15 }
+          }
+        }
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+</body>
+</html>
