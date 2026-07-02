@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muscle Map — "I want to train…"</title>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#1e293b; --panel2:#334155; --text:#e2e8f0;
+    --muted:#94a3b8; --line:#334155; --accent:#f97316; --accent2:#22d3ee;
+    --body:#475569; --muscle:#64748b; --muscle-hover:#38bdf8; --sel:#f97316;
+    --card:#1e293b; --badge-p:#f97316; --badge-s:#22d3ee; --badge-a:#a3a3a3;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f1f5f9; --panel:#ffffff; --panel2:#f8fafc; --text:#0f172a;
+      --muted:#64748b; --line:#e2e8f0; --body:#cbd5e1; --muscle:#94a3b8;
+      --muscle-hover:#0ea5e9; --card:#ffffff;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--text);line-height:1.5}
+  header{padding:20px 24px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header h1{margin:0;font-size:1.4rem;display:flex;align-items:center;gap:10px}
+  header p{margin:6px 0 0;color:var(--muted);font-size:.9rem}
+  .wrap{display:grid;grid-template-columns:minmax(320px,420px) 1fr;gap:0;min-height:calc(100vh - 78px)}
+  @media (max-width:860px){.wrap{grid-template-columns:1fr}}
+  .left{padding:20px 24px;border-right:1px solid var(--line);background:var(--panel)}
+  .right{padding:20px 24px;overflow:auto}
+  .maps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .figure{text-align:center}
+  .figure h3{margin:0 0 4px;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  svg{max-width:200px;height:auto;user-select:none;touch-action:manipulation}
+  .body{fill:var(--body)}
+  .muscle{fill:var(--muscle);cursor:pointer;transition:fill .12s ease, opacity .12s ease;opacity:.9}
+  .muscle:hover{fill:var(--muscle-hover);opacity:1}
+  .muscle.selected{fill:var(--sel);opacity:1}
+  .controls{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+  select,input{background:var(--panel2);color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:8px 10px;font-size:.9rem;width:100%}
+  label.fld{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .chip{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:999px;
+    padding:5px 11px;font-size:.8rem;cursor:pointer;transition:.12s}
+  .chip:hover{border-color:var(--muscle-hover)}
+  .chip.selected{background:var(--sel);border-color:var(--sel);color:#fff}
+  .cardio{background:linear-gradient(90deg,#ef4444,#f97316);color:#fff;border:none}
+  .rtitle{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .rtitle h2{margin:0;font-size:1.25rem}
+  .count{color:var(--muted);font-size:.9rem}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .toolbar > div{flex:1;min-width:150px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .exc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+    display:flex;flex-direction:column;gap:8px}
+  .exc h4{margin:0;font-size:1rem;text-transform:capitalize}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.75rem}
+  .tag{background:var(--panel2);border-radius:6px;padding:2px 8px;color:var(--muted);text-transform:capitalize}
+  .badge{border-radius:6px;padding:2px 8px;font-size:.72rem;font-weight:600;color:#fff}
+  .b-p{background:var(--badge-p)} .b-s{background:var(--badge-s);color:#04252b} .b-a{background:var(--badge-a);color:#111}
+  .steps{margin:4px 0 0;padding-left:20px;font-size:.85rem;color:var(--text);display:none}
+  .exc.open .steps{display:block}
+  .steps li{margin-bottom:4px}
+  .toggle{align-self:flex-start;background:none;border:none;color:var(--accent2);cursor:pointer;
+    font-size:.82rem;padding:0}
+  .empty{color:var(--muted);text-align:center;margin-top:60px}
+  .hint{color:var(--muted);font-size:.85rem;margin-top:14px}
+  code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:.85em}
+</style>
+</head>
+<body>
+<header>
+  <h1>💪 Muscle Map</h1>
+  <p>Pick a muscle on the body — or from the list — to see every exercise that trains it.</p>
+</header>
+
+<div class="wrap">
+  <div class="left">
+    <div class="maps">
+      <div class="figure">
+        <h3>Front</h3>
+        <svg viewBox="0 0 200 330" xmlns="http://www.w3.org/2000/svg" aria-label="Front body map">
+          <!-- base body -->
+          <circle class="body" cx="100" cy="26" r="16"/>
+          <rect class="body" x="93" y="38" width="14" height="10"/>
+          <rect class="body" x="72" y="48" width="56" height="84" rx="14"/>
+          <rect class="body" x="76" y="128" width="48" height="30" rx="12"/>
+          <rect class="body" x="46" y="58" width="18" height="86" rx="9"/>
+          <rect class="body" x="136" y="58" width="18" height="86" rx="9"/>
+          <rect class="body" x="76" y="152" width="22" height="152" rx="11"/>
+          <rect class="body" x="102" y="152" width="22" height="152" rx="11"/>
+          <ellipse class="body" cx="87" cy="312" rx="11" ry="8"/>
+          <ellipse class="body" cx="113" cy="312" rx="11" ry="8"/>
+          <!-- muscles -->
+          <ellipse class="muscle" data-region="shoulders" cx="57" cy="63" rx="11" ry="9"/>
+          <ellipse class="muscle" data-region="shoulders" cx="143" cy="63" rx="11" ry="9"/>
+          <ellipse class="muscle" data-region="chest" cx="87" cy="68" rx="12" ry="10"/>
+          <ellipse class="muscle" data-region="chest" cx="113" cy="68" rx="12" ry="10"/>
+          <ellipse class="muscle" data-region="biceps" cx="55" cy="92" rx="8" ry="15"/>
+          <ellipse class="muscle" data-region="biceps" cx="145" cy="92" rx="8" ry="15"/>
+          <ellipse class="muscle" data-region="forearms" cx="55" cy="123" rx="7" ry="16"/>
+          <ellipse class="muscle" data-region="forearms" cx="145" cy="123" rx="7" ry="16"/>
+          <rect class="muscle" data-region="abs" x="88" y="86" width="24" height="42" rx="6"/>
+          <ellipse class="muscle" data-region="quads" cx="87" cy="200" rx="12" ry="40"/>
+          <ellipse class="muscle" data-region="quads" cx="113" cy="200" rx="12" ry="40"/>
+          <ellipse class="muscle" data-region="adductors" cx="96" cy="192" rx="4" ry="24"/>
+          <ellipse class="muscle" data-region="adductors" cx="104" cy="192" rx="4" ry="24"/>
+          <ellipse class="muscle" data-region="calves" cx="87" cy="272" rx="9" ry="28"/>
+          <ellipse class="muscle" data-region="calves" cx="113" cy="272" rx="9" ry="28"/>
+        </svg>
+      </div>
+      <div class="figure">
+        <h3>Back</h3>
+        <svg viewBox="0 0 200 330" xmlns="http://www.w3.org/2000/svg" aria-label="Back body map">
+          <circle class="body" cx="100" cy="26" r="16"/>
+          <rect class="body" x="93" y="38" width="14" height="10"/>
+          <rect class="body" x="72" y="48" width="56" height="84" rx="14"/>
+          <rect class="body" x="76" y="128" width="48" height="30" rx="12"/>
+          <rect class="body" x="46" y="58" width="18" height="86" rx="9"/>
+          <rect class="body" x="136" y="58" width="18" height="86" rx="9"/>
+          <rect class="body" x="76" y="152" width="22" height="152" rx="11"/>
+          <rect class="body" x="102" y="152" width="22" height="152" rx="11"/>
+          <ellipse class="body" cx="87" cy="312" rx="11" ry="8"/>
+          <ellipse class="body" cx="113" cy="312" rx="11" ry="8"/>
+          <!-- muscles -->
+          <ellipse class="muscle" data-region="traps" cx="100" cy="56" rx="20" ry="10"/>
+          <ellipse class="muscle" data-region="lats" cx="100" cy="88" rx="24" ry="20"/>
+          <rect class="muscle" data-region="lowerback" x="86" y="110" width="28" height="20" rx="6"/>
+          <ellipse class="muscle" data-region="triceps" cx="55" cy="92" rx="8" ry="15"/>
+          <ellipse class="muscle" data-region="triceps" cx="145" cy="92" rx="8" ry="15"/>
+          <ellipse class="muscle" data-region="glutes" cx="88" cy="168" rx="12" ry="14"/>
+          <ellipse class="muscle" data-region="glutes" cx="112" cy="168" rx="12" ry="14"/>
+          <ellipse class="muscle" data-region="hamstrings" cx="87" cy="216" rx="12" ry="36"/>
+          <ellipse class="muscle" data-region="hamstrings" cx="113" cy="216" rx="12" ry="36"/>
+          <ellipse class="muscle" data-region="calves" cx="87" cy="272" rx="9" ry="28"/>
+          <ellipse class="muscle" data-region="calves" cx="113" cy="272" rx="9" ry="28"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div>
+        <label class="fld" for="muscleSel">Or choose a muscle</label>
+        <select id="muscleSel"><option value="">— select —</option></select>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <p class="hint">Tip: <code>Primary</code> = the exercise's main target ·
+      <code>Secondary</code> = listed muscle group · <code>Assisting</code> = a supporting muscle.</p>
+  </div>
+
+  <div class="right">
+    <div class="rtitle">
+      <h2 id="rTitle">Choose a muscle to begin</h2>
+      <span class="count" id="rCount"></span>
+    </div>
+    <div class="toolbar" id="toolbar" style="display:none">
+      <div>
+        <label class="fld" for="equipSel">Equipment</label>
+        <select id="equipSel"><option value="">All equipment</option></select>
+      </div>
+      <div>
+        <label class="fld" for="langSel">Instruction language</label>
+        <select id="langSel">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="tr">Türkçe</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+    </div>
+    <div id="results"><p class="empty">👈 Click a muscle on the body map or pick one from the list.</p></div>
+  </div>
+</div>
+
+<script src="muscle-map.data.js"></script>
+<script>
+(function(){
+  const DATA = window.EXERCISES || [];
+  // region id -> {label, tokens[]}  tokens matched against target / muscle_group / secondary_muscles
+  const REGIONS = {
+    chest:      {label:"Chest",              tokens:["pectorals","chest","upper chest"]},
+    shoulders:  {label:"Shoulders (Delts)",  tokens:["delts","deltoids","shoulders","rear deltoids","rotator cuff"]},
+    biceps:     {label:"Biceps",             tokens:["biceps","brachialis"]},
+    triceps:    {label:"Triceps",            tokens:["triceps"]},
+    forearms:   {label:"Forearms",           tokens:["forearms","wrist flexors","wrist extensors","wrists","grip muscles","grip","hands"]},
+    abs:        {label:"Abs / Core",         tokens:["abs","abdominals","core","obliques","lower abs","serratus anterior"]},
+    traps:      {label:"Traps",              tokens:["traps","trapezius","levator scapulae"]},
+    lats:       {label:"Upper back / Lats",  tokens:["upper back","lats","latissimus dorsi","rhomboids","back"]},
+    lowerback:  {label:"Lower back",         tokens:["lower back","spine"]},
+    glutes:     {label:"Glutes",             tokens:["glutes"]},
+    quads:      {label:"Quads",              tokens:["quads","quadriceps","hip flexors"]},
+    hamstrings: {label:"Hamstrings",         tokens:["hamstrings"]},
+    calves:     {label:"Calves",             tokens:["calves","soleus","ankles","ankle stabilizers","shins","feet","ankle"]},
+    adductors:  {label:"Inner / outer thigh",tokens:["adductors","abductors","inner thighs","groin"]},
+    cardio:     {label:"Cardio",             tokens:["cardiovascular system"]},
+  };
+
+  const norm = s => (s||"").toString().trim().toLowerCase();
+  let selected = null;
+
+  // --- build chips + dropdown ---
+  const chipsEl = document.getElementById("chips");
+  const selEl = document.getElementById("muscleSel");
+  Object.keys(REGIONS).forEach(id=>{
+    const c = document.createElement("button");
+    c.className = "chip" + (id==="cardio"?" cardio":"");
+    c.textContent = REGIONS[id].label;
+    c.dataset.region = id;
+    c.addEventListener("click",()=>select(id));
+    chipsEl.appendChild(c);
+    const o = document.createElement("option");
+    o.value = id; o.textContent = REGIONS[id].label;
+    selEl.appendChild(o);
+  });
+  selEl.addEventListener("change",e=>{ if(e.target.value) select(e.target.value); });
+
+  // --- svg clicks ---
+  document.querySelectorAll(".muscle").forEach(m=>{
+    m.addEventListener("click",()=>select(m.dataset.region));
+    m.addEventListener("mouseenter",()=>{ m.setAttribute("title", REGIONS[m.dataset.region]?.label||""); });
+  });
+
+  function match(ex, tokens){
+    const set = new Set(tokens);
+    if(set.has(norm(ex.target))) return 3;              // primary
+    if(set.has(norm(ex.muscle_group))) return 2;        // secondary
+    for(const s of (ex.secondary_muscles||[])) if(set.has(norm(s))) return 1; // assisting
+    return 0;
+  }
+
+  const badge = s => s===3? '<span class="badge b-p">Primary</span>'
+                    : s===2? '<span class="badge b-s">Secondary</span>'
+                    : '<span class="badge b-a">Assisting</span>';
+
+  let current = [];   // matched exercises for selected region
+
+  function select(id){
+    selected = id;
+    const r = REGIONS[id];
+    // highlight svg + chips
+    document.querySelectorAll(".muscle").forEach(m=>
+      m.classList.toggle("selected", m.dataset.region===id));
+    document.querySelectorAll(".chip").forEach(c=>
+      c.classList.toggle("selected", c.dataset.region===id));
+    selEl.value = id;
+
+    current = DATA
+      .map(ex=>({ex, score:match(ex, r.tokens)}))
+      .filter(x=>x.score>0)
+      .sort((a,b)=> b.score-a.score || a.ex.name.localeCompare(b.ex.name));
+
+    // equipment dropdown
+    const eq = [...new Set(current.map(x=>x.ex.equipment).filter(Boolean))].sort();
+    const equipSel = document.getElementById("equipSel");
+    equipSel.innerHTML = '<option value="">All equipment</option>' +
+      eq.map(e=>`<option value="${e}">${e}</option>`).join("");
+    document.getElementById("toolbar").style.display = "flex";
+    document.getElementById("rTitle").textContent = "Train your " + r.label;
+
+    render();
+  }
+
+  function render(){
+    const equip = document.getElementById("equipSel").value;
+    const lang = document.getElementById("langSel").value;
+    let rows = current;
+    if(equip) rows = rows.filter(x=>x.ex.equipment===equip);
+
+    document.getElementById("rCount").textContent =
+      rows.length + " exercise" + (rows.length===1?"":"s");
+
+    const res = document.getElementById("results");
+    if(!rows.length){ res.innerHTML = '<p class="empty">No exercises for this filter.</p>'; return; }
+
+    res.innerHTML = '<div class="grid">' + rows.map((x,i)=>{
+      const ex = x.ex;
+      const steps = (ex.instruction_steps && (ex.instruction_steps[lang]||ex.instruction_steps.en)) || [];
+      return `<div class="exc" id="ex${i}">
+        <div class="meta">${badge(x.score)}</div>
+        <h4>${ex.name}</h4>
+        <div class="meta">
+          <span class="tag">${ex.equipment||"—"}</span>
+          <span class="tag">${ex.category||"—"}</span>
+          ${ex.target?`<span class="tag">🎯 ${ex.target}</span>`:""}
+        </div>
+        <button class="toggle" data-i="${i}">Show instructions ▾</button>
+        <ol class="steps">${steps.map(s=>`<li>${s}</li>`).join("")}</ol>
+      </div>`;
+    }).join("") + '</div>';
+
+    res.querySelectorAll(".toggle").forEach(b=>b.addEventListener("click",()=>{
+      const card = document.getElementById("ex"+b.dataset.i);
+      const open = card.classList.toggle("open");
+      b.textContent = open ? "Hide instructions ▴" : "Show instructions ▾";
+    }));
+  }
+
+  document.getElementById("equipSel").addEventListener("change",render);
+  document.getElementById("langSel").addEventListener("change",render);
+
+  if(!DATA.length){
+    document.getElementById("results").innerHTML =
+      '<p class="empty">Could not load <code>muscle-map.data.js</code>. Make sure it sits next to this file.</p>';
+  }
+})();
+</script>
+</body>
+</html>

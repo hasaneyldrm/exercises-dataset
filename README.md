@@ -92,6 +92,15 @@ A fully client-side exercise explorer with:
 - Infinite scroll grid
 - Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, or Chinese
 
+### `muscle-map.html` — Muscle-Group Targeting Tool
+
+A "**I want to train X**" explorer built on an interactive front/back body map:
+- Click any muscle on the SVG body (or pick it from the list) to see every exercise that trains it
+- Results are ranked **Primary** (exercise's main target) → **Secondary** (listed muscle group) → **Assisting** (supporting muscle), derived from the `target`, `muscle_group`, and `secondary_muscles` fields
+- Filter results by equipment, and read step-by-step instructions in any of the 6 languages
+
+> Loads its data from the companion `muscle-map.data.js` (a slimmed, metadata-only extract of `exercises.json`) so it opens directly from disk — no server needed. Regenerate it from `data/exercises.json` whenever the dataset changes.
+
 ### `setup.html` — Developer Setup Guide
 
 A step-by-step guide for integrating the dataset into your own application:
@@ -109,6 +118,8 @@ exercises-dataset/
 ├── data/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
+├── muscle-map.html          # Muscle-group targeting tool (interactive body map)
+├── muscle-map.data.js       # Slim metadata extract used by muscle-map.html
 ├── setup.html               # Developer setup guide (DB import + API integration)
 └── README.md
 ```
@@ -117,6 +128,7 @@ exercises-dataset/
 
 - **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata. The `image` and `gif_url` fields are `null`; `media_id` holds the original ExerciseDB media reference.
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
+- **`muscle-map.html`** — Interactive body-map tool: click a muscle to list exercises that train it. Reads `muscle-map.data.js`.
 - **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
 
 > **Media** (`images/`, `videos/`) is intentionally **not** part of this repository — see the [notice](#-notice--exercise-media-is-not-included).
