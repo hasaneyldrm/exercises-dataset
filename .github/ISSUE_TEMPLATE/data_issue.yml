@@ -1,0 +1,29 @@
+name: Data issue
+description: Report an exercise metadata, instruction, translation, or media-reference problem.
+title: "[Data]: "
+labels:
+  - data
+body:
+  - type: input
+    id: exercise-id
+    attributes:
+      label: Exercise ID
+      description: The `id` from `data/exercises.json`, if known.
+      placeholder: "0001"
+  - type: input
+    id: exercise-name
+    attributes:
+      label: Exercise name
+      placeholder: "3/4 sit-up"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe what is wrong and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested fix
+      description: Optional. Include source or reasoning if you know the correct value.

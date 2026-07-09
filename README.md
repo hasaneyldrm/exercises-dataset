@@ -47,6 +47,7 @@
 - [Data Schema](#-data-schema)
 - [Sample Exercises](#-sample-exercises)
 - [Usage Examples](#-usage-examples)
+- [Contributing](#-contributing)
 - [License & Use](#-license--use)
 
 ---
@@ -406,6 +407,20 @@ const data = exercises as Exercise[];
 const randomWorkout: Exercise[] = data.slice(0, 6);
 console.log("First 6 exercises:", randomWorkout.map(e => e.name));
 ```
+
+---
+
+## 🤝 Contributing
+
+Before opening a pull request, run the dataset validator:
+
+```bash
+node scripts/validate-dataset.mjs
+```
+
+The validator checks JSON structure, required fields, multilingual instructions, duplicate IDs, media references, missing media files, and orphan media files. Duplicate exercise names are reported as warnings because some records may represent distinct movement or media variants.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for dataset rules, media-license requirements, and browser verification notes.
 
 ---
 
