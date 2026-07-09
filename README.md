@@ -106,6 +106,7 @@ A step-by-step guide for integrating the dataset into your own application:
 exercises-dataset/
 ├── data/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
+├── examples/                # Small Node, Python, and SQLite integration examples
 ├── images/                  # 1,324 × 180×180 thumbnails  (© Gym visual)
 ├── videos/                  # 1,324 × 180×180 animation GIFs  (© Gym visual)
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
@@ -117,6 +118,7 @@ exercises-dataset/
 ### Key Files
 
 - **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata. `image` / `gif_url` point to the local 180×180 assets, and each record carries an `attribution` field; `media_id` holds the original media reference id.
+- **`examples/`** — Small integration examples for loading the dataset from Node.js, Python, and SQLite.
 - **`images/`, `videos/`** — 180×180 thumbnails and animation GIFs (© [Gym visual](https://gymvisual.com/), used with permission).
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
 - **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
