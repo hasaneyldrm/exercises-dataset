@@ -47,6 +47,7 @@
 - [Data Schema](#-data-schema)
 - [Sample Exercises](#-sample-exercises)
 - [Usage Examples](#-usage-examples)
+- [Contributing](#-contributing)
 - [License & Use](#-license--use)
 
 ---
@@ -106,10 +107,15 @@ A step-by-step guide for integrating the dataset into your own application:
 exercises-dataset/
 ├── data/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
+├── examples/                # Small Node, Python, and SQLite integration examples
+├── scripts/
+│   └── validate-dataset.mjs # Dataset and media integrity validator
 ├── images/                  # 1,324 × 180×180 thumbnails  (© Gym visual)
 ├── videos/                  # 1,324 × 180×180 animation GIFs  (© Gym visual)
+├── .github/                 # CI workflow and issue / PR templates
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
 ├── setup.html               # Developer setup guide (DB import + API integration)
+├── CONTRIBUTING.md          # Contribution and validation rules
 ├── NOTICE.md                # Media attribution & license terms
 └── README.md
 ```
@@ -117,6 +123,8 @@ exercises-dataset/
 ### Key Files
 
 - **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata. `image` / `gif_url` point to the local 180×180 assets, and each record carries an `attribution` field; `media_id` holds the original media reference id.
+- **`scripts/validate-dataset.mjs`** — Dependency-free validation for dataset structure, multilingual instructions, duplicate IDs, and media references.
+- **`examples/`** — Small integration examples for loading the dataset from Node.js, Python, and SQLite.
 - **`images/`, `videos/`** — 180×180 thumbnails and animation GIFs (© [Gym visual](https://gymvisual.com/), used with permission).
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
 - **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
@@ -184,6 +192,7 @@ Each record in `data/exercises.json` follows this structure:
 | `instructions.tr` | `string` | Full step-by-step instructions in Turkish |
 | `instructions.ru` | `string` | Full step-by-step instructions in Russian |
 | `instructions.zh` | `string` | Full step-by-step instructions in Chinese |
+| `instruction_steps` | `object<string, string[]>` | Step arrays for each supported language (`en`, `es`, `it`, `tr`, `ru`, `zh`) |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -209,6 +218,17 @@ Each record in `data/exercises.json` follows this structure:
     "tr": "Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. ...",
     "ru": "Лягте на спину, согните колени и поставьте ступни на землю. ...",
     "zh": "平躺，膝盖弯曲，双脚平放在地上。..."
+  },
+  "instruction_steps": {
+    "en": [
+      "Lie flat on your back with your knees bent and feet flat on the ground.",
+      "Place your hands behind your head with your elbows pointing outwards."
+    ],
+    "es": ["Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. ..."],
+    "it": ["Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. ..."],
+    "tr": ["Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. ..."],
+    "ru": ["Лягте на спину, согните колени и поставьте ступни на землю. ..."],
+    "zh": ["平躺，膝盖弯曲，双脚平放在地上。..."]
   },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
@@ -390,6 +410,14 @@ interface Exercise {
     ru: string;
     zh: string;
   };
+  instruction_steps: {
+    en: string[];
+    es: string[];
+    it: string[];
+    tr: string[];
+    ru: string[];
+    zh: string[];
+  };
   muscle_group: string;
   secondary_muscles: string[];
   target: string;
@@ -406,6 +434,20 @@ const data = exercises as Exercise[];
 const randomWorkout: Exercise[] = data.slice(0, 6);
 console.log("First 6 exercises:", randomWorkout.map(e => e.name));
 ```
+
+---
+
+## 🤝 Contributing
+
+Before opening a pull request, run the dataset validator:
+
+```bash
+node scripts/validate-dataset.mjs
+```
+
+The validator checks JSON structure, required fields, multilingual instructions, duplicate IDs, media references, missing media files, and orphan media files. Duplicate exercise names are reported as warnings because some records may represent distinct movement or media variants.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for dataset rules, media-license requirements, and browser verification notes.
 
 ---
 
