@@ -1638,6 +1638,32 @@ renderApiCode();
 const llmPromptBox  = document.getElementById('llm-prompt');
 const copyPromptBtn = document.getElementById('copy-prompt-btn');
 
+function setCopyPromptButtonDefault() {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '14');
+  svg.setAttribute('height', '14');
+  svg.setAttribute('viewBox', '0 0 16 16');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor');
+  svg.setAttribute('stroke-width', '1.8');
+  svg.setAttribute('stroke-linecap', 'round');
+  svg.setAttribute('stroke-linejoin', 'round');
+
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', '4');
+  rect.setAttribute('y', '4');
+  rect.setAttribute('width', '9');
+  rect.setAttribute('height', '11');
+  rect.setAttribute('rx', '1.5');
+
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1');
+
+  svg.appendChild(rect);
+  svg.appendChild(path);
+  copyPromptBtn.replaceChildren(svg, document.createTextNode(' Copy Prompt'));
+}
+
 function renderLlmPrompt() {
   llmPromptBox.value = buildLlmPrompt(currentFw, currentLlmDb);
 }
@@ -1665,7 +1691,7 @@ copyPromptBtn.addEventListener('click', () => {
     copyPromptBtn.textContent = '✓ Copied!';
     copyPromptBtn.classList.add('copied');
     setTimeout(() => {
-      copyPromptBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/></svg> Copy Prompt`;
+      setCopyPromptButtonDefault();
       copyPromptBtn.classList.remove('copied');
     }, 2500);
   });
