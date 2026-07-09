@@ -184,6 +184,7 @@ Each record in `data/exercises.json` follows this structure:
 | `instructions.tr` | `string` | Full step-by-step instructions in Turkish |
 | `instructions.ru` | `string` | Full step-by-step instructions in Russian |
 | `instructions.zh` | `string` | Full step-by-step instructions in Chinese |
+| `instruction_steps` | `object<string, string[]>` | Step arrays for each supported language (`en`, `es`, `it`, `tr`, `ru`, `zh`) |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -209,6 +210,17 @@ Each record in `data/exercises.json` follows this structure:
     "tr": "Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. ...",
     "ru": "Лягте на спину, согните колени и поставьте ступни на землю. ...",
     "zh": "平躺，膝盖弯曲，双脚平放在地上。..."
+  },
+  "instruction_steps": {
+    "en": [
+      "Lie flat on your back with your knees bent and feet flat on the ground.",
+      "Place your hands behind your head with your elbows pointing outwards."
+    ],
+    "es": ["Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. ..."],
+    "it": ["Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. ..."],
+    "tr": ["Sırt üstü yatın, dizlerinizi bükün ve ayaklarınızı yere düz koyun. ..."],
+    "ru": ["Лягте на спину, согните колени и поставьте ступни на землю. ..."],
+    "zh": ["平躺，膝盖弯曲，双脚平放在地上。..."]
   },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
@@ -389,6 +401,14 @@ interface Exercise {
     tr: string;
     ru: string;
     zh: string;
+  };
+  instruction_steps: {
+    en: string[];
+    es: string[];
+    it: string[];
+    tr: string[];
+    ru: string[];
+    zh: string[];
   };
   muscle_group: string;
   secondary_muscles: string[];
