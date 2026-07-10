@@ -11,12 +11,12 @@
   <img src="videos/0334-DsgkuIt.gif" width="120" alt="dumbbell lateral raise" />
 </p>
 
-**A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with an animation GIF, 180×180 thumbnail image, category, body-part, equipment, target and muscle-group data, and step-by-step instructions in 9 languages (English, Spanish, Italian, Turkish, Russian, Chinese, Hindi, Polish, Korean).**
+**A comprehensive, ready-to-use fitness exercise dataset with 1,324 exercises — each with an animation GIF, 180×180 thumbnail image, category, body-part, equipment, target and muscle-group data, and step-by-step instructions in 10 languages (English, Spanish, Italian, Turkish, Russian, Chinese, Hindi, Polish, Korean, French).**
 
 [![Exercises](https://img.shields.io/badge/Exercises-1324-blue?style=flat-square)](data/exercises.json)
 [![Animation GIFs](https://img.shields.io/badge/Animation%20GIFs-1324-brightgreen?style=flat-square)](videos/)
 [![Thumbnails](https://img.shields.io/badge/Thumbnails-1324-orange?style=flat-square)](images/)
-[![Languages](https://img.shields.io/badge/Languages-9-green?style=flat-square)](#-overview)
+[![Languages](https://img.shields.io/badge/Languages-10-green?style=flat-square)](#-overview)
 [![Mobile App](https://img.shields.io/badge/App-LogPress-111111?style=flat-square&logo=react)](https://github.com/hasaneyldrm/logpress-public)
 [![License](https://img.shields.io/badge/License-MIT%20%2B%20media%20terms-blue?style=flat-square)](LICENSE)
 
@@ -32,7 +32,7 @@
 
 - 1,324 exercises with category, body-part, equipment, target and muscle-group data
 - an animation GIF + 180×180 thumbnail for every exercise (media © [Gym visual](https://gymvisual.com/) — see [License](#-license--use))
-- step-by-step instructions in 9 languages (🇬🇧 English, 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, 🇨🇳 Chinese, 🇮🇳 Hindi, 🇵🇱 Polish, 🇰🇷 Korean)
+- step-by-step instructions in 10 languages (🇬🇧 English, 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, 🇨🇳 Chinese, 🇮🇳 Hindi, 🇵🇱 Polish, 🇰🇷 Korean, 🇫🇷 French)
 - the interactive browser (`index.html`) and developer setup guide (`setup.html`)
 
 ---
@@ -71,7 +71,7 @@ Each exercise entry contains:
 | Muscle Group | Supporting / synergist muscles |
 | Equipment | Equipment required (or `body weight` for bodyweight) |
 | Instructions | Step-by-step instructions for each exercise |
-| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese · 🇮🇳 Hindi · 🇵🇱 Polish · 🇰🇷 Korean |
+| Available Languages | 🇬🇧 English · 🇪🇸 Spanish · 🇮🇹 Italian · 🇹🇷 Turkish · 🇷🇺 Russian · 🇨🇳 Chinese · 🇮🇳 Hindi · 🇵🇱 Polish · 🇰🇷 Korean · 🇫🇷 French |
 | Media | 180×180 thumbnail (`image`) + animation GIF (`gif_url`) per exercise — media © Gym visual, see [License](#-license--use) |
 
 ---
@@ -88,7 +88,7 @@ A fully client-side exercise explorer with:
 - Live search across all 1,324 exercises
 - Filter by category, equipment, and target muscle
 - Infinite scroll grid
-- Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, Chinese, Hindi, Polish, or Korean
+- Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, Chinese, Hindi, Polish, Korean, or French
 
 ### `setup.html` — Developer Setup Guide
 
@@ -131,7 +131,7 @@ exercises-dataset/
 | Metric | Count |
 |---|---|
 | Total Exercises | **1,324** |
-| Instruction Languages | **9** |
+| Instruction Languages | **10** |
 
 ### Exercises by Body Part
 
@@ -189,7 +189,8 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 | `instructions.hi` | `string` | Full step-by-step instructions in Hindi |
 | `instructions.pl` | `string` | Full step-by-step instructions in Polish |
 | `instructions.ko` | `string` | Full step-by-step instructions in Korean |
-| `instruction_steps.<lang>` | `array[string]` | Same instructions split into an ordered array of steps, per language (`en`, `es`, `it`, `tr`, `ru`, `zh`, `hi`, `pl`, `ko`) |
+| `instructions.fr` | `string` | Full step-by-step instructions in French |
+| `instruction_steps.<lang>` | `array[string]` | Same instructions split into an ordered array of steps, per language (`en`, `es`, `it`, `tr`, `ru`, `zh`, `hi`, `pl`, `ko`, `fr`) |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -217,7 +218,8 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
     "zh": "平躺，膝盖弯曲，双脚平放在地上。...",
     "hi": "अपने घुटनों को मोड़कर और पैरों को ज़मीन पर सपाट रखते हुए अपनी पीठ के बल लेट जाएँ।...",
     "pl": "Połóż się płasko na plecach, ugnij kolana i oprzyj stopy płasko na pod ...",
-    "ko": "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다. ..."
+    "ko": "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다. ...",
+    "fr": "Allonge-toi sur le dos, les genoux fléchis et les pieds à plat au sol. ..."
   },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
@@ -333,6 +335,7 @@ print(ex["instructions"]["tr"])  # Turkish
 print(ex["instructions"]["ru"])  # Russian
 print(ex["instructions"]["zh"])  # Chinese
 print(ex["instructions"]["hi"])  # Hindi
+print(ex["instructions"]["fr"])  # French
 ```
 
 ### Python — Load with Pandas
@@ -384,6 +387,7 @@ console.log(ex.instructions.zh); // Chinese
 console.log(ex.instructions.hi); // Hindi
 console.log(ex.instructions.pl); // Polish
 console.log(ex.instructions.ko); // Korean
+console.log(ex.instructions.fr); // French
 ```
 
 ### TypeScript — Type-safe Usage
@@ -405,6 +409,7 @@ interface Exercise {
     hi: string;
     pl: string;
     ko: string;
+    fr: string;
   };
   muscle_group: string;
   secondary_muscles: string[];
