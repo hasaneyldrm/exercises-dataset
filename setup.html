@@ -87,6 +87,22 @@
       font-size: 13px;
       color: var(--text-secondary);
     }
+    .language-select {
+      min-width: 112px;
+      margin-left: auto;
+      padding: 5px 28px 5px 9px;
+      font: inherit;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+    .language-select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .language-select + .back-link { margin-left: 0; }
 
     /* ── Shell ───────────────────────────────────────── */
     .page-shell {
@@ -456,6 +472,11 @@
 
     /* ── Responsive ──────────────────────────────────── */
     @media (max-width: 768px) {
+      .site-header { padding: 0 16px; gap: 8px; }
+      .header-divider, .header-label { display: none; }
+      .language-select { min-width: 0; max-width: 128px; }
+      .back-link { padding: 6px 8px; }
+      .back-link span { display: none; }
       .page-shell { grid-template-columns: 1fr; }
       .page-nav { display: none; }
       .page-content { padding: 32px 0 60px 0; }
@@ -470,12 +491,13 @@
 <header class="site-header">
   <div class="site-logo">Exercise<span>DB</span></div>
   <div class="header-divider"></div>
-  <span class="header-label">Developer Setup</span>
-  <a class="back-link" href="index.html">
+  <span class="header-label" data-i18n="headerLabel">Developer Setup</span>
+  <select class="language-select" id="language-select" aria-label="Interface language" data-i18n-aria-label="languageLabel"></select>
+  <a class="back-link" href="index.html" aria-label="Back to Browse" data-i18n-aria-label="backBrowse">
     <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 4L6 8l4 4"/>
     </svg>
-    Back to Browse
+    <span data-i18n="backBrowse">Back to Browse</span>
   </a>
 </header>
 
@@ -483,8 +505,8 @@
 <div class="page-shell">
 
   <!-- Left Nav -->
-  <nav class="page-nav" id="page-nav">
-    <div class="nav-group-label">Contents</div>
+  <nav class="page-nav" id="page-nav" aria-label="Contents" data-i18n-aria-label="contents">
+    <div class="nav-group-label" data-i18n="contents">Contents</div>
     <a class="nav-link active" href="#db-setup" data-section="db-setup">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
@@ -492,7 +514,7 @@
         <path d="M2 7v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V7"/>
         <path d="M2 10v2c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-2"/>
       </svg>
-      Database Setup
+      <span data-i18n="navDb">Database Setup</span>
     </a>
     <div class="nav-spacer"></div>
     <a class="nav-link" href="#api-integration" data-section="api-integration">
@@ -501,7 +523,7 @@
         <polyline points="11 4 15 8 11 12"/>
         <line x1="8" y1="2" x2="8" y2="14"/>
       </svg>
-      API Integration
+      <span data-i18n="navApi">API Integration</span>
     </a>
     <div class="nav-spacer"></div>
     <a class="nav-link" href="#ask-llm" data-section="ask-llm">
@@ -509,7 +531,7 @@
         <path d="M14 2H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h3l3 2 3-2h3a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
         <path d="M8 6v2M8 10h.01"/>
       </svg>
-      Ask Your LLM
+      <span data-i18n="navLlm">Ask Your LLM</span>
     </a>
   </nav>
 
@@ -520,13 +542,13 @@
     <section class="section" id="db-setup">
       <div class="section-header">
         <div class="section-num">1</div>
-        <h2 class="section-title">Database Setup</h2>
+        <h2 class="section-title" data-i18n="dbTitle">Database Setup</h2>
       </div>
-      <p class="section-desc">Import all 1,324 exercises into your database in 3 steps. Choose your database engine below.</p>
+      <p class="section-desc" data-i18n="dbDesc">Import all 1,324 exercises into your database in 3 steps. Choose your database engine below.</p>
 
       <div class="section-body">
         <!-- DB Tabs -->
-        <div class="tab-bar" id="db-tabs" role="tablist">
+        <div class="tab-bar" id="db-tabs" role="tablist" aria-label="Database engine" data-i18n-aria-label="dbTabsLabel">
           <button class="tab-btn active" data-db="mssql" role="tab">SQL Server</button>
           <button class="tab-btn" data-db="postgresql" role="tab">PostgreSQL</button>
           <button class="tab-btn" data-db="mysql" role="tab">MySQL</button>
@@ -538,10 +560,10 @@
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h3 class="step-title">Create Table</h3>
-              <p class="step-desc">Run this in your database client (SSMS, DBeaver, pgAdmin, TablePlus, etc.):</p>
+              <h3 class="step-title" data-i18n="createTitle">Create Table</h3>
+              <p class="step-desc" data-i18n="createDesc">Run this in your database client (SSMS, DBeaver, pgAdmin, TablePlus, etc.):</p>
               <div class="code-block">
-                <button class="copy-btn" id="copy-create-btn">Copy</button>
+                <button class="copy-btn" id="copy-create-btn" aria-label="Copy CREATE TABLE SQL" data-i18n="copy" data-i18n-aria-label="copyCreateLabel">Copy</button>
                 <pre class="code-pre" id="create-table-sql"></pre>
               </div>
             </div>
@@ -551,16 +573,16 @@
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h3 class="step-title">Import Data</h3>
-              <p class="step-desc">Generate a <code>.sql</code> file with all 1,324 INSERT statements. The file is built entirely in your browser — nothing is uploaded to any server.</p>
+              <h3 class="step-title" data-i18n="importTitle">Import Data</h3>
+              <p class="step-desc" data-i18n-html="importDesc">Generate a <code>.sql</code> file with all 1,324 INSERT statements. The file is built entirely in your browser — nothing is uploaded to any server.</p>
               <div style="display:flex;align-items:center;gap:0;">
-                <button class="generate-btn" id="generate-sql-btn">
+                <button class="generate-btn" id="generate-sql-btn" aria-label="Generate and download INSERT SQL" data-i18n-aria-label="generateLabel">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
                     <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12h12"/>
                   </svg>
-                  Generate INSERT SQL
+                  <span data-i18n="generate">Generate INSERT SQL</span>
                 </button>
-                <span class="generate-status" id="generate-status"></span>
+                <span class="generate-status" id="generate-status" aria-live="polite"></span>
               </div>
             </div>
           </div>
@@ -569,10 +591,10 @@
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h3 class="step-title">Media Files</h3>
-              <p class="step-desc">Download the media archives and place them in your web server root or CDN. The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app.</p>
+              <h3 class="step-title" data-i18n="mediaTitle">Media Files</h3>
+              <p class="step-desc" data-i18n-html="mediaDesc">Download the media archives and place them in your web server root or CDN. The <code>image</code> and <code>gif_url</code> columns store relative paths — prepend your base URL in your app.</p>
               <div class="code-block">
-                <pre class="code-pre">your-server.com/
+                <pre class="code-pre" data-i18n="mediaTree">your-server.com/
 ├── images/   ← 1,324 JPG thumbnails
 └── videos/   ← 1,324 GIF animations</pre>
               </div>
@@ -580,7 +602,7 @@
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px">
                   <circle cx="8" cy="8" r="6"/><path d="M8 7v4M8 5.5h.01"/>
                 </svg>
-                The <code>images/</code> and <code>videos/</code> folders are already included in the repository. After cloning, just copy them to your server or CDN — no separate download needed.
+                <span data-i18n-html="mediaNote">The <code>images/</code> and <code>videos/</code> folders are already included in the repository. After cloning, just copy them to your server or CDN — no separate download needed.</span>
               </div>
             </div>
           </div>
@@ -594,9 +616,9 @@
     <section class="section" id="api-integration">
       <div class="section-header">
         <div class="section-num">2</div>
-        <h2 class="section-title">API Integration</h2>
+        <h2 class="section-title" data-i18n="apiTitle">API Integration</h2>
       </div>
-      <p class="section-desc">Client-side code examples showing how to call your backend API from your app. Enter your API base URL below — all examples update live.</p>
+      <p class="section-desc" data-i18n="apiDesc">Client-side code examples showing how to call your backend API from your app. Enter your API base URL below — all examples update live.</p>
 
       <div class="section-body">
         <!-- Base URL Input -->
@@ -609,11 +631,13 @@
             value="https://api.yourapp.com"
             placeholder="https://api.yourapp.com"
             spellcheck="false"
+            aria-label="API base URL"
+            data-i18n-aria-label="baseUrlLabel"
           />
         </div>
 
         <!-- Language Tabs -->
-        <div class="tab-bar" id="lang-tabs" role="tablist">
+        <div class="tab-bar" id="lang-tabs" role="tablist" aria-label="Client language" data-i18n-aria-label="clientLanguageLabel">
           <button class="tab-btn active" data-lang="curl" role="tab">cURL</button>
           <button class="tab-btn" data-lang="js" role="tab">JavaScript</button>
           <button class="tab-btn" data-lang="python" role="tab">Python</button>
@@ -631,11 +655,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises/<span style="color:var(--accent)">:id</span></span>
-              <span class="endpoint-desc">Fetch a single exercise by ID</span>
+              <span class="endpoint-desc" data-i18n="getOneDesc">Fetch a single exercise by ID</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)" aria-label="Copy code" data-i18n="copy" data-i18n-aria-label="copyCodeLabel">Copy</button>
                 <pre class="code-pre api-code" data-endpoint="getOne" id="code-getOne"></pre>
               </div>
             </div>
@@ -646,11 +670,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises<span style="color:var(--text-tertiary)">?page=1&amp;limit=20</span></span>
-              <span class="endpoint-desc">Paginated list of exercises</span>
+              <span class="endpoint-desc" data-i18n="getAllDesc">Paginated list of exercises</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)" aria-label="Copy code" data-i18n="copy" data-i18n-aria-label="copyCodeLabel">Copy</button>
                 <pre class="code-pre api-code" data-endpoint="getAll" id="code-getAll"></pre>
               </div>
             </div>
@@ -661,11 +685,11 @@
             <div class="endpoint-header">
               <span class="method-badge">GET</span>
               <span class="endpoint-path">/exercises<span style="color:var(--text-tertiary)">?category=Strength&amp;body_part=Chest</span></span>
-              <span class="endpoint-desc">Filter by category, body part, equipment</span>
+              <span class="endpoint-desc" data-i18n="getFilteredDesc">Filter by category, body part, equipment</span>
             </div>
             <div class="endpoint-body">
               <div class="code-block">
-                <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+                <button class="copy-btn" onclick="copyBlock(this)" aria-label="Copy code" data-i18n="copy" data-i18n-aria-label="copyCodeLabel">Copy</button>
                 <pre class="code-pre api-code" data-endpoint="getFiltered" id="code-getFiltered"></pre>
               </div>
             </div>
@@ -681,17 +705,17 @@
     <section class="section" id="ask-llm">
       <div class="section-header">
         <div class="section-num">3</div>
-        <h2 class="section-title">Ask Your LLM</h2>
+        <h2 class="section-title" data-i18n="llmTitle">Ask Your LLM</h2>
       </div>
-      <p class="section-desc">
+      <p class="section-desc" data-i18n="llmDesc">
         Don't want to write a backend from scratch? Copy this prompt into ChatGPT, Claude, Gemini, or any LLM — it contains everything needed to generate a complete, production-ready API in one shot.
       </p>
 
       <div class="section-body">
         <div class="llm-selectors">
           <div class="selector-group">
-            <div class="selector-label">Framework</div>
-            <div class="selector-tabs" id="framework-tabs">
+            <div class="selector-label" data-i18n="frameworkLabel">Framework</div>
+            <div class="selector-tabs" id="framework-tabs" role="group" aria-label="Framework" data-i18n-aria-label="frameworkLabel">
               <button class="selector-btn active" data-fw="express">Express.js</button>
               <button class="selector-btn" data-fw="fastapi">FastAPI</button>
               <button class="selector-btn" data-fw="aspnet">ASP.NET Core</button>
@@ -701,8 +725,8 @@
             </div>
           </div>
           <div class="selector-group">
-            <div class="selector-label">Database</div>
-            <div class="selector-tabs" id="llm-db-tabs">
+            <div class="selector-label" data-i18n="databaseLabel">Database</div>
+            <div class="selector-tabs" id="llm-db-tabs" role="group" aria-label="Database" data-i18n-aria-label="databaseLabel">
               <button class="selector-btn active" data-llmdb="postgresql">PostgreSQL</button>
               <button class="selector-btn" data-llmdb="mysql">MySQL</button>
               <button class="selector-btn" data-llmdb="mssql">SQL Server</button>
@@ -712,17 +736,17 @@
         </div>
 
         <div class="llm-prompt-wrap">
-          <textarea class="llm-prompt-box" id="llm-prompt" readonly spellcheck="false"></textarea>
+          <textarea class="llm-prompt-box" id="llm-prompt" readonly spellcheck="false" aria-label="Backend API generation prompt" data-i18n-aria-label="promptLabel"></textarea>
         </div>
         <div class="llm-actions">
-          <button class="copy-prompt-btn" id="copy-prompt-btn">
+          <button class="copy-prompt-btn" id="copy-prompt-btn" aria-label="Copy prompt" data-i18n-aria-label="copyPromptLabel">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="4" y="4" width="9" height="11" rx="1.5"/>
               <path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/>
             </svg>
-            Copy Prompt
+            <span data-i18n="copyPrompt">Copy Prompt</span>
           </button>
-          <span class="llm-hint">Paste into ChatGPT, Claude, Gemini, or any LLM</span>
+          <span class="llm-hint" data-i18n="llmHint">Paste into ChatGPT, Claude, Gemini, or any LLM</span>
         </div>
       </div>
     </section>
@@ -730,7 +754,42 @@
   </main>
 </div>
 
+<script src="locales/runtime.js"></script>
+<script src="locales/manifest.js"></script>
 <script>
+const languageSelect = document.getElementById('language-select');
+
+function setupText(key, params) {
+  return ExercisesI18n.t('setup', key, params);
+}
+
+function populateLanguageSelect() {
+  languageSelect.replaceChildren(...ExercisesI18n.getAvailableLocales().map(locale => {
+    const option = document.createElement('option');
+    option.value = locale.code;
+    option.textContent = locale.label || locale.code;
+    return option;
+  }));
+  languageSelect.value = ExercisesI18n.getLocale();
+}
+
+function applyTranslations() {
+  document.title = setupText('pageTitle');
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    element.textContent = setupText(element.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(element => {
+    element.innerHTML = setupText(element.dataset.i18nHtml);
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+    element.setAttribute('aria-label', setupText(element.dataset.i18nAriaLabel));
+  });
+  languageSelect.value = ExercisesI18n.getLocale();
+  renderGenerateStatus();
+  renderLlmPrompt();
+  renderPromptCopyButton();
+}
+
 // ══════════════════════════════════════════════════
 // ── DB SQL Templates ───────────────────────────────
 // ══════════════════════════════════════════════════
@@ -757,6 +816,23 @@ const DB_SQL = {
   image             NVARCHAR(500),
   gif_url           NVARCHAR(500),
   created_at        DATETIME2
+);
+
+CREATE TABLE exercise_translations (
+  exercise_id       NVARCHAR(10)  NOT NULL,
+  locale            NVARCHAR(35)  NOT NULL,
+  name              NVARCHAR(255),
+  category          NVARCHAR(100),
+  body_part         NVARCHAR(100),
+  equipment         NVARCHAR(100),
+  target            NVARCHAR(100),
+  muscle_group      NVARCHAR(100),
+  secondary_muscles NVARCHAR(MAX), -- JSON array stored as string
+  instructions      NVARCHAR(MAX),
+  instruction_steps NVARCHAR(MAX), -- JSON array stored as string
+  CONSTRAINT PK_exercise_translations PRIMARY KEY (exercise_id, locale),
+  CONSTRAINT FK_exercise_translations_exercises
+    FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE CASCADE
 );`,
   postgresql: `CREATE TABLE exercises (
   id                VARCHAR(10)  PRIMARY KEY,
@@ -779,8 +855,25 @@ const DB_SQL = {
   image             VARCHAR(500),
   gif_url           VARCHAR(500),
   created_at        TIMESTAMPTZ
+);
+
+CREATE TABLE exercise_translations (
+  exercise_id       VARCHAR(10)  NOT NULL REFERENCES exercises(id) ON DELETE CASCADE,
+  locale            VARCHAR(35)  NOT NULL,
+  name              VARCHAR(255),
+  category          VARCHAR(100),
+  body_part         VARCHAR(100),
+  equipment         VARCHAR(100),
+  target            VARCHAR(100),
+  muscle_group      VARCHAR(100),
+  secondary_muscles JSONB,
+  instructions      TEXT,
+  instruction_steps JSONB,
+  PRIMARY KEY (exercise_id, locale)
 );`,
-  mysql: `CREATE TABLE exercises (
+  mysql: `SET NAMES utf8mb4;
+
+CREATE TABLE exercises (
   id                VARCHAR(10)  PRIMARY KEY,
   name              VARCHAR(255) NOT NULL,
   category          VARCHAR(100),
@@ -801,8 +894,27 @@ const DB_SQL = {
   image             VARCHAR(500),
   gif_url           VARCHAR(500),
   created_at        DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE exercise_translations (
+  exercise_id       VARCHAR(10)  NOT NULL,
+  locale            VARCHAR(35)  NOT NULL,
+  name              VARCHAR(255),
+  category          VARCHAR(100),
+  body_part         VARCHAR(100),
+  equipment         VARCHAR(100),
+  target            VARCHAR(100),
+  muscle_group      VARCHAR(100),
+  secondary_muscles JSON,
+  instructions      TEXT,
+  instruction_steps JSON,
+  PRIMARY KEY (exercise_id, locale),
+  CONSTRAINT fk_exercise_translations_exercises
+    FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`,
-  sqlite: `CREATE TABLE exercises (
+  sqlite: `PRAGMA foreign_keys = ON;
+
+CREATE TABLE exercises (
   id                TEXT PRIMARY KEY,
   name              TEXT NOT NULL,
   category          TEXT,
@@ -823,6 +935,22 @@ const DB_SQL = {
   image             TEXT,
   gif_url           TEXT,
   created_at        TEXT
+);
+
+CREATE TABLE exercise_translations (
+  exercise_id       TEXT NOT NULL,
+  locale            TEXT NOT NULL,
+  name              TEXT,
+  category          TEXT,
+  body_part         TEXT,
+  equipment         TEXT,
+  target            TEXT,
+  muscle_group      TEXT,
+  secondary_muscles TEXT, -- JSON array stored as string
+  instructions      TEXT,
+  instruction_steps TEXT, -- JSON array stored as string
+  PRIMARY KEY (exercise_id, locale),
+  FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE CASCADE
 );`
 };
 
@@ -1395,77 +1523,14 @@ const DB_META = {
 function buildLlmPrompt(fwKey, dbKey) {
   const fw = FRAMEWORK_META[fwKey];
   const db = DB_META[dbKey];
-  const schema = DB_SQL[dbKey];
-
-  return `You are a senior ${fw.lang} developer. Build a complete REST API using ${fw.name} for an exercise/fitness database.
-
-## Dataset Overview
-- 1,324 fitness exercises
-- Fields: id (string, e.g. "0001"), name, category, body_part, equipment, instructions_en (full text), instructions_es (Spanish text), instructions_it (Italian text), instructions_tr (Turkish text), instructions_ru (Russian text), instructions_zh (Chinese text), instructions_hi (Hindi text), instructions_pl (Polish text), instructions_ko (Korean text), muscle_group, secondary_muscles (JSON array of strings), target, image (relative path like "images/0001.jpg"), gif_url (relative path like "videos/0001.gif"), created_at
-
-## Database Schema (${db.name})
-\`\`\`sql
-${schema}
-\`\`\`
-
-## Required Endpoints
-
-### 1. GET /exercises/:id
-- Return a single exercise by its id
-- Return 404 JSON error if not found: { "error": "Exercise not found" }
-
-### 2. GET /exercises
-Query parameters (all optional):
-- page (integer, default: 1)
-- limit (integer, default: 20, max: 100)
-- category (string, case-insensitive partial match)
-- body_part (string, case-insensitive partial match)
-- equipment (string, case-insensitive partial match)
-- muscle_group (string, case-insensitive partial match)
-- target (string, case-insensitive partial match)
-
-Response format:
-\`\`\`json
-{
-  "data": [ /* array of exercise objects */ ],
-  "total": 1324,
-  "page": 1,
-  "limit": 20,
-  "totalPages": 67
-}
-\`\`\`
-
-### 3. GET /exercises/random
-- Return 1 random exercise object
-
-### 4. GET /categories
-- Return sorted array of unique category strings
-
-### 5. GET /body-parts
-- Return sorted array of unique body_part strings
-
-### 6. GET /equipment
-- Return sorted array of unique equipment strings
-
-## Technical Requirements
-- Read DB connection string from an environment variable
-- Use parameterized queries (never interpolate user input into SQL)
-- Return JSON with Content-Type: application/json
-- Enable CORS for all origins (or read allowed origins from env var \`ALLOWED_ORIGINS\`)
-- Validate page/limit: must be positive integers; reject with 400 if invalid
-- Return 500 with { "error": "Internal server error" } on unexpected errors
-- Log each request: method, path, status code, duration in ms
-
-## Packages to use
-${fw.pkg}
-
-## Deliverables
-1. Complete, runnable source code (not pseudocode — every file needed)
-2. Brief setup instructions:
-   - Install dependencies
-   - Run: \`${fw.run}\`
-
-Write clean, production-quality code. Do not skip error handling.`;
+  return ExercisesI18n.t('setup', 'llmPrompt', {
+    frameworkLanguage: fw.lang,
+    frameworkName: fw.name,
+    databaseName: db.name,
+    schema: DB_SQL[dbKey],
+    packages: fw.pkg,
+    runCommand: fw.run,
+  });
 }
 
 // ══════════════════════════════════════════════════
@@ -1478,6 +1543,8 @@ let currentFw   = 'express';
 let currentLlmDb = 'postgresql';
 let currentBaseUrl = 'https://api.yourapp.com';
 let EXERCISES = null; // lazy-loaded when generate is clicked
+let generateStatusKey = '';
+let generateStatusParams = {};
 
 // ══════════════════════════════════════════════════
 // ── DB Setup ───────────────────────────────────────
@@ -1491,20 +1558,54 @@ const generateStatus = document.getElementById('generate-status');
 function switchDbTab(db) {
   currentDb = db;
   document.querySelectorAll('#db-tabs .tab-btn').forEach(t => {
-    t.classList.toggle('active', t.dataset.db === db);
+    const active = t.dataset.db === db;
+    t.classList.toggle('active', active);
+    t.setAttribute('aria-selected', String(active));
   });
   createSqlEl.textContent = DB_SQL[db];
 }
 
-function copyToClipboard(text, btn, resetLabel = 'Copy') {
-  navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copied!';
+async function writeClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  const copied = document.execCommand('copy');
+  textarea.remove();
+  if (!copied) throw new Error('Clipboard unavailable');
+}
+
+function copyToClipboard(text, btn, resetKey = 'copy') {
+  writeClipboard(text).then(() => {
+    btn.textContent = setupText('copied');
     btn.classList.add('copied');
     setTimeout(() => {
-      btn.textContent = resetLabel;
+      btn.textContent = setupText(resetKey);
       btn.classList.remove('copied');
     }, 2000);
+  }).catch(() => {
+    btn.textContent = setupText('copyFailed');
+    setTimeout(() => { btn.textContent = setupText(resetKey); }, 2000);
   });
+}
+
+function renderGenerateStatus() {
+  generateStatus.textContent = generateStatusKey
+    ? setupText(generateStatusKey, generateStatusParams)
+    : '';
+}
+
+function setGenerateStatus(key, params) {
+  generateStatusKey = key;
+  generateStatusParams = params || {};
+  renderGenerateStatus();
 }
 
 function escStr(val, db) {
@@ -1513,7 +1614,56 @@ function escStr(val, db) {
   return db === 'mssql' ? `N'${s}'` : `'${s}'`;
 }
 
-function buildInserts(exercises, db) {
+function taxonomyTranslation(pack, group, value) {
+  const taxonomy = pack && pack.taxonomy && pack.taxonomy[group];
+  return taxonomy && Object.prototype.hasOwnProperty.call(taxonomy, value)
+    ? taxonomy[value]
+    : null;
+}
+
+function translatedSecondaryMuscles(pack, values) {
+  if (!Array.isArray(values)) return null;
+  const translated = values.map(value => taxonomyTranslation(pack, 'muscles', value));
+  return translated.every(value => value !== null) ? translated : null;
+}
+
+function collectTranslationRows(exercises) {
+  const exercisesById = new Map(exercises.map(exercise => [exercise.id, exercise]));
+  const rows = [];
+
+  ExercisesI18n.getAvailableLocales().forEach(locale => {
+    const pack = ExercisesI18n.getPack(locale.code);
+    if (!pack || pack.isBase) return;
+
+    Object.entries(pack.records || {}).forEach(([exerciseId, record]) => {
+      const exercise = exercisesById.get(exerciseId);
+      if (!exercise) throw new Error(`Locale ${pack.code} references unknown exercise ${exerciseId}`);
+
+      const steps = Array.isArray(record.steps) ? record.steps.slice() : [];
+      rows.push({
+        exercise_id: exerciseId,
+        locale: pack.code,
+        name: record.name === undefined ? null : record.name,
+        category: taxonomyTranslation(pack, 'categories', exercise.category),
+        body_part: taxonomyTranslation(pack, 'bodyParts', exercise.body_part),
+        equipment: taxonomyTranslation(pack, 'equipment', exercise.equipment),
+        target: taxonomyTranslation(pack, 'targets', exercise.target),
+        muscle_group: taxonomyTranslation(pack, 'muscles', exercise.muscle_group),
+        secondary_muscles: translatedSecondaryMuscles(pack, exercise.secondary_muscles),
+        instructions: steps.join(' '),
+        instruction_steps: steps,
+      });
+    });
+  });
+
+  return rows;
+}
+
+function jsonValue(value) {
+  return value === null || value === undefined ? null : JSON.stringify(value);
+}
+
+function buildInserts(exercises, translations, db) {
   const lines = [];
   const header = db === 'mssql' ? 'BEGIN TRANSACTION;\nGO\n' : 'BEGIN;\n';
   const footer = db === 'mssql' ? '\nCOMMIT;\nGO' : '\nCOMMIT;';
@@ -1563,6 +1713,30 @@ function buildInserts(exercises, db) {
     }
   });
 
+  if (db === 'mssql' && translations.length) lines.push('GO');
+
+  translations.forEach((translation, i) => {
+    const vals = [
+      escStr(translation.exercise_id, db),
+      escStr(translation.locale, db),
+      escStr(translation.name, db),
+      escStr(translation.category, db),
+      escStr(translation.body_part, db),
+      escStr(translation.equipment, db),
+      escStr(translation.target, db),
+      escStr(translation.muscle_group, db),
+      escStr(jsonValue(translation.secondary_muscles), db),
+      escStr(translation.instructions, db),
+      escStr(jsonValue(translation.instruction_steps), db),
+    ].join(', ');
+
+    lines.push(`INSERT INTO exercise_translations (exercise_id, locale, name, category, body_part, equipment, target, muscle_group, secondary_muscles, instructions, instruction_steps) VALUES (${vals});`);
+
+    if (db === 'mssql' && (i + 1) % 50 === 0 && i + 1 < translations.length) {
+      lines.push('GO');
+    }
+  });
+
   lines.push(footer);
   return lines.join('\n');
 }
@@ -1571,32 +1745,47 @@ async function generateInsertSql() {
   generateBtn.disabled = true;
 
   try {
+    setGenerateStatus('loadingLocales');
+    try {
+      await ExercisesI18n.loadAllLocales();
+    } catch (error) {
+      setGenerateStatus('localeLoadError');
+      console.error(error);
+      return;
+    }
+
+    if (window.location.protocol === 'file:') {
+      setGenerateStatus('fileProtocolError');
+      return;
+    }
+
     if (!EXERCISES) {
-      generateStatus.textContent = 'Loading exercise data…';
+      setGenerateStatus('loading');
       const res = await fetch('data/exercises.json');
       if (!res.ok) throw new Error('Could not load exercises.json');
       EXERCISES = await res.json();
     }
 
-    generateStatus.textContent = 'Generating…';
+    setGenerateStatus('generating');
 
     await new Promise(r => setTimeout(r, 10));
 
-    const sql  = buildInserts(EXERCISES, currentDb);
-    const blob = new Blob([sql], { type: 'text/plain;charset=utf-8' });
+    const translations = collectTranslationRows(EXERCISES);
+    const sql  = buildInserts(EXERCISES, translations, currentDb);
+    const blob = new Blob(['\uFEFF', sql], { type: 'text/plain;charset=utf-8' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
     a.href     = url;
     a.download = `exercises_insert_${currentDb}.sql`;
     a.click();
     URL.revokeObjectURL(url);
-    generateStatus.textContent = `✓ Downloaded exercises_insert_${currentDb}.sql`;
+    setGenerateStatus('downloaded', { filename: `exercises_insert_${currentDb}.sql` });
   } catch (e) {
-    generateStatus.textContent = 'Error generating file.';
+    setGenerateStatus('generateError');
     console.error(e);
+  } finally {
+    generateBtn.disabled = false;
   }
-
-  generateBtn.disabled = false;
 }
 
 // Wire DB tab events
@@ -1626,7 +1815,9 @@ function renderApiCode() {
 function switchLangTab(lang) {
   currentLang = lang;
   document.querySelectorAll('#lang-tabs .tab-btn').forEach(t => {
-    t.classList.toggle('active', t.dataset.lang === lang);
+    const active = t.dataset.lang === lang;
+    t.classList.toggle('active', active);
+    t.setAttribute('aria-selected', String(active));
   });
   renderApiCode();
 }
@@ -1647,7 +1838,7 @@ function copyBlock(btn) {
 }
 
 // Init
-renderApiCode();
+switchLangTab('curl');
 
 // ══════════════════════════════════════════════════
 // ── Ask Your LLM ───────────────────────────────────
@@ -1655,42 +1846,53 @@ renderApiCode();
 
 const llmPromptBox  = document.getElementById('llm-prompt');
 const copyPromptBtn = document.getElementById('copy-prompt-btn');
+const COPY_ICON = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/></svg>`;
 
 function renderLlmPrompt() {
   llmPromptBox.value = buildLlmPrompt(currentFw, currentLlmDb);
 }
 
+function renderPromptCopyButton() {
+  copyPromptBtn.innerHTML = `${COPY_ICON}<span data-i18n="copyPrompt">${setupText('copyPrompt')}</span>`;
+  copyPromptBtn.classList.remove('copied');
+}
+
 document.querySelectorAll('#framework-tabs .selector-btn').forEach(btn => {
+  btn.setAttribute('aria-pressed', String(btn.classList.contains('active')));
   btn.addEventListener('click', () => {
     currentFw = btn.dataset.fw;
-    document.querySelectorAll('#framework-tabs .selector-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('#framework-tabs .selector-btn').forEach(b => {
+      const active = b === btn;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
     renderLlmPrompt();
   });
 });
 
 document.querySelectorAll('#llm-db-tabs .selector-btn').forEach(btn => {
+  btn.setAttribute('aria-pressed', String(btn.classList.contains('active')));
   btn.addEventListener('click', () => {
     currentLlmDb = btn.dataset.llmdb;
-    document.querySelectorAll('#llm-db-tabs .selector-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('#llm-db-tabs .selector-btn').forEach(b => {
+      const active = b === btn;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
     renderLlmPrompt();
   });
 });
 
 copyPromptBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText(llmPromptBox.value).then(() => {
-    copyPromptBtn.textContent = '✓ Copied!';
+  writeClipboard(llmPromptBox.value).then(() => {
+    copyPromptBtn.textContent = `✓ ${setupText('copied')}`;
     copyPromptBtn.classList.add('copied');
-    setTimeout(() => {
-      copyPromptBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M11 4V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h1"/></svg> Copy Prompt`;
-      copyPromptBtn.classList.remove('copied');
-    }, 2500);
+    setTimeout(renderPromptCopyButton, 2500);
+  }).catch(() => {
+    copyPromptBtn.textContent = setupText('copyFailed');
+    setTimeout(renderPromptCopyButton, 2000);
   });
 });
-
-// Init
-renderLlmPrompt();
 
 // ══════════════════════════════════════════════════
 // ── Scrollspy ──────────────────────────────────────
@@ -1710,6 +1912,25 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
 
 sections.forEach(s => observer.observe(s));
+
+languageSelect.addEventListener('change', async () => {
+  languageSelect.disabled = true;
+  try {
+    await ExercisesI18n.setLocale(languageSelect.value);
+    applyTranslations();
+  } catch (error) {
+    console.error(error);
+  } finally {
+    languageSelect.disabled = false;
+  }
+});
+
+ExercisesI18n.init().then(() => {
+  populateLanguageSelect();
+  applyTranslations();
+}).catch(error => {
+  console.error(error);
+});
 </script>
 </body>
 </html>
