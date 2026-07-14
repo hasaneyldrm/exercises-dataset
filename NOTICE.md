@@ -1,3 +1,5 @@
+**English** · [简体中文（非官方参考译文）](NOTICE.zh-CN.md)
+
 # Media Attribution & License
 
 The exercise **media** (thumbnail images and animation GIFs) in this repository
@@ -34,6 +36,6 @@ allow** — cloning this repo is not a license.
 
 ## Dataset (non-media)
 
-The exercise **data** (names, categories, body parts, equipment, targets,
-muscle groups, and multilingual instructions) is separate from the media and
+The exercise **data** (English and Simplified Chinese names, categories, body
+parts, equipment, targets, muscle groups, and multilingual instructions) is separate from the media and
 is released under the MIT License — see [`LICENSE`](LICENSE).

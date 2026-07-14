@@ -1,3 +1,5 @@
+**English** · [简体中文](README.zh-CN.md)
+
 <div align="center">
 
 # 💪 Exercises Dataset
@@ -33,6 +35,7 @@
 - 1,324 exercises with category, body-part, equipment, target and muscle-group data
 - an animation GIF + 180×180 thumbnail for every exercise (media © [Gym visual](https://gymvisual.com/) — see [License](#-license--use))
 - step-by-step instructions in 9 languages (🇬🇧 English, 🇪🇸 Spanish, 🇮🇹 Italian, 🇹🇷 Turkish, 🇷🇺 Russian, 🇨🇳 Chinese, 🇮🇳 Hindi, 🇵🇱 Polish, 🇰🇷 Korean)
+- Simplified Chinese metadata fields alongside the original English names and fitness terminology
 - the interactive browser (`index.html`) and developer setup guide (`setup.html`)
 
 ---
@@ -66,7 +69,9 @@ Each exercise entry contains:
 |---|---|
 | Unique ID | Numeric identifier (e.g. `"0001"`) |
 | Name | Full descriptive exercise name |
-| Category | Primary muscle group targeted |
+| Chinese Name | Simplified Chinese exercise name (`name_zh`) |
+| Category | Body-part category (same value as `body_part`) |
+| Chinese Metadata | Simplified Chinese category, body part, equipment, muscle-group, secondary-muscle, and target fields (`*_zh`) |
 | Target | Specific target muscle |
 | Muscle Group | Supporting / synergist muscles |
 | Equipment | Equipment required (or `body weight` for bodyweight) |
@@ -88,13 +93,15 @@ A fully client-side exercise explorer with:
 - Live search across all 1,324 exercises
 - Filter by category, equipment, and target muscle
 - Infinite scroll grid
+- Simplified Chinese interface by default, with a persistent English switch
+- Search and display in both Chinese and English
 - Click any card to see full details and instructions in English, Spanish, Italian, Turkish, Russian, Chinese, Hindi, Polish, or Korean
 
 ### `setup.html` — Developer Setup Guide
 
 A step-by-step guide for integrating the dataset into your own application:
 
-1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,324 INSERT statements, built entirely in your browser.
+1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,324 INSERT statements, built entirely in your browser. The dataset is embedded in the guide, so generation also works when `setup.html` is opened directly via `file://`.
 2. **API Integration** — Copy-paste client code in **JavaScript, Python, C#, Java, PHP, Go, and cURL** showing how to call your backend API. Enter your base URL and all examples update live.
 3. **Ask Your LLM** — A structured prompt (choose your framework + database) that you can paste into ChatGPT, Claude, or Gemini to generate a complete, production-ready REST API in one shot. Supports Express.js, FastAPI, ASP.NET Core, Spring Boot, Laravel, and Gin.
 
@@ -107,11 +114,16 @@ exercises-dataset/
 ├── data/
 │   ├── exercises.json        # Full dataset — 1,324 exercise records (JSON array)
 │   └── exercises.schema.json # JSON Schema (2020-12) describing every record
+├── scripts/
+│   ├── refine-zh-data.mjs    # Audit and normalize Simplified Chinese fields
+│   └── sync-embedded-data.mjs # Keep the HTML-embedded data in sync
 ├── images/                  # 1,324 × 180×180 thumbnails  (© Gym visual)
 ├── videos/                  # 1,324 × 180×180 animation GIFs  (© Gym visual)
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
 ├── setup.html               # Developer setup guide (DB import + API integration)
 ├── NOTICE.md                # Media attribution & license terms
+├── README.zh-CN.md          # Simplified Chinese README translation
+├── NOTICE.zh-CN.md          # Simplified Chinese NOTICE translation (informational)
 └── README.md
 ```
 
@@ -119,9 +131,12 @@ exercises-dataset/
 
 - **`data/exercises.json`** — The primary data file. A JSON array of 1,324 exercise objects with all metadata. `image` / `gif_url` point to the local 180×180 assets, and each record carries an `attribution` field; `media_id` holds the original media reference id.
 - **`data/exercises.schema.json`** — A [JSON Schema](https://json-schema.org/) (Draft 2020-12) that formally describes every field, its type and constraints. Use it to validate the dataset or your own additions with any standard JSON Schema validator.
+- **`scripts/refine-zh-data.mjs`** — Checks all delivered Chinese fields and applies the reviewed terminology corrections with `--write`; run without `--write` for a non-mutating audit.
+- **`scripts/sync-embedded-data.mjs`** — Synchronizes `data/exercises.json` into `index.html` and `setup.html`; use `--check` to verify that all three copies match without modifying files.
 - **`images/`, `videos/`** — 180×180 thumbnails and animation GIFs (© [Gym visual](https://gymvisual.com/), used with permission).
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
 - **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation.
+- **`README.zh-CN.md`, `NOTICE.zh-CN.md`** — Simplified Chinese translations for convenience. The English license and notice remain authoritative.
 - **`LICENSE`, `NOTICE.md`** — MIT (code/data) + the Gym visual media terms.
 
 ---
@@ -177,9 +192,13 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 |---|---|---|
 | `id` | `string` | Unique numeric identifier (e.g. `"0001"`) |
 | `name` | `string` | Full exercise name (e.g. `"3/4 Sit-up"`) |
+| `name_zh` | `string` | Simplified Chinese exercise name |
 | `category` | `string` | Body part category (e.g. `"upper arms"`, `"chest"`, `"back"`) |
+| `category_zh` | `string` | Simplified Chinese category |
 | `body_part` | `string` | Same as `category` — body part targeted |
+| `body_part_zh` | `string` | Simplified Chinese body part |
 | `equipment` | `string` | Required equipment (e.g. `"dumbbell"`, `"body weight"`) |
+| `equipment_zh` | `string` | Simplified Chinese equipment name |
 | `instructions.en` | `string` | Full step-by-step instructions in English |
 | `instructions.es` | `string` | Full step-by-step instructions in Spanish |
 | `instructions.it` | `string` | Full step-by-step instructions in Italian |
@@ -191,8 +210,11 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 | `instructions.ko` | `string` | Full step-by-step instructions in Korean |
 | `instruction_steps.<lang>` | `array[string]` | Same instructions split into an ordered array of steps, per language (`en`, `es`, `it`, `tr`, `ru`, `zh`, `hi`, `pl`, `ko`) |
 | `muscle_group` | `string` | Primary synergist muscle group |
+| `muscle_group_zh` | `string` | Simplified Chinese synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
+| `secondary_muscles_zh` | `array[string]` | Simplified Chinese names for additional muscles |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
+| `target_zh` | `string` | Simplified Chinese primary target muscle |
 | `media_id` | `string` | Original media reference id (e.g. `"2gPfomN"`) |
 | `image` | `string` | Path to the 180×180 thumbnail (e.g. `"images/0001-2gPfomN.jpg"`) |
 | `gif_url` | `string` | Path to the 180×180 animation GIF (e.g. `"videos/0001-2gPfomN.gif"`) |
@@ -205,9 +227,13 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 {
   "id": "0001",
   "name": "3/4 sit-up",
+  "name_zh": "3/4仰卧起坐",
   "category": "waist",
+  "category_zh": "腰腹部",
   "body_part": "waist",
+  "body_part_zh": "腰腹部",
   "equipment": "body weight",
+  "equipment_zh": "自重",
   "instructions": {
     "en": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
     "es": "Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. ...",
@@ -220,8 +246,11 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
     "ko": "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다. ..."
   },
   "muscle_group": "hip flexors",
+  "muscle_group_zh": "髋屈肌",
   "secondary_muscles": ["hip flexors", "lower back"],
+  "secondary_muscles_zh": ["髋屈肌", "下背肌群"],
   "target": "abs",
+  "target_zh": "腹肌",
   "media_id": "2gPfomN",
   "image": "images/0001-2gPfomN.jpg",
   "gif_url": "videos/0001-2gPfomN.gif",
@@ -326,6 +355,7 @@ print("Categories:", categories)
 
 # Access multilingual instructions
 ex = exercises[0]
+print(ex["name_zh"])             # Simplified Chinese exercise name
 print(ex["instructions"]["en"])  # English
 print(ex["instructions"]["es"])  # Spanish
 print(ex["instructions"]["it"])  # Italian
@@ -333,6 +363,8 @@ print(ex["instructions"]["tr"])  # Turkish
 print(ex["instructions"]["ru"])  # Russian
 print(ex["instructions"]["zh"])  # Chinese
 print(ex["instructions"]["hi"])  # Hindi
+print(ex["instructions"]["pl"])  # Polish
+print(ex["instructions"]["ko"])  # Korean
 ```
 
 ### Python — Load with Pandas
@@ -375,6 +407,7 @@ const byCategory = exercises.reduce((acc, ex) => {
 
 // Access multilingual instructions
 const ex = exercises[0];
+console.log(ex.name_zh);          // Simplified Chinese exercise name
 console.log(ex.instructions.en); // English
 console.log(ex.instructions.es); // Spanish
 console.log(ex.instructions.it); // Italian
@@ -392,9 +425,13 @@ console.log(ex.instructions.ko); // Korean
 interface Exercise {
   id: string;
   name: string;
+  name_zh: string;
   category: string;
+  category_zh: string;
   body_part: string;
+  body_part_zh: string;
   equipment: string;
+  equipment_zh: string;
   instructions: {
     en: string;
     es: string;
@@ -406,12 +443,26 @@ interface Exercise {
     pl: string;
     ko: string;
   };
+  instruction_steps: {
+    en: string[];
+    es: string[];
+    it: string[];
+    tr: string[];
+    ru: string[];
+    zh: string[];
+    hi: string[];
+    pl: string[];
+    ko: string[];
+  };
   muscle_group: string;
+  muscle_group_zh: string;
   secondary_muscles: string[];
+  secondary_muscles_zh: string[];
   target: string;
-  media_id: string | null;
-  image: string | null;
-  gif_url: string | null;
+  target_zh: string;
+  media_id: string;
+  image: string;
+  gif_url: string;
   attribution: string;
   created_at: string;
 }
@@ -430,5 +481,5 @@ console.log("First 6 exercises:", randomWorkout.map(e => e.name));
 This repository is a **developer setup wizard and structured exercise dataset** — exercise metadata, multilingual instruction translations, and 180×180 exercise media.
 
 - **Code, tooling, dataset structure, and instruction text** are released under the [MIT License](LICENSE).
-- **Exercise media (images & GIFs) is © [Gym visual](https://gymvisual.com/)** and redistributed here **with permission**, at 180×180 resolution — see [`NOTICE.md`](NOTICE.md) and the media exception in [`LICENSE`](LICENSE). Keep the `© Gym visual — https://gymvisual.com/` attribution intact. Reuse is governed by [Gym visual's Terms & Conditions](https://gymvisual.com/content/3-terms-and-conditions-of-use); obtain your own license there before reusing the media.
+- **Exercise media (images & GIFs) is © [Gym visual](https://gymvisual.com/)** and redistributed here **with permission**, at 180×180 resolution — see [`NOTICE.md`](NOTICE.md) ([informational Chinese translation](NOTICE.zh-CN.md)) and the media exception in [`LICENSE`](LICENSE). Keep the `© Gym visual — https://gymvisual.com/` attribution intact. Reuse is governed by [Gym visual's Terms & Conditions](https://gymvisual.com/content/3-terms-and-conditions-of-use); obtain your own license there before reusing the media.
 - This repository does **not** claim ownership of the underlying exercise content or media.

@@ -17,9 +17,12 @@
         "it": { "type": "string" },
         "tr": { "type": "string" },
         "ru": { "type": "string" },
-        "zh": { "type": "string" }
+        "zh": { "type": "string" },
+        "hi": { "type": "string" },
+        "pl": { "type": "string" },
+        "ko": { "type": "string" }
       },
-      "required": ["en", "es", "it", "tr", "ru", "zh"],
+      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko"],
       "additionalProperties": { "type": "string" }
     },
     "languageStepsMap": {
@@ -31,9 +34,12 @@
         "it": { "$ref": "#/$defs/steps" },
         "tr": { "$ref": "#/$defs/steps" },
         "ru": { "$ref": "#/$defs/steps" },
-        "zh": { "$ref": "#/$defs/steps" }
+        "zh": { "$ref": "#/$defs/steps" },
+        "hi": { "$ref": "#/$defs/steps" },
+        "pl": { "$ref": "#/$defs/steps" },
+        "ko": { "$ref": "#/$defs/steps" }
       },
-      "required": ["en", "es", "it", "tr", "ru", "zh"],
+      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko"],
       "additionalProperties": { "$ref": "#/$defs/steps" }
     },
     "steps": {
@@ -53,9 +59,19 @@
           "description": "Full exercise name (e.g. \"3/4 sit-up\").",
           "minLength": 1
         },
+        "name_zh": {
+          "type": "string",
+          "description": "Simplified Chinese exercise name.",
+          "minLength": 1
+        },
         "category": {
           "type": "string",
           "description": "Body part category. Mirrors body_part.",
+          "minLength": 1
+        },
+        "category_zh": {
+          "type": "string",
+          "description": "Simplified Chinese body part category. Mirrors body_part_zh.",
           "minLength": 1
         },
         "body_part": {
@@ -74,9 +90,19 @@
             "waist"
           ]
         },
+        "body_part_zh": {
+          "type": "string",
+          "description": "Simplified Chinese body part targeted.",
+          "minLength": 1
+        },
         "equipment": {
           "type": "string",
           "description": "Required equipment (e.g. \"dumbbell\", \"body weight\").",
+          "minLength": 1
+        },
+        "equipment_zh": {
+          "type": "string",
+          "description": "Simplified Chinese equipment name.",
           "minLength": 1
         },
         "instructions": {
@@ -92,14 +118,29 @@
           "description": "Primary synergist muscle group.",
           "minLength": 1
         },
+        "muscle_group_zh": {
+          "type": "string",
+          "description": "Simplified Chinese primary synergist muscle group.",
+          "minLength": 1
+        },
         "secondary_muscles": {
           "type": "array",
           "description": "Additional muscles involved.",
           "items": { "type": "string", "minLength": 1 }
         },
+        "secondary_muscles_zh": {
+          "type": "array",
+          "description": "Simplified Chinese names of the additional muscles involved.",
+          "items": { "type": "string", "minLength": 1 }
+        },
         "target": {
           "type": "string",
           "description": "Primary target muscle (e.g. \"biceps\", \"abs\").",
+          "minLength": 1
+        },
+        "target_zh": {
+          "type": "string",
+          "description": "Simplified Chinese primary target muscle.",
           "minLength": 1
         },
         "media_id": {
