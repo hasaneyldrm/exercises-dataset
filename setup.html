@@ -1754,11 +1754,6 @@ async function generateInsertSql() {
       return;
     }
 
-    if (window.location.protocol === 'file:') {
-      setGenerateStatus('fileProtocolError');
-      return;
-    }
-
     if (!EXERCISES) {
       setGenerateStatus('loading');
       const res = await fetch('data/exercises.json');

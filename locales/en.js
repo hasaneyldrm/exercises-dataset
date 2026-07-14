@@ -77,7 +77,6 @@ window.ExercisesI18n.registerLocale({
       generating: 'Generating…',
       downloaded: '✓ Downloaded {filename}',
       generateError: 'Error generating file.',
-      fileProtocolError: 'SQL generation cannot read data from file://. Start a local server with “python3 -m http.server 8000”, then open http://localhost:8000/setup.html.',
       localeLoadError: 'Could not load all registered translation packs.',
       mediaTitle: 'Media Files',
       mediaDesc: 'Place the media folders in your web server root or CDN. The <code>image</code> and <code>gif_url</code> columns store relative paths; prepend your base URL in your app.',

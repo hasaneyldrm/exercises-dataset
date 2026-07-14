@@ -77,7 +77,6 @@ window.ExercisesI18n.registerLocale({
       generating: '正在生成…',
       downloaded: '✓ 已下载 {filename}',
       generateError: '文件生成失败。',
-      fileProtocolError: '浏览器不允许通过 file:// 读取动作数据。请在仓库目录运行“python3 -m http.server 8000”，然后打开 http://localhost:8000/setup.html。',
       localeLoadError: '无法加载全部已注册翻译包。',
       mediaTitle: '媒体文件',
       mediaDesc: '将媒体目录放到 Web 服务器根目录或 CDN。<code>image</code> 和 <code>gif_url</code> 列保存相对路径，请在应用中拼接资源基础 URL。',

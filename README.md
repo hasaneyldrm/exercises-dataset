@@ -82,7 +82,7 @@ Each exercise entry contains:
 
 ## 🖥️ Interactive Browser & Developer Setup
 
-This repository includes two ready-to-use HTML tools. The exercise browser can be opened directly; SQL generation in the setup guide reads `data/exercises.json` and therefore requires a local HTTP server.
+This repository includes two ready-to-use HTML tools. The exercise browser can be opened directly; when deployed, the setup guide reads `data/exercises.json` from the repository when generating SQL.
 
 > **Note:** the browser displays each exercise's 180×180 thumbnail and animation GIF alongside its metadata and instructions.
 
@@ -103,14 +103,6 @@ A step-by-step guide for integrating the dataset into your own application:
 1. **Database Setup** — `CREATE TABLE` SQL for SQL Server, PostgreSQL, MySQL, and SQLite. Generate a ready-to-run `.sql` file with all 1,324 exercises and every registered non-base locale. Localized records use the generic `exercise_translations` table.
 2. **API Integration** — Copy-paste client code in **JavaScript, Python, C#, Java, PHP, Go, and cURL** showing how to call your backend API. Enter your base URL and all examples update live.
 3. **Ask Your LLM** — A structured prompt (choose your framework + database) that you can paste into ChatGPT, Claude, or Gemini to generate a complete, production-ready REST API in one shot. Supports Express.js, FastAPI, ASP.NET Core, Spring Boot, Laravel, and Gin.
-
-To generate SQL locally, serve the repository and open the setup page:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000/setup.html`.
 
 ---
 
@@ -159,7 +151,7 @@ exercises-dataset/
 - **`locales/`** — Shared i18n runtime and one self-contained translation file per locale. Browser localization is an overlay and does not modify the canonical JSON schema.
 - **`images/`, `videos/`** — 180×180 thumbnails and animation GIFs (© [Gym visual](https://gymvisual.com/), used with permission).
 - **`index.html`** — Standalone exercise browser. Open directly in any modern browser.
-- **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation. SQL generation requires HTTP access to the external JSON file.
+- **`setup.html`** — Developer guide for DB setup, API integration, and LLM-assisted backend generation. SQL generation loads the external dataset at runtime instead of embedding a duplicate copy in the page.
 - **`LICENSE`, `NOTICE.md`** — MIT (code/data) + the Gym visual media terms. [`NOTICE.zh-CN.md`](NOTICE.zh-CN.md) is an informational translation; the English notice remains authoritative.
 
 ---

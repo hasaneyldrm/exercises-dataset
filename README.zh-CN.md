@@ -51,13 +51,7 @@
 
 ### `setup.html`
 
-页面本身可以直接打开并切换语言，但浏览器通常禁止 `file://` 页面读取外部 JSON。生成 SQL 时请在仓库目录启动本地 HTTP 服务：
-
-```bash
-python3 -m http.server 8000
-```
-
-然后访问 `http://localhost:8000/setup.html`。
+`setup.html` 按上游方式在生成 SQL 时读取 `data/exercises.json`，因此应与仓库中的数据、语言包和媒体文件一起部署到 Web 服务器。页面不再重复内嵌整份动作数据。
 
 setup 支持 SQL Server、PostgreSQL、MySQL 和 SQLite，可导出：
 
