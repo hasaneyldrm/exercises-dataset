@@ -1,3 +1,5 @@
+[**English**](NOTICE.md) · [简体中文](NOTICE.zh-CN.md)
+
 # Media Attribution & License
 
 The exercise **media** (thumbnail images and animation GIFs) in this repository
