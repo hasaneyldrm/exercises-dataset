@@ -1,0 +1,31 @@
+name: Validate dataset
+
+on:
+  pull_request:
+    paths: &dataset_paths
+      - "data/exercises.json"
+      - "data/exercises.schema.json"
+      - "index.html"
+      - ".github/workflows/validate-dataset.yml"
+      - ".github/scripts/validate-dataset.mjs"
+  push:
+    branches: [main]
+    paths: *dataset_paths
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install --no-save ajv@8 ajv-formats@3
+
+      - run: node .github/scripts/validate-dataset.mjs
