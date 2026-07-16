@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a problem with the browser, setup guide, scripts, or documentation.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the browser, command, or file you used.
+      placeholder: |
+        1. Open index.html
+        2. Search for ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Chrome 126, macOS 15 / Node 20"
