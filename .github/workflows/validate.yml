@@ -1,0 +1,39 @@
+name: Validate dataset
+
+on:
+  push:
+    paths:
+      - data/exercises.json
+      - images/**
+      - videos/**
+      - scripts/validate-dataset.mjs
+      - .github/workflows/validate.yml
+  pull_request:
+    paths:
+      - data/exercises.json
+      - images/**
+      - videos/**
+      - scripts/validate-dataset.mjs
+      - .github/workflows/validate.yml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate exercises dataset
+        run: |
+          if [ ! -f scripts/validate-dataset.mjs ]; then
+            echo "Validator script is not present yet. Merge the validator PR first."
+            exit 0
+          fi
+
+          node scripts/validate-dataset.mjs
