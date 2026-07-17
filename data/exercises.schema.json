@@ -21,7 +21,8 @@
         "hi": { "type": "string" },
         "pl": { "type": "string" },
         "ko": { "type": "string" },
-        "fr": { "type": "string" }
+        "fr": { "type": "string" },
+        "pt": { "type": "string" }
       },
       "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr"],
       "additionalProperties": { "type": "string" }
@@ -39,7 +40,8 @@
         "hi": { "$ref": "#/$defs/steps" },
         "pl": { "$ref": "#/$defs/steps" },
         "ko": { "$ref": "#/$defs/steps" },
-        "fr": { "$ref": "#/$defs/steps" }
+        "fr": { "$ref": "#/$defs/steps" },
+        "pt": { "$ref": "#/$defs/steps" }
       },
       "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr"],
       "additionalProperties": { "$ref": "#/$defs/steps" }
