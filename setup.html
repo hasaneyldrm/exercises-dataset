@@ -1343,7 +1343,7 @@ import (
 const baseURL = "${base}"
 
 // GetExercisesFiltered fetches exercises with optional filters
-func GetExercisesFiltered(page, limit int, category, bodyPart, equipment string) (map[string]any, error) {
+func GetExercisesFiltered(page, limit int, category, bodyPart, equipment, target string) (map[string]any, error) {
     params := url.Values{
         "page":  {strconv.Itoa(page)},
         "limit": {strconv.Itoa(limit)},
@@ -1351,6 +1351,7 @@ func GetExercisesFiltered(page, limit int, category, bodyPart, equipment string)
     if category  != "" { params.Set("category",  category) }
     if bodyPart  != "" { params.Set("body_part", bodyPart) }
     if equipment != "" { params.Set("equipment", equipment) }
+    if target    != "" { params.Set("target",    target) }
 
     resp, err := http.Get(baseURL + "/exercises?" + params.Encode())
     if err != nil {
@@ -1364,7 +1365,7 @@ func GetExercisesFiltered(page, limit int, category, bodyPart, equipment string)
 
 // Usage
 func main() {
-    result, err := GetExercisesFiltered(1, 20, "Strength", "Chest", "")
+    result, err := GetExercisesFiltered(1, 20, "Strength", "Chest", "", "")
     if err != nil { panic(err) }
     data := result["data"].([]any)
     fmt.Println(data[0].(map[string]any)["name"]) // e.g. Barbell Bench Press
