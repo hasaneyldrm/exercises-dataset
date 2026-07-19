@@ -1,0 +1,802 @@
+{
+  "800": {
+    "en": "Keeping your upper arm stationary, exhale and curl the weight up towards your shoulder.",
+    "pt": "Mantendo o braço superior imóvel, expire e encurte o peso para cima em direção ao ombro."
+  },
+  "801": {
+    "en": "Inhale and slowly lower the weight back down to the starting position.",
+    "pt": "Inspire e baixe lentamente o peso de volta à posição inicial."
+  },
+  "802": {
+    "en": "Stand with your feet shoulder-width apart, holding a barbell in front of your thighs with an overhand grip.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, segurando uma barra à frente das coxas com uma pegada pronada."
+  },
+  "803": {
+    "en": "Slowly raise the barbell in front of you, keeping your arms straight and your palms facing down.",
+    "pt": "Eleve lentamente a barra à sua frente, mantendo os braços retos e as palmas das mãos viradas para baixo."
+  },
+  "804": {
+    "en": "Continue lifting until the barbell is slightly above shoulder level.",
+    "pt": "Continue a elevar até que a barra fique ligeiramente acima do nível dos ombros."
+  },
+  "805": {
+    "en": "Stand with your feet shoulder-width apart and hold a barbell with an overhand grip.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma barra com uma pegada pronada."
+  },
+  "806": {
+    "en": "Raise the barbell overhead, fully extending your arms.",
+    "pt": "Eleve a barra acima da cabeça, estendendo completamente os braços."
+  },
+  "807": {
+    "en": "Keeping your upper arms close to your head, slowly lower the barbell behind your head by bending your elbows.",
+    "pt": "Mantendo os braços superiores próximos da cabeça, baixe lentamente a barra atrás da cabeça, dobrando os cotovelos."
+  },
+  "808": {
+    "en": "Pause for a moment, then raise the barbell back to the starting position by extending your arms.",
+    "pt": "Faça uma pausa e, em seguida, eleve a barra de volta à posição inicial, estendendo os braços."
+  },
+  "809": {
+    "en": "Keep your elbows close to your torso and your upper arms stationary.",
+    "pt": "Mantenha os cotovelos próximos do tronco e os braços superiores imóveis."
+  },
+  "810": {
+    "en": "Exhale and curl the weights while contracting your biceps, bringing the barbell as close to your shoulders as possible.",
+    "pt": "Expire e encurte os pesos enquanto contrai o bicípite, aproximando a barra o máximo possível dos ombros."
+  },
+  "811": {
+    "en": "Raise your heels off the ground as high as possible, balancing on the balls of your feet.",
+    "pt": "Eleve os calcanhares do chão o mais alto possível, equilibrando-se na planta dos pés."
+  },
+  "812": {
+    "en": "Slowly lower your heels back down to the starting position.",
+    "pt": "Baixe lentamente os calcanhares de volta à posição inicial."
+  },
+  "813": {
+    "en": "Stand with your feet shoulder-width apart and hold a barbell in front of your chest with both hands, palms facing down.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma barra à frente do peito com ambas as mãos, palmas viradas para baixo."
+  },
+  "814": {
+    "en": "Engage your core and keep your back straight throughout the exercise.",
+    "pt": "Contraia o abdómen e mantenha as costas retas durante todo o exercício."
+  },
+  "815": {
+    "en": "Slowly twist your torso to the right, pivoting on your feet and hips, while keeping your lower body stable.",
+    "pt": "Rode lentamente o tronco para a direita, pivotando sobre os pés e a anca, mantendo a parte inferior do corpo estável."
+  },
+  "816": {
+    "en": "Repeat the twist to the left side.",
+    "pt": "Repita a rotação para o lado esquerdo."
+  },
+  "817": {
+    "en": "Continue alternating twists for the desired number of repetitions.",
+    "pt": "Continue a alternar as rotações pelo número desejado de repetições."
+  },
+  "818": {
+    "en": "Stand with your feet shoulder-width apart and hold a barbell with an underhand grip, hands wider than shoulder-width apart.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma barra com uma pegada supinada, mãos mais afastadas do que a largura dos ombros."
+  },
+  "819": {
+    "en": "Keep your back straight and your elbows close to your torso.",
+    "pt": "Mantenha as costas retas e os cotovelos próximos do tronco."
+  },
+  "820": {
+    "en": "Exhale and curl the barbell up towards your shoulders, keeping your upper arms stationary.",
+    "pt": "Expire e encurte a barra para cima em direção aos ombros, mantendo os braços superiores imóveis."
+  },
+  "821": {
+    "en": "Inhale and slowly lower the barbell back to the starting position, fully extending your arms.",
+    "pt": "Inspire e baixe lentamente a barra de volta à posição inicial, estendendo completamente os braços."
+  },
+  "822": {
+    "en": "Stand with your feet shoulder-width apart and hold the barbell with an overhand grip, slightly wider than shoulder-width.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure a barra com uma pegada pronada, ligeiramente mais afastada do que a largura dos ombros."
+  },
+  "823": {
+    "en": "Lift the barbell to shoulder height, keeping your elbows slightly in front of the bar.",
+    "pt": "Eleve a barra até à altura dos ombros, mantendo os cotovelos ligeiramente à frente da barra."
+  },
+  "824": {
+    "en": "Stand up straight with your feet shoulder-width apart and hold a barbell with an overhand grip, hands wider than shoulder-width apart.",
+    "pt": "Mantenha-se de pé, direito, com os pés à largura dos ombros e segure uma barra com uma pegada pronada, mãos mais afastadas do que a largura dos ombros."
+  },
+  "825": {
+    "en": "Let the barbell hang at arm's length in front of your thighs, with your palms facing away from your body.",
+    "pt": "Deixe a barra pendurada à distância dos braços à frente das coxas, com as palmas das mãos viradas para longe do corpo."
+  },
+  "826": {
+    "en": "Keeping your upper arms stationary, exhale and curl the barbell upward by contracting your biceps.",
+    "pt": "Mantendo os braços superiores imóveis, expire e encurte a barra para cima, contraindo o bicípite."
+  },
+  "827": {
+    "en": "Stand in front of a bench or step with a barbell resting on your upper back.",
+    "pt": "Mantenha-se de pé em frente a um banco ou degrau com uma barra apoiada nas costas superiores."
+  },
+  "828": {
+    "en": "Place one foot on the bench or step, ensuring your entire foot is in contact with the surface.",
+    "pt": "Coloque um pé no banco ou degrau, garantindo que todo o pé está em contacto com a superfície."
+  },
+  "829": {
+    "en": "Push through your heel and step up onto the bench or step, fully extending your hip and knee.",
+    "pt": "Empurre através do calcanhar e suba para o banco ou degrau, estendendo completamente a anca e o joelho."
+  },
+  "830": {
+    "en": "Pause briefly at the top, then lower yourself back down to the starting position.",
+    "pt": "Faça uma breve pausa no topo e, em seguida, baixe-se de volta à posição inicial."
+  },
+  "831": {
+    "en": "Repeat with the opposite leg.",
+    "pt": "Repita com a perna oposta."
+  },
+  "832": {
+    "en": "Hold the barbell across your upper back, resting it on your traps.",
+    "pt": "Segure a barra sobre as costas superiores, apoiando-a nos trapézios."
+  },
+  "833": {
+    "en": "Keeping your back straight, hinge forward at the hips, pushing your glutes back.",
+    "pt": "Mantendo as costas retas, incline-se para a frente a partir da anca, empurrando os glúteos para trás."
+  },
+  "834": {
+    "en": "Engage your glutes and hamstrings to return to the starting position.",
+    "pt": "Contraia os glúteos e os isquiotibiais para regressar à posição inicial."
+  },
+  "835": {
+    "en": "Bend at your hips and lower the barbell towards the ground, keeping your back straight and your knees slightly bent.",
+    "pt": "Dobre a partir da anca e baixe a barra em direção ao chão, mantendo as costas retas e os joelhos ligeiramente dobrados."
+  },
+  "836": {
+    "en": "Lower the barbell until you feel a stretch in your hamstrings.",
+    "pt": "Baixe a barra até sentir um alongamento nos isquiotibiais."
+  },
+  "837": {
+    "en": "Engage your hamstrings and glutes to lift the barbell back up to the starting position.",
+    "pt": "Contraia os isquiotibiais e os glúteos para elevar a barra de volta à posição inicial."
+  },
+  "838": {
+    "en": "Stand with your feet wider than shoulder-width apart, toes pointing outwards.",
+    "pt": "Mantenha-se de pé com os pés mais afastados do que a largura dos ombros, pontas dos pés viradas para fora."
+  },
+  "839": {
+    "en": "Place a barbell on the ground in front of you, centered between your feet.",
+    "pt": "Coloque uma barra no chão à sua frente, centrada entre os pés."
+  },
+  "840": {
+    "en": "Bend your knees and lower your hips, keeping your back straight and chest up, to grip the barbell with an overhand grip.",
+    "pt": "Dobre os joelhos e baixe a anca, mantendo as costas retas e o peito para cima, para agarrar a barra com uma pegada pronada."
+  },
+  "841": {
+    "en": "Engage your core and drive through your heels to lift the barbell off the ground, extending your hips and knees simultaneously.",
+    "pt": "Contraia o abdómen e impulsione através dos calcanhares para elevar a barra do chão, estendendo a anca e os joelhos simultaneamente."
+  },
+  "842": {
+    "en": "As you lift, keep your chest up and back straight, and push your hips forward to fully engage your glutes.",
+    "pt": "Ao elevar, mantenha o peito para cima e as costas retas, e empurre a anca para a frente para contrair totalmente os glúteos."
+  },
+  "843": {
+    "en": "Pause for a moment at the top, then slowly lower the barbell back down to the starting position, maintaining control throughout the movement.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe lentamente a barra de volta à posição inicial, mantendo o controle durante todo o movimento."
+  },
+  "844": {
+    "en": "Start by standing with your feet shoulder-width apart, holding a barbell at shoulder height with an overhand grip.",
+    "pt": "Comece por se manter de pé com os pés à largura dos ombros, segurando uma barra à altura dos ombros com uma pegada pronada."
+  },
+  "845": {
+    "en": "Lower into a squat position by bending your knees and pushing your hips back.",
+    "pt": "Baixe para uma posição de agachamento, dobrando os joelhos e empurrando a anca para trás."
+  },
+  "846": {
+    "en": "As you reach the bottom of the squat, explosively drive through your heels to stand up, simultaneously pressing the barbell overhead.",
+    "pt": "Ao atingir o ponto mais baixo do agachamento, impulsione explosivamente através dos calcanhares para se levantar, empurrando simultaneamente a barra acima da cabeça."
+  },
+  "847": {
+    "en": "Lower the barbell back to shoulder height as you lower back into the squat position.",
+    "pt": "Baixe a barra de volta à altura dos ombros enquanto volta a descer para a posição de agachamento."
+  },
+  "848": {
+    "en": "Stand with your feet shoulder-width apart and hold a barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma barra com uma pegada pronada, mãos ligeiramente mais afastadas do que a largura dos ombros."
+  },
+  "849": {
+    "en": "Let the barbell hang in front of your thighs, arms fully extended.",
+    "pt": "Deixe a barra pendurada à frente das coxas, braços completamente estendidos."
+  },
+  "850": {
+    "en": "Keeping your back straight and core engaged, exhale and lift the barbell straight up towards your chin, leading with your elbows.",
+    "pt": "Mantendo as costas retas e o abdómen contraído, expire e eleve a barra diretamente para cima em direção ao queixo, liderando com os cotovelos."
+  },
+  "851": {
+    "en": "Pause for a moment at the top, then inhale and slowly lower the barbell back down to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, inspire e baixe lentamente a barra de volta à posição inicial."
+  },
+  "852": {
+    "en": "Keeping your back straight, exhale and lift the barbell straight up towards your chin, leading with your elbows.",
+    "pt": "Mantendo as costas retas, expire e eleve a barra diretamente para cima em direção ao queixo, liderando com os cotovelos."
+  },
+  "853": {
+    "en": "Keeping your core engaged and back straight, exhale as you lift the barbell straight up towards your chin, leading with your elbows.",
+    "pt": "Mantendo o abdómen contraído e as costas retas, expire ao elevar a barra diretamente para cima em direção ao queixo, liderando com os cotovelos."
+  },
+  "854": {
+    "en": "Pause for a moment at the top, then inhale as you slowly lower the barbell back down to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, inspire ao baixar lentamente a barra de volta à posição inicial."
+  },
+  "855": {
+    "en": "Lower the barbell slowly towards your chest, keeping your elbows slightly flared out.",
+    "pt": "Baixe a barra lentamente em direção ao peito, mantendo os cotovelos ligeiramente abertos para fora."
+  },
+  "856": {
+    "en": "Grasp the barbell with a wide reverse grip, slightly wider than shoulder-width apart.",
+    "pt": "Agarre a barra com uma pegada invertida ampla, ligeiramente mais afastada do que a largura dos ombros."
+  },
+  "857": {
+    "en": "Lower the barbell slowly towards your chest, keeping your elbows tucked in and your wrists straight.",
+    "pt": "Baixe a barra lentamente em direção ao peito, mantendo os cotovelos junto ao corpo e os punhos retos."
+  },
+  "858": {
+    "en": "Engage your core and keep your chest up as you lower your body down into a squat, pushing your hips back and bending your knees.",
+    "pt": "Contraia o abdómen e mantenha o peito para cima ao baixar o corpo para um agachamento, empurrando a anca para trás e dobrando os joelhos."
+  },
+  "859": {
+    "en": "Stand with your feet shoulder-width apart and hold a barbell with an overhand grip, hands wider than shoulder-width apart.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma barra com uma pegada pronada, mãos mais afastadas do que a largura dos ombros."
+  },
+  "860": {
+    "en": "Sit on a bench with your feet flat on the ground and your forearms resting on your thighs, holding a barbell with an underhand grip.",
+    "pt": "Sente-se num banco com os pés apoiados no chão e os antebraços apoiados nas coxas, segurando uma barra com uma pegada supinada."
+  },
+  "861": {
+    "en": "Allow the barbell to roll down to your fingertips, keeping your wrists straight.",
+    "pt": "Deixe a barra rolar até às pontas dos dedos, mantendo os punhos retos."
+  },
+  "862": {
+    "en": "Slowly curl the barbell up towards your forearms by flexing your wrists.",
+    "pt": "Encurte lentamente a barra para cima em direção aos antebraços, fletindo os punhos."
+  },
+  "863": {
+    "en": "Hold a barbell with an underhand grip, palms facing up, and your hands shoulder-width apart.",
+    "pt": "Segure uma barra com uma pegada supinada, palmas das mãos viradas para cima, e as mãos à largura dos ombros."
+  },
+  "864": {
+    "en": "Slowly curl your wrists upward, bringing the barbell towards your forearms.",
+    "pt": "Encurte lentamente os punhos para cima, aproximando a barra dos antebraços."
+  },
+  "865": {
+    "en": "Hold the barbell in the crooks of your elbows, with your hands gripping the bar for stability.",
+    "pt": "Segure a barra na dobra dos cotovelos, com as mãos a agarrar a barra para estabilidade."
+  },
+  "866": {
+    "en": "Stand with your feet shoulder-width apart and your arms by your sides.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e os braços ao longo do corpo."
+  },
+  "867": {
+    "en": "Bend forward at the waist, keeping your back straight and your knees slightly bent.",
+    "pt": "Incline-se para a frente a partir da cintura, mantendo as costas retas e os joelhos ligeiramente dobrados."
+  },
+  "868": {
+    "en": "Reach down towards your toes with your hands, keeping your legs as straight as possible.",
+    "pt": "Estenda as mãos em direção aos dedos dos pés, mantendo as pernas o mais retas possível."
+  },
+  "869": {
+    "en": "Hold one end of the rope in each hand, with your palms facing each other.",
+    "pt": "Segure uma extremidade da corda em cada mão, com as palmas das mãos viradas uma para a outra."
+  },
+  "870": {
+    "en": "Raise your arms to shoulder height, keeping your elbows slightly bent.",
+    "pt": "Eleve os braços até à altura dos ombros, mantendo os cotovelos ligeiramente dobrados."
+  },
+  "871": {
+    "en": "Begin making alternating waves with the ropes by rapidly raising and lowering each arm.",
+    "pt": "Comece a fazer ondas alternadas com as cordas, elevando e baixando rapidamente cada braço."
+  },
+  "872": {
+    "en": "Continue for the desired duration or number of repetitions.",
+    "pt": "Continue pela duração ou número de repetições desejado."
+  },
+  "873": {
+    "en": "Lift your knees slightly off the ground, keeping your back flat and your core engaged.",
+    "pt": "Eleve os joelhos ligeiramente do chão, mantendo as costas planas e o abdómen contraído."
+  },
+  "874": {
+    "en": "Move your right hand and left foot forward simultaneously, followed by your left hand and right foot.",
+    "pt": "Mova a mão direita e o pé esquerdo para a frente simultaneamente, seguidos da mão esquerda e do pé direito."
+  },
+  "875": {
+    "en": "Continue crawling forward, alternating your hand and foot movements.",
+    "pt": "Continue a rastejar para a frente, alternando os movimentos das mãos e dos pés."
+  },
+  "876": {
+    "en": "Maintain a steady pace and keep your core tight throughout the exercise.",
+    "pt": "Mantenha um ritmo constante e o abdómen contraído durante todo o exercício."
+  },
+  "877": {
+    "en": "Continue for the desired distance or time.",
+    "pt": "Continue pela distância ou tempo desejado."
+  },
+  "878": {
+    "en": "Interlace your fingers behind your head with your elbows pointing outwards.",
+    "pt": "Entrelace os dedos atrás da cabeça com os cotovelos virados para fora."
+  },
+  "879": {
+    "en": "Slowly squeeze your shoulder blades together and push your chest forward.",
+    "pt": "Contraia lentamente as omoplatas e empurre o peito para a frente."
+  },
+  "880": {
+    "en": "Hold the stretch for 15-30 seconds.",
+    "pt": "Mantenha o alongamento durante 15-30 segundos."
+  },
+  "881": {
+    "en": "Release the stretch and repeat as desired.",
+    "pt": "Solte o alongamento e repita conforme desejado."
+  },
+  "882": {
+    "en": "Sit on the edge of a bench or chair with your hands gripping the edge next to your hips.",
+    "pt": "Sente-se na borda de um banco ou cadeira com as mãos a agarrar a borda junto à anca."
+  },
+  "883": {
+    "en": "Slide your butt off the bench and straighten your legs in front of you, keeping your heels on the ground.",
+    "pt": "Deslize os glúteos para fora do banco e estenda as pernas à sua frente, mantendo os calcanhares no chão."
+  },
+  "884": {
+    "en": "Bend your elbows and lower your body towards the ground, keeping your back close to the bench.",
+    "pt": "Dobre os cotovelos e baixe o corpo em direção ao chão, mantendo as costas próximas do banco."
+  },
+  "885": {
+    "en": "Sit on the edge of a bench or chair with your hands gripping the edge, fingers pointing forward.",
+    "pt": "Sente-se na borda de um banco ou cadeira com as mãos a agarrar a borda, dedos virados para a frente."
+  },
+  "886": {
+    "en": "Slide your butt off the bench, supporting your weight with your hands.",
+    "pt": "Deslize os glúteos para fora do banco, apoiando o peso com as mãos."
+  },
+  "887": {
+    "en": "Push yourself back up to the starting position by straightening your arms.",
+    "pt": "Empurre-se de volta à posição inicial, estendendo os braços."
+  },
+  "888": {
+    "en": "Sit on a bench with your back against the bench and your feet flat on the ground.",
+    "pt": "Sente-se num banco com as costas apoiadas no banco e os pés apoiados no chão."
+  },
+  "889": {
+    "en": "Place your hands on the bench for support.",
+    "pt": "Coloque as mãos no banco para apoio."
+  },
+  "890": {
+    "en": "Engage your glutes and hamstrings, then lift your hips off the bench until your body forms a straight line from your knees to your shoulders.",
+    "pt": "Contraia os glúteos e os isquiotibiais e, em seguida, eleve a anca do banco até que o corpo forme uma linha reta dos joelhos aos ombros."
+  },
+  "891": {
+    "en": "Position yourself under a bar or a sturdy horizontal surface that is at chest height.",
+    "pt": "Posicione-se sob uma barra ou uma superfície horizontal resistente que esteja à altura do peito."
+  },
+  "892": {
+    "en": "Grab the bar or surface with an overhand grip, slightly wider than shoulder-width apart.",
+    "pt": "Agarre a barra ou superfície com uma pegada pronada, ligeiramente mais afastada do que a largura dos ombros."
+  },
+  "893": {
+    "en": "Hang with your arms fully extended and your body straight.",
+    "pt": "Pendure-se com os braços completamente estendidos e o corpo reto."
+  },
+  "894": {
+    "en": "Pull your chest towards the bar or surface by squeezing your shoulder blades together and bending your elbows.",
+    "pt": "Puxe o peito em direção à barra ou superfície, contraindo as omoplatas e dobrando os cotovelos."
+  },
+  "895": {
+    "en": "Continue pulling until your chin is above the bar or surface.",
+    "pt": "Continue a puxar até que o queixo fique acima da barra ou superfície."
+  },
+  "896": {
+    "en": "Lower yourself back down to the starting position with control.",
+    "pt": "Baixe-se de volta à posição inicial com controle."
+  },
+  "897": {
+    "en": "Extend your arms out to the sides, perpendicular to your body.",
+    "pt": "Estenda os braços para os lados, perpendicularmente ao corpo."
+  },
+  "898": {
+    "en": "Keeping your knees together, slowly lower them to one side, aiming to touch the ground with your knees.",
+    "pt": "Mantendo os joelhos juntos, baixe-os lentamente para um lado, com o objetivo de tocar o chão com os joelhos."
+  },
+  "899": {
+    "en": "Pause for a moment, then engage your core and slowly lift your knees back to the starting position.",
+    "pt": "Faça uma pausa e, em seguida, contraia o abdómen e eleve lentamente os joelhos de volta à posição inicial."
+  },
+  "900": {
+    "en": "Sit on a bench with your legs spread apart and your feet flat on the ground.",
+    "pt": "Sente-se num banco com as pernas afastadas e os pés apoiados no chão."
+  },
+  "901": {
+    "en": "Hold a dumbbell in one hand and place your elbow on the inside of your thigh, just above the knee.",
+    "pt": "Segure um halter numa mão e coloque o cotovelo na parte interna da coxa, logo acima do joelho."
+  },
+  "902": {
+    "en": "With your palm facing up, curl the dumbbell towards your shoulder while keeping your upper arm stationary.",
+    "pt": "Com a palma da mão virada para cima, encurte o halter em direção ao ombro, mantendo o braço superior imóvel."
+  },
+  "903": {
+    "en": "Squeeze your biceps at the top of the movement, then slowly lower the dumbbell back to the starting position.",
+    "pt": "Contraia o bicípite no ponto mais alto do movimento e, em seguida, baixe lentamente o halter de volta à posição inicial."
+  },
+  "904": {
+    "en": "Hang from a pull-up bar with your palms facing towards you and your hands shoulder-width apart.",
+    "pt": "Pendure-se numa barra de dominadas com as palmas das mãos viradas para si e as mãos à largura dos ombros."
+  },
+  "905": {
+    "en": "Engage your core and pull yourself up towards the bar, focusing on using your biceps to lift your body.",
+    "pt": "Contraia o abdómen e puxe-se para cima em direção à barra, concentrando-se em usar o bicípite para elevar o corpo."
+  },
+  "906": {
+    "en": "Pause for a moment at the top, then slowly lower yourself back down to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe-se lentamente de volta à posição inicial."
+  },
+  "907": {
+    "en": "Hang from a pull-up bar with your palms facing away from you and your hands shoulder-width apart.",
+    "pt": "Pendure-se numa barra de dominadas com as palmas das mãos viradas para longe de si e as mãos à largura dos ombros."
+  },
+  "908": {
+    "en": "Engage your core and pull yourself up by bending your elbows, bringing your chest towards the bar.",
+    "pt": "Contraia o abdómen e puxe-se para cima, dobrando os cotovelos e aproximando o peito da barra."
+  },
+  "909": {
+    "en": "Pause at the top of the movement, then slowly lower yourself back down to the starting position.",
+    "pt": "Faça uma pausa no ponto mais alto do movimento e, em seguida, baixe-se lentamente de volta à posição inicial."
+  },
+  "910": {
+    "en": "Start by placing your hands on a raised surface, such as a bench or parallel bars, with your palms facing down and fingers pointing forward.",
+    "pt": "Comece por colocar as mãos numa superfície elevada, como um banco ou barras paralelas, com as palmas das mãos viradas para baixo e os dedos virados para a frente."
+  },
+  "911": {
+    "en": "Extend your legs out in front of you, keeping your heels on the ground and your body straight.",
+    "pt": "Estenda as pernas à sua frente, mantendo os calcanhares no chão e o corpo reto."
+  },
+  "912": {
+    "en": "Lower your body by bending your elbows, keeping them close to your sides, until your upper arms are parallel to the ground.",
+    "pt": "Baixe o corpo dobrando os cotovelos, mantendo-os próximos do corpo, até que os braços superiores fiquem paralelos ao chão."
+  },
+  "913": {
+    "en": "Pause for a moment, then push through your palms to straighten your arms and lift your body back up to the starting position.",
+    "pt": "Faça uma pausa e, em seguida, empurre através das palmas das mãos para estender os braços e elevar o corpo de volta à posição inicial."
+  },
+  "914": {
+    "en": "Jump up explosively, extending your hips, knees, and ankles.",
+    "pt": "Salte explosivamente, estendendo a anca, os joelhos e os tornozelos."
+  },
+  "915": {
+    "en": "While in mid-air, quickly bring your feet together.",
+    "pt": "Enquanto estiver no ar, junte rapidamente os pés."
+  },
+  "916": {
+    "en": "Land softly on the balls of your feet and immediately drop back into a squat position.",
+    "pt": "Aterre suavemente na planta dos pés e baixe imediatamente de volta para uma posição de agachamento."
+  },
+  "917": {
+    "en": "Start by lying on your side with your legs extended and stacked on top of each other.",
+    "pt": "Comece por se deitar de lado com as pernas estendidas e empilhadas uma sobre a outra."
+  },
+  "918": {
+    "en": "Place your forearm on the ground directly below your shoulder, with your elbow bent at a 90-degree angle.",
+    "pt": "Coloque o antebraço no chão diretamente abaixo do ombro, com o cotovelo dobrado num ângulo de 90 graus."
+  },
+  "919": {
+    "en": "Engage your core and lift your hips off the ground, creating a straight line from your head to your feet.",
+    "pt": "Contraia o abdómen e eleve a anca do chão, criando uma linha reta da cabeça aos pés."
+  },
+  "920": {
+    "en": "Hold this position for the desired amount of time.",
+    "pt": "Mantenha esta posição pelo período de tempo desejado."
+  },
+  "921": {
+    "en": "Lower your hips back down to the ground and repeat on the other side.",
+    "pt": "Baixe a anca de volta ao chão e repita do outro lado."
+  },
+  "922": {
+    "en": "Kneel down on the ground with your knees hip-width apart.",
+    "pt": "Ajoelhe-se no chão com os joelhos à largura da anca."
+  },
+  "923": {
+    "en": "Place your hands on the ground in front of you, shoulder-width apart, fingers pointing forward.",
+    "pt": "Coloque as mãos no chão à sua frente, à largura dos ombros, dedos virados para a frente."
+  },
+  "924": {
+    "en": "Extend your legs straight behind you, balancing on your toes and hands, forming a straight line from head to heels.",
+    "pt": "Estenda as pernas retas para trás, equilibrando-se nas pontas dos pés e nas mãos, formando uma linha reta da cabeça aos calcanhares."
+  },
+  "925": {
+    "en": "Bend your elbows and lower your upper body towards the ground, keeping your elbows close to your sides.",
+    "pt": "Dobre os cotovelos e baixe a parte superior do corpo em direção ao chão, mantendo os cotovelos próximos do corpo."
+  },
+  "926": {
+    "en": "Pause for a moment at the bottom, then push through your hands to straighten your arms and return to the starting position.",
+    "pt": "Faça uma pausa no ponto mais baixo e, em seguida, empurre através das mãos para estender os braços e regressar à posição inicial."
+  },
+  "927": {
+    "en": "Lie on your side with your legs extended and your head supported by your arm.",
+    "pt": "Deite-se de lado com as pernas estendidas e a cabeça apoiada pelo braço."
+  },
+  "928": {
+    "en": "Hold your upper arm against your side and bend your elbow to curl your forearm towards your shoulder.",
+    "pt": "Mantenha o braço superior junto ao corpo e dobre o cotovelo para encurtar o antebraço em direção ao ombro."
+  },
+  "929": {
+    "en": "Pause for a moment at the top, then slowly lower your forearm back down to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe lentamente o antebraço de volta à posição inicial."
+  },
+  "930": {
+    "en": "Stand with your feet shoulder-width apart, holding onto a sturdy object or suspension trainer with your arms extended.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, segurando um objeto resistente ou um treinador de suspensão com os braços estendidos."
+  },
+  "931": {
+    "en": "Lower your body into a squat position, keeping your back straight and your knees behind your toes.",
+    "pt": "Baixe o corpo para uma posição de agachamento, mantendo as costas retas e os joelhos atrás das pontas dos pés."
+  },
+  "932": {
+    "en": "From the squat position, pull your body up towards the object or suspension trainer, squeezing your shoulder blades together.",
+    "pt": "A partir da posição de agachamento, puxe o corpo para cima em direção ao objeto ou treinador de suspensão, contraindo as omoplatas."
+  },
+  "933": {
+    "en": "Stand with your feet shoulder-width apart, holding a towel in front of you with your palms facing down.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, segurando uma toalha à sua frente com as palmas das mãos viradas para baixo."
+  },
+  "934": {
+    "en": "Bend your knees and lower your body into a squat position, keeping your back straight and your chest up.",
+    "pt": "Dobre os joelhos e baixe o corpo para uma posição de agachamento, mantendo as costas retas e o peito para cima."
+  },
+  "935": {
+    "en": "As you lower into the squat, simultaneously pull the towel towards your chest, squeezing your shoulder blades together.",
+    "pt": "Ao baixar para o agachamento, puxe simultaneamente a toalha em direção ao peito, contraindo as omoplatas."
+  },
+  "936": {
+    "en": "Pause for a moment at the bottom of the squat, then slowly return to the starting position while extending your arms.",
+    "pt": "Faça uma pausa no ponto mais baixo do agachamento e, em seguida, regresse lentamente à posição inicial enquanto estende os braços."
+  },
+  "937": {
+    "en": "Stand with your feet shoulder-width apart, toes pointing forward.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, pontas dos pés viradas para a frente."
+  },
+  "938": {
+    "en": "Place your hands on a wall or stable surface for balance.",
+    "pt": "Coloque as mãos numa parede ou superfície estável para equilíbrio."
+  },
+  "939": {
+    "en": "Slowly raise your heels off the ground, lifting your body weight onto the balls of your feet.",
+    "pt": "Eleve lentamente os calcanhares do chão, transferindo o peso corporal para a planta dos pés."
+  },
+  "940": {
+    "en": "Stand with your feet shoulder-width apart, knees slightly bent, and hold a dumbbell in one hand with a neutral grip.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, joelhos ligeiramente dobrados, e segure um halter numa mão com uma pegada neutra."
+  },
+  "941": {
+    "en": "Bend forward at the hips, keeping your back straight and your core engaged.",
+    "pt": "Incline-se para a frente a partir da anca, mantendo as costas retas e o abdómen contraído."
+  },
+  "942": {
+    "en": "Pull the dumbbell up towards your chest, keeping your elbow close to your body and squeezing your shoulder blades together.",
+    "pt": "Puxe o halter para cima em direção ao peito, mantendo o cotovelo próximo do corpo e contraindo as omoplatas."
+  },
+  "943": {
+    "en": "Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe lentamente o halter de volta à posição inicial."
+  },
+  "944": {
+    "en": "Bend forward at the waist, keeping your back straight and your core engaged.",
+    "pt": "Incline-se para a frente a partir da cintura, mantendo as costas retas e o abdómen contraído."
+  },
+  "945": {
+    "en": "Extend your arms straight in front of you, gripping the bar or handles with a close grip.",
+    "pt": "Estenda os braços retos à sua frente, agarrando a barra ou pegas com uma pegada fechada."
+  },
+  "946": {
+    "en": "Pull the bar or handles towards your body, squeezing your shoulder blades together.",
+    "pt": "Puxe a barra ou pegas em direção ao corpo, contraindo as omoplatas."
+  },
+  "947": {
+    "en": "Pause for a moment at the top of the movement, then slowly release and return to the starting position.",
+    "pt": "Faça uma pausa no ponto mais alto do movimento e, em seguida, solte lentamente e regresse à posição inicial."
+  },
+  "948": {
+    "en": "Stand with your feet shoulder-width apart, knees slightly bent, and hold a dumbbell in one hand.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, joelhos ligeiramente dobrados, e segure um halter numa mão."
+  },
+  "949": {
+    "en": "Let the dumbbell hang straight down in front of you, with your arm fully extended.",
+    "pt": "Deixe o halter pendurado diretamente para baixo à sua frente, com o braço completamente estendido."
+  },
+  "950": {
+    "en": "Pull the dumbbell up towards your chest, keeping your elbow close to your body.",
+    "pt": "Puxe o halter para cima em direção ao peito, mantendo o cotovelo próximo do corpo."
+  },
+  "951": {
+    "en": "Lower the dumbbell back down to the starting position.",
+    "pt": "Baixe o halter de volta à posição inicial."
+  },
+  "952": {
+    "en": "Stand with your feet shoulder-width apart, knees slightly bent, and hold a towel with one hand.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros, joelhos ligeiramente dobrados, e segure uma toalha com uma mão."
+  },
+  "953": {
+    "en": "Pull the towel towards your chest, squeezing your shoulder blades together.",
+    "pt": "Puxe a toalha em direção ao peito, contraindo as omoplatas."
+  },
+  "954": {
+    "en": "Pause for a moment at the top, then slowly lower the towel back to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe lentamente a toalha de volta à posição inicial."
+  },
+  "955": {
+    "en": "Grasp a bar or handles with an overhand grip, palms facing down.",
+    "pt": "Agarre uma barra ou pegas com uma pegada pronada, palmas das mãos viradas para baixo."
+  },
+  "956": {
+    "en": "Slowly release and extend your arms back to the starting position.",
+    "pt": "Solte lentamente e estenda os braços de volta à posição inicial."
+  },
+  "957": {
+    "en": "Stand with your feet shoulder-width apart and hold a towel in front of you with both hands.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e segure uma toalha à sua frente com ambas as mãos."
+  },
+  "958": {
+    "en": "Bend your knees and bring them towards your chest, keeping your feet off the ground.",
+    "pt": "Dobre os joelhos e aproxime-os do peito, mantendo os pés fora do chão."
+  },
+  "959": {
+    "en": "Engaging your abs, lift your hips off the ground, bringing your knees towards your head.",
+    "pt": "Contraindo o abdómen, eleve a anca do chão, aproximando os joelhos da cabeça."
+  },
+  "960": {
+    "en": "Stand in front of a box or platform with your feet shoulder-width apart.",
+    "pt": "Mantenha-se de pé em frente a uma caixa ou plataforma com os pés à largura dos ombros."
+  },
+  "961": {
+    "en": "Bend your knees and jump onto the box, landing softly with one foot on the box and the other foot hanging off the edge.",
+    "pt": "Dobre os joelhos e salte para a caixa, aterrando suavemente com um pé na caixa e o outro pé pendurado na borda."
+  },
+  "962": {
+    "en": "Stabilize yourself on the box with the foot that is on it, while keeping the other foot off the ground.",
+    "pt": "Estabilize-se na caixa com o pé que está sobre ela, mantendo o outro pé fora do chão."
+  },
+  "963": {
+    "en": "Hold this position for a few seconds, engaging your calf muscles to maintain balance.",
+    "pt": "Mantenha esta posição durante alguns segundos, contraindo os gémeos para manter o equilíbrio."
+  },
+  "964": {
+    "en": "Slowly step down with the foot that is on the box, returning to the starting position.",
+    "pt": "Desça lentamente com o pé que está na caixa, regressando à posição inicial."
+  },
+  "965": {
+    "en": "Repeat the exercise with the other leg.",
+    "pt": "Repita o exercício com a outra perna."
+  },
+  "966": {
+    "en": "Start in a high plank position with your hands directly under your shoulders and your body in a straight line.",
+    "pt": "Comece numa posição de prancha alta com as mãos diretamente abaixo dos ombros e o corpo em linha reta."
+  },
+  "967": {
+    "en": "Engage your core and lift your right foot off the ground, bringing your right knee towards your left elbow.",
+    "pt": "Contraia o abdómen e eleve o pé direito do chão, aproximando o joelho direito do cotovelo esquerdo."
+  },
+  "968": {
+    "en": "Return your right foot to the starting position and repeat the movement with your left foot towards your right elbow.",
+    "pt": "Regresse o pé direito à posição inicial e repita o movimento com o pé esquerdo em direção ao cotovelo direito."
+  },
+  "969": {
+    "en": "Continue alternating sides, moving at a controlled pace.",
+    "pt": "Continue a alternar os lados, movendo-se a um ritmo controlado."
+  },
+  "970": {
+    "en": "Keep your hips level and avoid lifting your hips too high or sagging them too low.",
+    "pt": "Mantenha a anca nivelada e evite elevar demasiado a anca ou deixá-la cair demasiado."
+  },
+  "971": {
+    "en": "Maintain a steady breathing pattern throughout the exercise.",
+    "pt": "Mantenha um padrão de respiração constante durante todo o exercício."
+  },
+  "972": {
+    "en": "Start in a standing position with your feet shoulder-width apart.",
+    "pt": "Comece numa posição de pé com os pés à largura dos ombros."
+  },
+  "973": {
+    "en": "Lower your body into a squat position by bending your knees and placing your hands on the floor in front of you.",
+    "pt": "Baixe o corpo para uma posição de agachamento, dobrando os joelhos e colocando as mãos no chão à sua frente."
+  },
+  "974": {
+    "en": "Kick your feet back into a push-up position.",
+    "pt": "Lance os pés para trás para uma posição de flexão de braços."
+  },
+  "975": {
+    "en": "Perform a push-up, keeping your body in a straight line.",
+    "pt": "Execute uma flexão de braços, mantendo o corpo em linha reta."
+  },
+  "976": {
+    "en": "Jump your feet back into the squat position.",
+    "pt": "Salte com os pés de volta para a posição de agachamento."
+  },
+  "977": {
+    "en": "Jump up explosively, reaching your arms overhead.",
+    "pt": "Salte explosivamente, estendendo os braços acima da cabeça."
+  },
+  "978": {
+    "en": "Land softly and immediately lower back into a squat position to begin the next repetition.",
+    "pt": "Aterre suavemente e baixe imediatamente de volta para uma posição de agachamento para iniciar a repetição seguinte."
+  },
+  "979": {
+    "en": "Place your hands by your sides, palms facing down.",
+    "pt": "Coloque as mãos ao longo do corpo, palmas das mãos viradas para baixo."
+  },
+  "980": {
+    "en": "Engaging your abs, lift your legs off the ground, bringing your knees towards your chest.",
+    "pt": "Contraindo o abdómen, eleve as pernas do chão, aproximando os joelhos do peito."
+  },
+  "981": {
+    "en": "At the top of the movement, squeeze your abs and pause for a moment.",
+    "pt": "No ponto mais alto do movimento, contraia o abdómen e faça uma pausa."
+  },
+  "982": {
+    "en": "Sit on the floor with your legs extended in front of you.",
+    "pt": "Sente-se no chão com as pernas estendidas à sua frente."
+  },
+  "983": {
+    "en": "Bend your knees and bring the soles of your feet together, allowing your knees to fall out to the sides.",
+    "pt": "Dobre os joelhos e junte as plantas dos pés, permitindo que os joelhos caiam para os lados."
+  },
+  "984": {
+    "en": "Hold onto your ankles or feet with your hands.",
+    "pt": "Segure os tornozelos ou os pés com as mãos."
+  },
+  "985": {
+    "en": "Sit up tall and lengthen your spine.",
+    "pt": "Sente-se direito e alongue a coluna."
+  },
+  "986": {
+    "en": "Gently press your knees down towards the floor, feeling a stretch in your inner thighs.",
+    "pt": "Pressione suavemente os joelhos para baixo em direção ao chão, sentindo um alongamento na parte interna das coxas."
+  },
+  "987": {
+    "en": "Hold this position for a few breaths.",
+    "pt": "Mantenha esta posição durante algumas respirações."
+  },
+  "988": {
+    "en": "To release, slowly bring your knees back up and extend your legs.",
+    "pt": "Para soltar, aproxime lentamente os joelhos e estenda as pernas."
+  },
+  "989": {
+    "en": "Stand with your feet shoulder-width apart and grasp the handles of the cable machine with an overhand grip.",
+    "pt": "Mantenha-se de pé com os pés à largura dos ombros e agarre as pegas da máquina de cabos com uma pegada pronada."
+  },
+  "990": {
+    "en": "Position your hands at shoulder height, with your palms facing forward.",
+    "pt": "Posicione as mãos à altura dos ombros, com as palmas das mãos viradas para a frente."
+  },
+  "991": {
+    "en": "Keep your core engaged and your back straight.",
+    "pt": "Mantenha o abdómen contraído e as costas retas."
+  },
+  "992": {
+    "en": "Press one handle up and forward until your arm is fully extended.",
+    "pt": "Empurre uma pega para cima e para a frente até que o braço fique completamente estendido."
+  },
+  "993": {
+    "en": "Pause for a moment at the top, then slowly lower the handle back to the starting position.",
+    "pt": "Faça uma pausa no topo e, em seguida, baixe lentamente a pega de volta à posição inicial."
+  },
+  "994": {
+    "en": "Repeat with the other arm.",
+    "pt": "Repita com o outro braço."
+  },
+  "995": {
+    "en": "Alternate between arms for the desired number of repetitions.",
+    "pt": "Alterne entre os braços pelo número desejado de repetições."
+  },
+  "996": {
+    "en": "Stand facing the cable machine with your feet shoulder-width apart.",
+    "pt": "Mantenha-se de pé de frente para a máquina de cabos com os pés à largura dos ombros."
+  },
+  "997": {
+    "en": "Hold the cable handle with your right hand and bring your arm up so that your upper arm is parallel to the ground and your elbow is bent at a 90-degree angle.",
+    "pt": "Segure a pega do cabo com a mão direita e eleve o braço de modo a que o braço superior fique paralelo ao chão e o cotovelo fique dobrado num ângulo de 90 graus."
+  },
+  "998": {
+    "en": "Keep your upper arm stationary and extend your forearm backward, fully straightening your arm.",
+    "pt": "Mantenha o braço superior imóvel e estenda o antebraço para trás, estendendo completamente o braço."
+  },
+  "999": {
+    "en": "Repeat with your left arm.",
+    "pt": "Repita com o braço esquerdo."
+  }
+}
