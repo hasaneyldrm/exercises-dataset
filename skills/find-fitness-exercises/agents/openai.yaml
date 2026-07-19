@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fitness Exercise Finder"
+  short_description: "Search exercises with filters and reference media"
+  default_prompt: "Use $find-fitness-exercises to find suitable exercises and show concise reference examples."
