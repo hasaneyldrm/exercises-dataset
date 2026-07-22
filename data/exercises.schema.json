@@ -22,10 +22,10 @@
         "pl": { "type": "string" },
         "ko": { "type": "string" },
         "fr": { "type": "string" },
-        "pt": { "type": "string" },
-        "ptBr": { "type": "string" }
+        "ptPT": { "type": "string" },
+        "ptBR": { "type": "string" }
       },
-      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr", "pt", "ptBr"],
+      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr", "ptPT", "ptBR"],
       "additionalProperties": { "type": "string" }
     },
     "languageStepsMap": {
@@ -42,10 +42,10 @@
         "pl": { "$ref": "#/$defs/steps" },
         "ko": { "$ref": "#/$defs/steps" },
         "fr": { "$ref": "#/$defs/steps" },
-        "pt": { "$ref": "#/$defs/steps" },
-        "ptBr": { "$ref": "#/$defs/steps" }
+        "ptPT": { "$ref": "#/$defs/steps" },
+        "ptBR": { "$ref": "#/$defs/steps" }
       },
-      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr", "pt", "ptBr"],
+      "required": ["en", "es", "it", "tr", "ru", "zh", "hi", "pl", "ko", "fr", "ptPT", "ptBR"],
       "additionalProperties": { "$ref": "#/$defs/steps" }
     },
     "steps": {

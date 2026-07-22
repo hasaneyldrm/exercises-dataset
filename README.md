@@ -190,9 +190,9 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 | `instructions.pl` | `string` | Full step-by-step instructions in Polish |
 | `instructions.ko` | `string` | Full step-by-step instructions in Korean |
 | `instructions.fr` | `string` | Full step-by-step instructions in French |
-| `instructions.pt` | `string` | Full step-by-step instructions in European Portuguese |
-| `instructions.ptBr` | `string` | Full step-by-step instructions in Brazilian Portuguese |
-| `instruction_steps.<lang>` | `array[string]` | Same instructions split into an ordered array of steps, per language (`en`, `es`, `it`, `tr`, `ru`, `zh`, `hi`, `pl`, `ko`, `fr`, `pt`, `ptBr`) |
+| `instructions.ptPT` | `string` | Full step-by-step instructions in European Portuguese |
+| `instructions.ptBR` | `string` | Full step-by-step instructions in Brazilian Portuguese |
+| `instruction_steps.<lang>` | `array[string]` | Same instructions split into an ordered array of steps, per language (`en`, `es`, `it`, `tr`, `ru`, `zh`, `hi`, `pl`, `ko`, `fr`, `ptPT`, `ptBR`) |
 | `muscle_group` | `string` | Primary synergist muscle group |
 | `secondary_muscles` | `array[string]` | Additional muscles involved |
 | `target` | `string` | Primary target muscle (e.g. `"biceps"`, `"pectoralis major"`) |
@@ -222,8 +222,8 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
     "pl": "Połóż się płasko na plecach, ugnij kolana i oprzyj stopy płasko na pod ...",
     "ko": "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다. ...",
     "fr": "Allonge-toi sur le dos, les genoux fléchis et les pieds à plat au sol. ...",
-    "pt": "Deite-se de costas com os joelhos fletidos e os pés apoiados no chão. ...",
-    "ptBr": "Deite-se de costas com os joelhos flexionados e os pés apoiados no chão. ..."
+    "ptPT": "Deite-se de costas com os joelhos fletidos e os pés apoiados no chão. ...",
+    "ptBR": "Deite-se de costas com os joelhos flexionados e os pés apoiados no chão. ..."
   },
   "muscle_group": "hip flexors",
   "secondary_muscles": ["hip flexors", "lower back"],
@@ -342,8 +342,8 @@ print(ex["instructions"]["hi"])  # Hindi
 print(ex["instructions"]["pl"])  # Polish
 print(ex["instructions"]["ko"])  # Korean
 print(ex["instructions"]["fr"])  # French
-print(ex["instructions"]["pt"])  # European Portuguese
-print(ex["instructions"]["ptBr"])  # Brazilian Portuguese
+print(ex["instructions"]["ptPT"])  # European Portuguese
+print(ex["instructions"]["ptBR"])  # Brazilian Portuguese
 ```
 
 ### Python — Load with Pandas
@@ -396,8 +396,8 @@ console.log(ex.instructions.hi); // Hindi
 console.log(ex.instructions.pl); // Polish
 console.log(ex.instructions.ko); // Korean
 console.log(ex.instructions.fr); // French
-console.log(ex.instructions.pt); // European Portuguese
-console.log(ex.instructions.ptBr); // Brazilian Portuguese
+console.log(ex.instructions.ptPT); // European Portuguese
+console.log(ex.instructions.ptBR); // Brazilian Portuguese
 ```
 
 ### TypeScript — Type-safe Usage
@@ -420,8 +420,8 @@ interface Exercise {
     pl: string;
     ko: string;
     fr: string;
-    pt: string;
-    ptBr: string;
+    ptPT: string;
+    ptBR: string;
   };
   instruction_steps: {
     en: string[];
@@ -434,8 +434,8 @@ interface Exercise {
     pl: string[];
     ko: string[];
     fr: string[];
-    pt: string[];
-    ptBr: string[];
+    ptPT: string[];
+    ptBR: string[];
   };
   muscle_group: string;
   secondary_muscles: string[];
