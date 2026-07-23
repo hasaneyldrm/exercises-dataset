@@ -2,6 +2,8 @@
 
 # 💪 Exercises Dataset
 
+**English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
+
 <p>
   <img src="videos/0025-EIeI8Vf.gif" width="120" alt="barbell bench press" />
   <img src="videos/0043-qXTaZnJ.gif" width="120" alt="barbell full squat" />
