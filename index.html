@@ -1021,6 +1021,464 @@
       vertical-align: middle;
     }
 
+    /* ── Workout Builder Button ──────────────────────── */
+    .workout-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .workout-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .workout-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* ── Workout Builder Modal ───────────────────────── */
+    .workout-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.2s;
+    }
+
+    .workout-modal.open {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .workout-panel {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .workout-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .workout-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .workout-close {
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-tertiary);
+      transition: color 0.15s;
+    }
+
+    .workout-close:hover {
+      color: var(--text-primary);
+    }
+
+    .workout-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .workout-selector {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .workout-selector-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .workout-search {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .workout-search:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .workout-exercise-list {
+      flex: 1;
+      overflow-y: auto;
+      display: grid;
+      gap: 8px;
+    }
+
+    .workout-exercise-item {
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s;
+      background: var(--bg-base);
+    }
+
+    .workout-exercise-item:hover {
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+
+    .workout-exercise-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .workout-exercise-meta {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .workout-sequence {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      border-left: 1px solid var(--border);
+      padding-left: 20px;
+    }
+
+    .workout-sequence-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .workout-sequence-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .workout-sequence-item {
+      padding: 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s;
+      cursor: grab;
+    }
+
+    .workout-sequence-item:active {
+      cursor: grabbing;
+      opacity: 0.7;
+    }
+
+    .workout-sequence-item.dragging {
+      opacity: 0.5;
+    }
+
+    .workout-drag-handle {
+      color: var(--text-tertiary);
+      cursor: grab;
+    }
+
+    .workout-sequence-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .workout-sequence-item-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .workout-sequence-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .workout-duration-input {
+      width: 60px;
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .workout-sequence-remove {
+      color: var(--text-tertiary);
+      cursor: pointer;
+      font-size: 18px;
+      transition: color 0.15s;
+    }
+
+    .workout-sequence-remove:hover {
+      color: #ef4444;
+    }
+
+    .workout-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .workout-action-btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+
+    .workout-cancel-btn {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .workout-cancel-btn:hover {
+      background: var(--bg-base);
+    }
+
+    .workout-play-btn {
+      background: var(--accent);
+      color: white;
+    }
+
+    .workout-play-btn:hover {
+      opacity: 0.88;
+    }
+
+    .workout-play-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ── Workout Player ──────────────────────────────── */
+    .workout-player {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      animation: fadeIn 0.3s;
+    }
+
+    .workout-player.open {
+      display: flex;
+    }
+
+    .workout-player-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 40px;
+      color: white;
+      text-align: center;
+      animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .workout-player-gif {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .workout-player-gif img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .workout-player-info {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .workout-player-meta {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 8px;
+    }
+
+    .workout-player-timer {
+      font-size: 72px;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      margin-top: 30px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .workout-player-progress {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .workout-player-progress-bar {
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.3s linear;
+    }
+
+    .workout-player-controls {
+      position: fixed;
+      bottom: 40px;
+      display: flex;
+      gap: 20px;
+      z-index: 2001;
+    }
+
+    .workout-player-control-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .workout-player-control-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .workout-player-control-btn:active {
+      transform: scale(0.95);
+    }
+
+    .workout-player-close-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .workout-player-close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .workout-player-stats {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+    }
+
   </style>
 </head>
 <body>
@@ -1884,6 +2342,339 @@
   dbTabs.forEach(tab => tab.addEventListener('click', () => switchDbTab(tab.dataset.db)));
   copyCreateBtn.addEventListener('click', () => copyToClipboard(DB_SQL[currentDb], copyCreateBtn));
   generateBtn.addEventListener('click', generateInsertSql);
+
+  /* ────────────────────────────────────────────────── */
+  /* WORKOUT BUILDER & PLAYER                          */
+  /* ────────────────────────────────────────────────── */
+
+  class WorkoutBuilder {
+    constructor(exercises) {
+      this.exercises = exercises;
+      this.workout = [];
+      this.modal = document.getElementById('workout-modal');
+      this.player = document.getElementById('workout-player');
+      this.workoutBtn = document.getElementById('workout-btn');
+      this.modalClose = document.getElementById('workout-modal-close');
+      this.searchInput = document.getElementById('workout-search');
+      this.exerciseList = document.getElementById('workout-exercise-list');
+      this.sequenceList = document.getElementById('workout-sequence-list');
+      this.playBtn = document.getElementById('workout-play-btn');
+      this.cancelBtn = document.getElementById('workout-cancel-btn');
+      this.playerClose = document.getElementById('workout-player-close');
+      this.playerPause = document.getElementById('workout-player-pause');
+      this.playerSkip = document.getElementById('workout-player-skip');
+
+      this.isPlaying = false;
+      this.currentIndex = 0;
+      this.timeRemaining = 0;
+      this.playerInterval = null;
+
+      this.setupEventListeners();
+      this.renderExerciseList();
+    }
+
+    setupEventListeners() {
+      this.workoutBtn.addEventListener('click', () => this.openModal());
+      this.modalClose.addEventListener('click', () => this.closeModal());
+      this.modal.addEventListener('click', e => {
+        if (e.target === this.modal) this.closeModal();
+      });
+
+      this.searchInput.addEventListener('input', e => {
+        this.filterExercises(e.target.value);
+      });
+
+      this.playBtn.addEventListener('click', () => this.startPlayer());
+      this.cancelBtn.addEventListener('click', () => this.closeModal());
+      this.playerClose.addEventListener('click', () => this.stopPlayer());
+      this.playerPause.addEventListener('click', () => this.togglePause());
+      this.playerSkip.addEventListener('click', () => this.nextExercise());
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && this.modal.classList.contains('open')) this.closeModal();
+        if (e.key === 'Escape' && this.player.classList.contains('open')) this.stopPlayer();
+        if (e.key === ' ' && this.player.classList.contains('open')) {
+          e.preventDefault();
+          this.togglePause();
+        }
+        if (e.key === 'ArrowRight' && this.player.classList.contains('open')) this.nextExercise();
+      });
+    }
+
+    openModal() {
+      this.modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+      this.modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    renderExerciseList(filter = '') {
+      const filtered = this.exercises.filter(ex =>
+        !this.workout.find(w => w.exercise.id === ex.id) &&
+        (ex.name.toLowerCase().includes(filter.toLowerCase()) ||
+         ex.category.toLowerCase().includes(filter.toLowerCase()) ||
+         ex.equipment.toLowerCase().includes(filter.toLowerCase()))
+      ).slice(0, 30);
+
+      this.exerciseList.innerHTML = filtered.map(ex => `
+        <div class="workout-exercise-item" data-id="${ex.id}">
+          <div class="workout-exercise-name">${ex.name}</div>
+          <div class="workout-exercise-meta">${ex.category} • ${ex.equipment}</div>
+        </div>
+      `).join('');
+
+      this.exerciseList.querySelectorAll('.workout-exercise-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const id = item.dataset.id;
+          const exercise = this.exercises.find(e => e.id === id);
+          this.addExercise(exercise);
+          item.remove();
+        });
+      });
+    }
+
+    filterExercises(query) {
+      this.renderExerciseList(query);
+    }
+
+    addExercise(exercise) {
+      const duration = 45;
+      this.workout.push({ exercise, duration });
+      this.renderSequence();
+    }
+
+    renderSequence() {
+      this.sequenceList.innerHTML = this.workout.map((item, idx) => `
+        <div class="workout-sequence-item" draggable="true" data-index="${idx}">
+          <div class="workout-drag-handle">⋮⋮</div>
+          <div class="workout-sequence-item-info">
+            <div class="workout-sequence-item-name">${item.exercise.name}</div>
+          </div>
+          <div class="workout-sequence-controls">
+            <input type="number" class="workout-duration-input" value="${item.duration}" min="5" max="300">
+            <div class="workout-sequence-remove">×</div>
+          </div>
+        </div>
+      `).join('');
+
+      // Duration updates
+      this.sequenceList.querySelectorAll('.workout-duration-input').forEach((input, idx) => {
+        input.addEventListener('change', e => {
+          this.workout[idx].duration = parseInt(e.target.value) || 45;
+        });
+      });
+
+      // Remove item
+      this.sequenceList.querySelectorAll('.workout-sequence-remove').forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          this.workout.splice(idx, 1);
+          this.renderSequence();
+          this.renderExerciseList(this.searchInput.value);
+        });
+      });
+
+      // Drag & drop
+      this.setupDragAndDrop();
+      this.playBtn.disabled = this.workout.length === 0;
+    }
+
+    setupDragAndDrop() {
+      const items = this.sequenceList.querySelectorAll('.workout-sequence-item');
+      let draggedItem = null;
+
+      items.forEach(item => {
+        item.addEventListener('dragstart', () => {
+          draggedItem = item;
+          item.classList.add('dragging');
+        });
+
+        item.addEventListener('dragend', () => {
+          item.classList.remove('dragging');
+        });
+
+        item.addEventListener('dragover', e => {
+          e.preventDefault();
+          if (draggedItem && draggedItem !== item) {
+            const allItems = [...this.sequenceList.querySelectorAll('.workout-sequence-item')];
+            const draggedIdx = allItems.indexOf(draggedItem);
+            const targetIdx = allItems.indexOf(item);
+
+            [this.workout[draggedIdx], this.workout[targetIdx]] = 
+            [this.workout[targetIdx], this.workout[draggedIdx]];
+
+            this.renderSequence();
+          }
+        });
+      });
+    }
+
+    startPlayer() {
+      if (this.workout.length === 0) return;
+      this.closeModal();
+      this.player.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      this.isPlaying = true;
+      this.currentIndex = 0;
+      this.playExercise();
+    }
+
+    playExercise() {
+      if (this.currentIndex >= this.workout.length) {
+        this.workoutComplete();
+        return;
+      }
+
+      const item = this.workout[this.currentIndex];
+      const playerContent = document.getElementById('workout-player-content');
+      const playerGif = document.getElementById('workout-player-gif');
+      const playerInfo = document.getElementById('workout-player-info');
+      const playerMeta = document.getElementById('workout-player-meta');
+      const playerTimer = document.getElementById('workout-player-timer');
+
+      playerGif.innerHTML = `<img src="${item.exercise.gif_url}" alt="${item.exercise.name}">`;
+      playerInfo.textContent = item.exercise.name;
+      playerMeta.textContent = `${item.exercise.category} • ${item.exercise.equipment}`;
+
+      this.timeRemaining = item.duration;
+      this.updateTimer(playerTimer);
+
+      if (this.playerInterval) clearInterval(this.playerInterval);
+      this.playerInterval = setInterval(() => {
+        this.timeRemaining--;
+        this.updateTimer(playerTimer);
+        this.updateProgress();
+
+        if (this.timeRemaining <= 0) {
+          clearInterval(this.playerInterval);
+          this.currentIndex++;
+          setTimeout(() => this.playExercise(), 1000);
+        }
+      }, 1000);
+    }
+
+    updateTimer(element) {
+      const mins = Math.floor(this.timeRemaining / 60);
+      const secs = this.timeRemaining % 60;
+      element.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    updateProgress() {
+      const totalDuration = this.workout.reduce((sum, item) => sum + item.duration, 0);
+      const completedDuration = this.workout.slice(0, this.currentIndex).reduce((sum, item) => sum + item.duration, 0);
+      const currentProgress = completedDuration + (this.workout[this.currentIndex].duration - this.timeRemaining);
+      const percent = (currentProgress / totalDuration) * 100;
+      document.getElementById('workout-player-progress-bar').style.width = percent + '%';
+    }
+
+    togglePause() {
+      this.isPlaying = !this.isPlaying;
+      if (this.isPlaying) {
+        this.playerInterval = setInterval(() => {
+          this.timeRemaining--;
+          this.updateTimer(document.getElementById('workout-player-timer'));
+          this.updateProgress();
+
+          if (this.timeRemaining <= 0) {
+            clearInterval(this.playerInterval);
+            this.currentIndex++;
+            setTimeout(() => this.playExercise(), 1000);
+          }
+        }, 1000);
+        this.playerPause.textContent = '⏸';
+      } else {
+        clearInterval(this.playerInterval);
+        this.playerPause.textContent = '▶';
+      }
+    }
+
+    nextExercise() {
+      clearInterval(this.playerInterval);
+      this.currentIndex++;
+      this.playExercise();
+    }
+
+    workoutComplete() {
+      const playerContent = document.getElementById('workout-player-content');
+      playerContent.innerHTML = `
+        <div style="text-align: center;">
+          <div style="font-size: 64px; margin-bottom: 20px;">🎉</div>
+          <div style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 10px;">Workout Complete!</div>
+          <div style="font-size: 16px; color: rgba(255, 255, 255, 0.7);">Great job! You've finished your workout.</div>
+        </div>
+      `;
+      setTimeout(() => this.stopPlayer(), 3000);
+    }
+
+    stopPlayer() {
+      clearInterval(this.playerInterval);
+      this.player.classList.remove('open');
+      document.body.style.overflow = '';
+      this.isPlaying = false;
+      this.currentIndex = 0;
+      this.timeRemaining = 0;
+    }
+  }
+
+  // Initialize Workout Builder
+  const workoutBuilder = new WorkoutBuilder(EXERCISES);
 </script>
+
+<!-- Workout Builder Button -->
+<button class="workout-btn" id="workout-btn" title="Build Workout">🏋️</button>
+
+<!-- Workout Builder Modal -->
+<div class="workout-modal" id="workout-modal">
+  <div class="workout-panel">
+    <div class="workout-header">
+      <div class="workout-title">Build Your Workout</div>
+      <div class="workout-close" id="workout-modal-close">×</div>
+    </div>
+
+    <div class="workout-body">
+      <div class="workout-selector">
+        <div class="workout-selector-title">Exercise Library</div>
+        <input type="text" class="workout-search" id="workout-search" placeholder="Search exercises...">
+        <div class="workout-exercise-list" id="workout-exercise-list"></div>
+      </div>
+
+      <div class="workout-sequence">
+        <div class="workout-sequence-title">Your Workout</div>
+        <div class="workout-sequence-list" id="workout-sequence-list"></div>
+      </div>
+    </div>
+
+    <div class="workout-footer">
+      <button class="workout-action-btn workout-cancel-btn" id="workout-cancel-btn">Cancel</button>
+      <button class="workout-action-btn workout-play-btn" id="workout-play-btn" disabled>Start Workout</button>
+    </div>
+  </div>
+</div>
+
+<!-- Workout Player -->
+<div class="workout-player" id="workout-player">
+  <div class="workout-player-progress">
+    <div class="workout-player-progress-bar" id="workout-player-progress-bar"></div>
+  </div>
+
+  <div class="workout-player-stats" id="workout-player-stats"></div>
+
+  <button class="workout-player-close-btn" id="workout-player-close" title="Exit Workout">✕</button>
+
+  <div class="workout-player-content" id="workout-player-content">
+    <div class="workout-player-gif" id="workout-player-gif"></div>
+    <div class="workout-player-info" id="workout-player-info"></div>
+    <div class="workout-player-meta" id="workout-player-meta"></div>
+    <div class="workout-player-timer" id="workout-player-timer">0:00</div>
+  </div>
+
+  <div class="workout-player-controls">
+    <button class="workout-player-control-btn" id="workout-player-pause" title="Pause/Resume (Space)">⏸</button>
+    <button class="workout-player-control-btn" id="workout-player-skip" title="Next Exercise (→)">⏭</button>
+  </div>
+</div>
+
 </body>
 </html>
