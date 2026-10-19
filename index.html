@@ -1525,8 +1525,8 @@
 
     // Instructions — format is always keyed by language code
     modalInstr.innerHTML = '';
-    const LANG_LABELS = { en: 'English', es: 'Español', it: 'Italiano', tr: 'Türkçe', ru: 'Русский', zh: '简体中文', hi: 'हिन्दी', pl: 'Polski', ko: '한국어', fr: 'Français' };
-    const langs = ['en', 'es', 'it', 'tr', 'ru', 'zh', 'hi', 'pl', 'ko', 'fr']
+    const LANG_LABELS = { zh: '简体中文', en: 'English', es: 'Español', it: 'Italiano', tr: 'Türkçe', ru: 'Русский', hi: 'हिन्दी', pl: 'Polski', ko: '한국어', fr: 'Français' };
+    const langs = ['zh', 'en', 'es', 'it', 'tr', 'ru', 'hi', 'pl', 'ko', 'fr']
       .map(code => ({ code, steps: ex.instruction_steps?.[code] ?? [] }))
       .filter(l => l.steps.length > 0);
 
