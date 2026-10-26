@@ -1,0 +1,240 @@
+[
+  {
+    "id": "0001",
+    "name": "3/4 sit-up",
+    "category": "waist",
+    "body_part": "waist",
+    "equipment": "body weight",
+    "instructions": {
+      "en": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions.",
+      "it": "Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. Metti le mani dietro la testa con i gomiti rivolti verso l'esterno. Coinvolgendo gli addominali, solleva lentamente la parte superiore del corpo da terra, piegandoti in avanti finché il busto non forma un angolo di 45 gradi. Fermati per un momento in alto, quindi abbassa lentamente la parte superiore del corpo fino alla posizione di partenza. Ripetere per il numero di ripetizioni desiderato.",
+      "tr": "Dizleriniz bükülü ve ayaklarınız yere düz basacak şekilde sırt üstü yatın. Ellerinizi başınızın arkasına, dirsekleriniz dışarı bakacak şekilde yerleştirin. Karın kaslarınızı devreye sokarak üst bedeninizi yavaşça yerden kaldırın ve gövdeniz 45 derecelik bir açıya gelene kadar öne doğru kıvrılın. Tepe noktasında bir an duraklayın, ardından üst vücudunuzu yavaşça başlangıç ​​pozisyonuna indirin. İstenilen sayıda tekrar için tekrarlayın.",
+      "es": "Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo. Coloca las manos detrás de la cabeza con los codos apuntando hacia afuera. Activando el abdomen, levanta lentamente la parte superior del cuerpo del suelo, curvándote hacia adelante hasta que tu torso forme un ángulo de 45 grados. Haz una pausa por un momento en la parte superior, luego baja lentamente la parte superior del cuerpo de vuelta a la posición inicial. Repite el número de repeticiones deseado.",
+      "ru": "Лягте на спину, согните колени и поставьте ступни на землю. Положите руки за голову локтями наружу. Включив пресс, медленно поднимите верхнюю часть тела от земли, наклоняясь вперед, пока туловище не окажется под углом 45 градусов. Задержитесь на мгновение в верхней точке, затем медленно опустите верхнюю часть тела обратно в исходное положение. Повторите необходимое количество повторений.",
+      "zh": "平躺，膝盖弯曲，双脚平放在地上。 将双手放在脑后，肘部朝外。 收紧腹肌，慢慢将上半身抬离地面，向前卷曲，直到躯干呈 45 度角。 在顶部停顿片刻，然后慢慢将上半身放回起始位置。 重复所需的重复次数。",
+      "hi": "अपने घुटनों को मोड़कर और पैरों को ज़मीन पर सपाट रखते हुए अपनी पीठ के बल लेट जाएँ। अपने हाथों को अपने सिर के पीछे रखें और अपनी कोहनियों को बाहर की ओर रखें। अपने पेट को शामिल करते हुए, धीरे-धीरे अपने ऊपरी शरीर को जमीन से ऊपर उठाएं, आगे की ओर झुकें जब तक कि आपका धड़ 45 डिग्री के कोण पर न आ जाए। शीर्ष पर एक पल के लिए रुकें, फिर धीरे-धीरे अपने ऊपरी शरीर को वापस प्रारंभिक स्थिति में ले आएं। दोहराव की वांछित संख्या के लिए दोहराएँ।",
+      "pl": "Połóż się płasko na plecach, ugnij kolana i oprzyj stopy płasko na podłodze. Umieść dłonie za głową, kierując łokcie na zewnątrz. Angażując mięśnie brzucha, powoli unieś górną część ciała nad podłogę, zwijając się do przodu, aż tułów znajdzie się pod kątem 45 stopni. Zatrzymaj się na chwilę w górnej pozycji, a następnie powoli opuść górną część ciała z powrotem do pozycji wyjściowej. Powtórz zalecaną liczbę razy.",
+      "ko": "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다. 손을 머리 뒤에 깍지껴 팔꿈치가 바깥쪽을 향하도록 합니다. 복근을 사용하여 천천히 윗몸을 들어 올려 몸통이 45도 각도가 될 때까지 앞쪽으로 구부립니다. 맨 위에서 잠깐 멈췄다가 천천히 윗몸을 시작 자세로 내립니다. 원하는 반복 횟수만큼 반복합니다.",
+      "fr": "Allonge-toi sur le dos, les genoux fléchis et les pieds à plat au sol. Place tes mains derrière ta tête avec tes coudes pointés vers l'extérieur. En gainant tes abdominaux, soulève lentement le haut de ton corps du sol, en t'enroulant vers l'avant jusqu'à ce que ton torse forme un angle de 45 degrés. Marque une pause en haut, puis abaisse lentement le haut de ton corps pour revenir à la position de départ. Répète le nombre de répétitions souhaité.",
+      "uz": "Tizzalaringizni bukib, oyoq kaftlaringizni yerga tekis qo‘ygan holda chalqancha yoting. Qo‘llaringizni boshingiz orqasiga qo‘ying, tirsaklaringizni ikki tomonga qarating. Qorin mushaklaringizni taranglashtirib, gavdangizni oldinga bukgan holda yuqori qismini yerdan sekin ko‘taring; gavdangiz taxminan 45° burchakka yetguncha davom eting. Yuqori nuqtada bir lahza to‘xtang, so‘ng gavdangizni sekin boshlang‘ich holatga tushiring. Mashqni kerakli marta takrorlang."
+    },
+    "instruction_steps": {
+      "en": [
+        "Lie flat on your back with your knees bent and feet flat on the ground.",
+        "Place your hands behind your head with your elbows pointing outwards.",
+        "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+        "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+        "Repeat for the desired number of repetitions."
+      ],
+      "it": [
+        "Sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra.",
+        "Metti le mani dietro la testa con i gomiti rivolti verso l'esterno.",
+        "Coinvolgendo gli addominali, solleva lentamente la parte superiore del corpo da terra, piegandoti in avanti finché il busto non forma un angolo di 45 gradi.",
+        "Fermati per un momento in alto, quindi abbassa lentamente la parte superiore del corpo fino alla posizione di partenza.",
+        "Ripetere per il numero di ripetizioni desiderato."
+      ],
+      "tr": [
+        "Dizleriniz bükülü ve ayaklarınız yere düz basacak şekilde sırt üstü yatın.",
+        "Ellerinizi başınızın arkasına, dirsekleriniz dışarı bakacak şekilde yerleştirin.",
+        "Karın kaslarınızı devreye sokarak üst bedeninizi yavaşça yerden kaldırın ve gövdeniz 45 derecelik bir açıya gelene kadar öne doğru kıvrılın.",
+        "Tepe noktasında bir an duraklayın, ardından üst vücudunuzu yavaşça başlangıç ​​pozisyonuna indirin.",
+        "İstenilen sayıda tekrar için tekrarlayın."
+      ],
+      "es": [
+        "Túmbate sobre tu espalda con las rodillas flexionadas y los pies apoyados en el suelo.",
+        "Coloca las manos detrás de la cabeza con los codos apuntando hacia afuera.",
+        "Activando el abdomen, levanta lentamente la parte superior del cuerpo del suelo, curvándote hacia adelante hasta que tu torso forme un ángulo de 45 grados.",
+        "Haz una pausa por un momento en la parte superior, luego baja lentamente la parte superior del cuerpo de vuelta a la posición inicial.",
+        "Repite el número de repeticiones deseado."
+      ],
+      "ru": [
+        "Лягте на спину, согните колени и поставьте ступни на землю.",
+        "Положите руки за голову локтями наружу.",
+        "Включив пресс, медленно поднимите верхнюю часть тела от земли, наклоняясь вперед, пока туловище не окажется под углом 45 градусов.",
+        "Задержитесь на мгновение в верхней точке, затем медленно опустите верхнюю часть тела обратно в исходное положение.",
+        "Повторите необходимое количество повторений."
+      ],
+      "zh": [
+        "平躺，膝盖弯曲，双脚平放在地上。",
+        "将双手放在脑后，肘部朝外。",
+        "收紧腹肌，慢慢将上半身抬离地面，向前卷曲，直到躯干呈 45 度角。",
+        "在顶部停顿片刻，然后慢慢将上半身放回起始位置。",
+        "重复所需的重复次数。"
+      ],
+      "hi": [
+        "अपने घुटनों को मोड़कर और पैरों को ज़मीन पर सपाट रखते हुए अपनी पीठ के बल लेट जाएँ।",
+        "अपने हाथों को अपने सिर के पीछे रखें और अपनी कोहनियों को बाहर की ओर रखें।",
+        "अपने पेट को शामिल करते हुए, धीरे-धीरे अपने ऊपरी शरीर को जमीन से ऊपर उठाएं, आगे की ओर झुकें जब तक कि आपका धड़ 45 डिग्री के कोण पर न आ जाए।",
+        "शीर्ष पर एक पल के लिए रुकें, फिर धीरे-धीरे अपने ऊपरी शरीर को वापस प्रारंभिक स्थिति में ले आएं।",
+        "दोहराव की वांछित संख्या के लिए दोहराएँ।"
+      ],
+      "pl": [
+        "Połóż się płasko na plecach, ugnij kolana i oprzyj stopy płasko na podłodze.",
+        "Umieść dłonie za głową, kierując łokcie na zewnątrz.",
+        "Angażując mięśnie brzucha, powoli unieś górną część ciała nad podłogę, zwijając się do przodu, aż tułów znajdzie się pod kątem 45 stopni.",
+        "Zatrzymaj się na chwilę w górnej pozycji, a następnie powoli opuść górną część ciała z powrotem do pozycji wyjściowej.",
+        "Powtórz zalecaną liczbę razy."
+      ],
+      "ko": [
+        "등을 바닥에 누워 무릎을 구부리고 발을 바닥에 붙입니다.",
+        "손을 머리 뒤에 깍지껴 팔꿈치가 바깥쪽을 향하도록 합니다.",
+        "복근을 사용하여 천천히 윗몸을 들어 올려 몸통이 45도 각도가 될 때까지 앞쪽으로 구부립니다.",
+        "맨 위에서 잠깐 멈췄다가 천천히 윗몸을 시작 자세로 내립니다.",
+        "원하는 반복 횟수만큼 반복합니다."
+      ],
+      "fr": [
+        "Allonge-toi sur le dos, les genoux fléchis et les pieds à plat au sol.",
+        "Place tes mains derrière ta tête avec tes coudes pointés vers l'extérieur.",
+        "En gainant tes abdominaux, soulève lentement le haut de ton corps du sol, en t'enroulant vers l'avant jusqu'à ce que ton torse forme un angle de 45 degrés.",
+        "Marque une pause en haut, puis abaisse lentement le haut de ton corps pour revenir à la position de départ.",
+        "Répète le nombre de répétitions souhaité."
+      ],
+      "uz": [
+        "Tizzalaringizni bukib, oyoq kaftlaringizni yerga tekis qo‘ygan holda chalqancha yoting.",
+        "Qo‘llaringizni boshingiz orqasiga qo‘ying, tirsaklaringizni ikki tomonga qarating.",
+        "Qorin mushaklaringizni taranglashtirib, gavdangizni oldinga bukgan holda yuqori qismini yerdan sekin ko‘taring; gavdangiz taxminan 45° burchakka yetguncha davom eting.",
+        "Yuqori nuqtada bir lahza to‘xtang, so‘ng gavdangizni sekin boshlang‘ich holatga tushiring.",
+        "Mashqni kerakli marta takrorlang."
+      ]
+    },
+    "muscle_group": "hip flexors",
+    "secondary_muscles": [
+      "hip flexors",
+      "lower back"
+    ],
+    "target": "abs",
+    "image": "images/0001-2gPfomN.jpg",
+    "gif_url": "videos/0001-2gPfomN.gif",
+    "media_id": "2gPfomN",
+    "created_at": "2026-03-18T12:31:32.854798+00:00",
+    "attribution": "© Gym visual — https://gymvisual.com/",
+    "name_uz": "3/4 gavdani ko‘tarish",
+    "category_uz": "Bel va qorin",
+    "body_part_uz": "Bel va qorin",
+    "equipment_uz": "Tana vazni",
+    "muscle_group_uz": "Sonni bukuvchi mushaklar",
+    "target_uz": "Qorinning to‘g‘ri mushaklari",
+    "secondary_muscles_uz": [
+      "Sonni bukuvchi mushaklar",
+      "Bel mushaklari"
+    ]
+  },
+  {
+    "id": "0002",
+    "name": "45° side bend",
+    "category": "waist",
+    "body_part": "waist",
+    "equipment": "body weight",
+    "instructions": {
+      "en": "Stand with your feet shoulder-width apart and your arms extended straight down by your sides. Keeping your back straight and your core engaged, slowly bend your torso to one side, lowering your hand towards your knee. Pause for a moment at the bottom, then slowly return to the starting position. Repeat on the other side. Continue alternating sides for the desired number of repetitions.",
+      "it": "Stai con i piedi alla larghezza delle spalle e le braccia distese lungo i fianchi. Mantenendo la schiena dritta e il core impegnato, piega lentamente il busto da un lato, abbassando la mano verso il ginocchio. Fermati per un momento in basso, quindi torna lentamente alla posizione di partenza. Ripeti dall'altra parte. Continua ad alternare i lati per il numero di ripetizioni desiderato.",
+      "tr": "Ayaklarınız omuz genişliğinde açık ve kollarınız yanlarınızda düz bir şekilde uzatılmış şekilde ayakta durun. Sırtınızı düz ve merkez bölgenizi meşgul tutarak gövdenizi yavaşça bir tarafa doğru eğin ve elinizi dizinize doğru indirin. Altta bir an duraklayın, ardından yavaşça başlangıç ​​pozisyonuna dönün. Diğer tarafta tekrarlayın. İstenilen tekrar sayısı için alternatif taraflara devam edin.",
+      "es": "Ponte de pie con los pies separados a la altura de los hombros y los brazos extendidos hacia abajo a los lados. Manteniendo la espalda recta y el core activado, flexiona lentamente el torso hacia un lado, bajando la mano hacia la rodilla. Haz una pausa por un momento en la parte inferior, luego regresa lentamente a la posición inicial. Repite del otro lado. Continúa alternando lados durante el número de repeticiones deseado.",
+      "ru": "Встаньте, поставив ноги на ширине плеч и вытянув руки по бокам. Удерживая спину прямой и напрягая корпус, медленно наклоните туловище в сторону, опуская руку к колену. Задержитесь на мгновение внизу, затем медленно вернитесь в исходное положение. Повторите с другой стороны. Продолжайте чередовать стороны желаемое количество повторений.",
+      "zh": "双脚分开与肩同宽站立，双臂在身体两侧笔直向下伸展。 保持背部挺直，核心肌群参与，慢慢将躯干向一侧弯曲，将手向膝盖方向放低。 在底部停顿片刻，然后慢慢回到起始位置。 在另一侧重复。 继续交替进行所需的重复次数。",
+      "hi": "अपने पैरों को कंधे की चौड़ाई पर फैलाकर खड़े हो जाएं और आपकी भुजाएं आपके बगल में सीधी नीचे की ओर फैली हुई हों। अपनी पीठ को सीधा रखते हुए और अपने कोर को व्यस्त रखते हुए, धीरे-धीरे अपने धड़ को एक तरफ झुकाएं, अपने हाथ को अपने घुटने की ओर नीचे करें। नीचे एक पल के लिए रुकें, फिर धीरे-धीरे प्रारंभिक स्थिति में लौट आएं। दूसरी तरफ दोहराएं। दोहराव की वांछित संख्या के लिए पक्षों को बदलना जारी रखें।",
+      "pl": "Stań w rozkroku na szerokość barków, ramiona wyprostowane wzdłuż tułowia. Utrzymując proste plecy i napięty brzuch, powoli pochyl tułów w bok, opuszczając dłoń w kierunku kolana. Zatrzymaj się na chwilę w dolnej pozycji, a następnie powoli wróć do pozycji wyjściowej. Powtórz po drugiej stronie. Kontynuuj naprzemienne wykonywanie ruchu na obie strony przez zalecaną liczbę powtórzeń.",
+      "ko": "발을 어깨 넓이로 벌리고 팔을 양쪽에 내려 펼칩니다. 등을 곧게 펴고 복근을 긴장시킨 상태에서 천천히 몸통을 한쪽으로 구부려 손을 무릎 쪽으로 내립니다. 맨 아래에서 잠깐 멈췄다가 천천히 시작 자세로 돌아옵니다. 반대쪽에서 반복합니다. 원하는 반복 횟수만큼 좌우를 번갈아가며 계속합니다.",
+      "fr": "Tiens-toi debout, les pieds écartés à la largeur des épaules et les bras tendus vers le bas le long du corps. En gardant le dos droit et ta sangle abdominale gainée, penche lentement ton torse sur un côté, en abaissant ta main vers ton genou. Marque une pause en bas, puis reviens lentement à la position de départ. Répète de l'autre côté. Continue à alterner les côtés pour le nombre de répétitions souhaité.",
+      "uz": "Oyoqlaringizni yelka kengligida ochib tik turing, qo‘llaringizni yoningizda pastga uzating. Orqangizni tik va qorin mushaklaringizni tarang tutgan holda gavdangizni sekin bir tomonga eging, qo‘lingizni tizzangizga yaqinlashtiring. Eng pastki nuqtada bir lahza to‘xtab, sekin boshlang‘ich holatga qayting. Ikkinchi tomonga ham egilib, harakatni takrorlang. Kerakli takrorlashlar soniga yetguncha ikki tomonga navbatma-navbat egiling."
+    },
+    "instruction_steps": {
+      "en": [
+        "Stand with your feet shoulder-width apart and your arms extended straight down by your sides.",
+        "Keeping your back straight and your core engaged, slowly bend your torso to one side, lowering your hand towards your knee.",
+        "Pause for a moment at the bottom, then slowly return to the starting position.",
+        "Repeat on the other side.",
+        "Continue alternating sides for the desired number of repetitions."
+      ],
+      "it": [
+        "Stai con i piedi alla larghezza delle spalle e le braccia distese lungo i fianchi.",
+        "Mantenendo la schiena dritta e il core impegnato, piega lentamente il busto da un lato, abbassando la mano verso il ginocchio.",
+        "Fermati per un momento in basso, quindi torna lentamente alla posizione di partenza.",
+        "Ripeti dall'altra parte.",
+        "Continua ad alternare i lati per il numero di ripetizioni desiderato."
+      ],
+      "tr": [
+        "Ayaklarınız omuz genişliğinde açık ve kollarınız yanlarınızda düz bir şekilde uzatılmış şekilde ayakta durun.",
+        "Sırtınızı düz ve merkez bölgenizi meşgul tutarak gövdenizi yavaşça bir tarafa doğru eğin ve elinizi dizinize doğru indirin.",
+        "Altta bir an duraklayın, ardından yavaşça başlangıç ​​pozisyonuna dönün.",
+        "Diğer tarafta tekrarlayın.",
+        "İstenilen tekrar sayısı için alternatif taraflara devam edin."
+      ],
+      "es": [
+        "Ponte de pie con los pies separados a la altura de los hombros y los brazos extendidos hacia abajo a los lados.",
+        "Manteniendo la espalda recta y el core activado, flexiona lentamente el torso hacia un lado, bajando la mano hacia la rodilla.",
+        "Haz una pausa por un momento en la parte inferior, luego regresa lentamente a la posición inicial.",
+        "Repite del otro lado.",
+        "Continúa alternando lados durante el número de repeticiones deseado."
+      ],
+      "ru": [
+        "Встаньте, поставив ноги на ширине плеч и вытянув руки по бокам.",
+        "Удерживая спину прямой и напрягая корпус, медленно наклоните туловище в сторону, опуская руку к колену.",
+        "Задержитесь на мгновение внизу, затем медленно вернитесь в исходное положение.",
+        "Повторите с другой стороны.",
+        "Продолжайте чередовать стороны желаемое количество повторений."
+      ],
+      "zh": [
+        "双脚分开与肩同宽站立，双臂在身体两侧笔直向下伸展。",
+        "保持背部挺直，核心肌群参与，慢慢将躯干向一侧弯曲，将手向膝盖方向放低。",
+        "在底部停顿片刻，然后慢慢回到起始位置。",
+        "在另一侧重复。",
+        "继续交替进行所需的重复次数。"
+      ],
+      "hi": [
+        "अपने पैरों को कंधे की चौड़ाई पर फैलाकर खड़े हो जाएं और आपकी भुजाएं आपके बगल में सीधी नीचे की ओर फैली हुई हों।",
+        "अपनी पीठ को सीधा रखते हुए और अपने कोर को व्यस्त रखते हुए, धीरे-धीरे अपने धड़ को एक तरफ झुकाएं, अपने हाथ को अपने घुटने की ओर नीचे करें।",
+        "नीचे एक पल के लिए रुकें, फिर धीरे-धीरे प्रारंभिक स्थिति में लौट आएं।",
+        "दूसरी तरफ दोहराएं।",
+        "दोहराव की वांछित संख्या के लिए पक्षों को बदलना जारी रखें।"
+      ],
+      "pl": [
+        "Stań w rozkroku na szerokość barków, ramiona wyprostowane wzdłuż tułowia.",
+        "Utrzymując proste plecy i napięty brzuch, powoli pochyl tułów w bok, opuszczając dłoń w kierunku kolana.",
+        "Zatrzymaj się na chwilę w dolnej pozycji, a następnie powoli wróć do pozycji wyjściowej.",
+        "Powtórz po drugiej stronie.",
+        "Kontynuuj naprzemienne wykonywanie ruchu na obie strony przez zalecaną liczbę powtórzeń."
+      ],
+      "ko": [
+        "발을 어깨 넓이로 벌리고 팔을 양쪽에 내려 펼칩니다.",
+        "등을 곧게 펴고 복근을 긴장시킨 상태에서 천천히 몸통을 한쪽으로 구부려 손을 무릎 쪽으로 내립니다.",
+        "맨 아래에서 잠깐 멈췄다가 천천히 시작 자세로 돌아옵니다.",
+        "반대쪽에서 반복합니다.",
+        "원하는 반복 횟수만큼 좌우를 번갈아가며 계속합니다."
+      ],
+      "fr": [
+        "Tiens-toi debout, les pieds écartés à la largeur des épaules et les bras tendus vers le bas le long du corps.",
+        "En gardant le dos droit et ta sangle abdominale gainée, penche lentement ton torse sur un côté, en abaissant ta main vers ton genou.",
+        "Marque une pause en bas, puis reviens lentement à la position de départ.",
+        "Répète de l'autre côté.",
+        "Continue à alterner les côtés pour le nombre de répétitions souhaité."
+      ],
+      "uz": [
+        "Oyoqlaringizni yelka kengligida ochib tik turing, qo‘llaringizni yoningizda pastga uzating.",
+        "Orqangizni tik va qorin mushaklaringizni tarang tutgan holda gavdangizni sekin bir tomonga eging, qo‘lingizni tizzangizga yaqinlashtiring.",
+        "Eng pastki nuqtada bir lahza to‘xtab, sekin boshlang‘ich holatga qayting.",
+        "Ikkinchi tomonga ham egilib, harakatni takrorlang.",
+        "Kerakli takrorlashlar soniga yetguncha ikki tomonga navbatma-navbat egiling."
+      ]
+    },
+    "muscle_group": "obliques",
+    "secondary_muscles": [
+      "obliques"
+    ],
+    "target": "abs",
+    "image": "images/0002-Hy9D21L.jpg",
+    "gif_url": "videos/0002-Hy9D21L.gif",
+    "media_id": "Hy9D21L",
+    "created_at": "2026-03-18T12:31:32.854953+00:00",
+    "attribution": "© Gym visual — https://gymvisual.com/",
+    "name_uz": "45° yonga egilish",
+    "category_uz": "Bel va qorin",
+    "body_part_uz": "Bel va qorin",
+    "equipment_uz": "Tana vazni",
+    "muscle_group_uz": "Qorinning qiyshiq mushaklari",
+    "target_uz": "Qorinning to‘g‘ri mushaklari",
+    "secondary_muscles_uz": [
+      "Qorinning qiyshiq mushaklari"
+    ]
+  }
+]
