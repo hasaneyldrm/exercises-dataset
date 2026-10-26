@@ -6,6 +6,7 @@ This repository has an **Uzbek (Latin script, `uz`) localization overlay** for t
 
 - **1,324/1,324 exercises:** `category_uz`, `body_part_uz`, `equipment_uz`, `muscle_group_uz`, `target_uz`, `secondary_muscles_uz` available in `data/exercises_uz.json`.
 - **2/1,324 exercises:** reviewed `name_uz`, `instructions_uz` and `instruction_steps_uz` (IDs `0001` and `0002`).
+- **1,322/1,324 exercises:** machine-translated (Gemini 3.8 Flash, EN→UZ) `name_uz`, `instructions_uz` and `instruction_steps_uz`; not yet reviewed by a native speaker.
 - **1,322 exercise names and instructions still need translation and review.** The uploaded archive included only two examples, not a full translation. Do **not** advertise 11 complete instruction languages yet.
 
 ## Files

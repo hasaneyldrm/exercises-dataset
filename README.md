@@ -28,7 +28,7 @@
 
 ### 🇺🇿 Uzbek (Uz) — localization in progress
 
-An additive [Uzbek localization overlay](data/exercises_uz.json) now covers category, equipment, target and muscle metadata for **all 1,324 exercises**. Reviewed Uzbek names and instructions are currently available for **2 exercises**; other exercise instructions are **not yet translated**. See [README.uz.md](README.uz.md) for the merge script, examples, remaining work and optional machine-translation workflow. The original 10 fully available instruction languages are unchanged.
+An additive [Uzbek localization overlay](data/exercises_uz.json) now covers category, equipment, target and muscle metadata for **all 1,324 exercises**. Uzbek names and step-by-step instructions are available for **all 1,324 exercises**: **2** are reviewed by hand and **1,322** are machine-translated (Gemini 3.8 Flash, EN→UZ) and not yet reviewed by a native speaker. See [README.uz.md](README.uz.md) for the merge script, examples, remaining work and optional machine-translation workflow. The original 10 fully available instruction languages are unchanged.
 
 ---
 
