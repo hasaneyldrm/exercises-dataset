@@ -199,6 +199,7 @@ Each record in `data/exercises.json` follows this structure. A machine-readable 
 | `gif_url` | `string` | Path to the 180×180 animation GIF (e.g. `"videos/0001-2gPfomN.gif"`) |
 | `attribution` | `string` | Media copyright notice — `"© Gym visual — https://gymvisual.com/"` |
 | `created_at` | `string` | ISO 8601 timestamp of record creation |
+| `translations.<lang>` | `object` | Optional translation of the exercise name and equipment for one language: `name` and `equipment`, both `string`. Currently available: `es` (Spanish). Languages are added as they are contributed. |
 
 ### Sample Record
 
